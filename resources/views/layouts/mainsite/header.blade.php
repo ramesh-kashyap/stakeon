@@ -55,7 +55,7 @@
 										<a class="main-btn main-btn_line" href="/login">
 											<img src="{{asset('')}}assets/img//btn-login.svg" width="18" alt="btn-login">login
 										</a>
-										<a class="main-btn main-btn_sign main-btn_orange" href="/registers">
+										<a class="main-btn main-btn_sign main-btn_orange" href="/register">
 											<img src="{{asset('')}}assets/img//btn-sign.svg" alt="btn-sign">register
 										</a>
 									</div>

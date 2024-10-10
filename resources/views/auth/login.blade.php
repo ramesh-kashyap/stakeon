@@ -9,8 +9,8 @@
 		<link rel="icon" type="image/png" sizes="32x32"
 			href="assets/img/favicon-32x32.png">
 		<meta content="ie=edge" http-equiv="x-ua-compatible">
-		<link rel="stylesheet" href="assets/css/vendor.css">
-		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="{{asset('')}}assets/css/vendor.css">
+		<link rel="stylesheet" href="{{asset('')}}assets/css/style.css">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -37,10 +37,8 @@ function checkform() {
 <div class="container">
             <div class="row">
                <div class="col-lg-5 offset-lg-3">
-                  <form method=post name=mainform onsubmit="return checkform()"><input type="hidden" name="form_id" value="17282798556938"><input type="hidden" name="form_token" value="14200c6aaf348e5a86c897e0fefdee6b">
-					<input type=hidden name=a value='do_login'>
-					<input type=hidden name=follow value=''>
-					<input type=hidden name=follow_id value=''>
+                  <form method=post name=mainform action="{{route('login')}}">
+					@csrf
                      <div class="sign-box">
                         <div class="sign-title">
                            Sign IN
@@ -60,8 +58,8 @@ function checkform() {
                               </svg>
                            </label>
                         </div>
-                        <a class="sign-link" href="https://stakeon.pro/?a=forgot_password">Forgot your password?</a><button name="login_frm_btn" type="submit" class="main-btn main-btn_orange main-btn_m"  style="width:100%">Sign IN</button>
-                        <div class="sign-bot">Don't you have an account yet?<a href="https://stakeon.pro/?a=signup"> Sign Up</a></div>
+                        <a class="sign-link" href="{{route('forgot-password')}}">Forgot your password?</a><button name="login_frm_btn" type="submit" class="main-btn main-btn_orange main-btn_m"  style="width:100%">Sign IN</button>
+                        <div class="sign-bot">Don't you have an account yet?<a href="{{route('register')}}"> Sign Up</a></div>
                      </div>
                   </form>
                </div>

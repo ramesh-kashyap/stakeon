@@ -1,445 +1,531 @@
-<div class="cab-content">
-    <div class="container">
-        <style>
-            .cab-bal__item .main-btn {
-                box-shadow: 1px 18px 20px 0px rgb(0 0 0 / 14%);
-            }
-        </style>
-
-     
-        <form method="post" name="add" action="{{ route('user.confirmDeposit') }}">
-            
-            {{ csrf_field() }}
-       
-            <div class="cab-title">select payment system<span>:</span></div>
-            <div class="cab-wallets">
-                <label style="position: relative;"><input class="PSys" checked type="radio" name="PSys" value="USDT.BEP20"
-                        data-icon="usdt" data-curr="USDT" data-min="0.0000000000" data-rate="1">
-                    <p> <img src="/assets/img/usdt.svg" alt="usdt" />USDT BEP20 <span>( USDT )</span>
-                    </p>
-                </label>
-                <label style="position: relative;"><input class="PSys" type="radio" name="PSys" value="USDT.TRC20"
-                        data-icon="usdt" data-curr="USDT" data-min="0.0000000000" data-rate="1">
-                    <p> <img src="/assets/img/usdt.svg" alt="usdt" />USDT TRC20 <span>( USDT )</span>
-                    </p>
-                </label>
-
-            </div>
-            <div class="cab-title">select staking<span>:</span></div>
-            <div class="cab-plans">
-                <div class="cab-plans__col">
-                    <div class="cab-plans__head">
-                        <div class="cab-plans__arrow"><svg>
-                                <use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
-                            </svg></div>
-                        <div class="cab-plans__text">
-                            <h3> <span>Beginner</span>Trader</h3>
-                        </div>
-                    </div><label><input type="radio" name="Plan" id="plan-6" value="6" data-min="50"
-                            data-max="200" checked>
-                        <div class="cab-plans__item">
-                            <h3>2.5% <span>(daily)</span></h3>
-                            <p>Min-Max: <span>50 - 200$</span></p>
-                            <p>total profit: <span>200%</span></p>
-                        </div>
-                    </label>
-                </div>
-                <div class="cab-plans__col">
-                    <div class="cab-plans__head blue">
-                        <div class="cab-plans__arrow"><svg>
-                                <use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
-                            </svg></div>
-                        <div class="cab-plans__text">
-                            <h3> <span>Standard</span>Trader</h3>
-                        </div>
-                    </div><label><input type="radio" name="Plan" id="plan-9" value="9" data-min="400"
-                            data-max="800">
-                        <div class="cab-plans__item">
-                            <h3>2.5% <span>(daily)</span></h3>
-                            <p>Min-Max: <span>400$ - 800$</span></p>
-                            <p>Total Profit: <span>200%</span></p>
-                        </div>
-                    </label>
-                </div>
-                <div class="cab-plans__col">
-                    <div class="cab-plans__head orange">
-                        <div class="cab-plans__arrow"><svg>
-                                <use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
-                            </svg></div>
-                        <div class="cab-plans__text">
-                            <h3> <span>Exclusive</span>Trader</h3>
-                        </div>
-                    </div><label><input type="radio"  name="Plan"   id="plan-12" value="12" data-min="1000"
-                            data-max="2000">
-                        <div class="cab-plans__item" >
-                            <style>
-                                .box-item {
-                                    position: absolute;
-                                    right: 0;
-                                    bottom: 3px;
-                                }
-
-                                .box-item img {
-                                    width: 34px;
-                                    position: relative;
-                                    left: 5px;
-                                }
-
-                                @media screen and (max-width: 480px) {
-                                    .box-item img {
-                                        left: 0;
-                                        width: 25px;
-                                    }
-
-                                    .box-item p {
-                                        text-align: center;
-                                        font-size: 10px;
-                                        position: relative;
-                                        top: -4px;
-                                    }
-                                }
-                            </style>
-                            
-                            <h3>3% <span>(daily)</span></h3>
-                            <p>Min-Max: <span>1000$ - 2000$</span></p>
-                            <p>total Profit: <span>200%</span></p>
-                        </div>
-                    </label> 
-                   
-                </div>
-                <div class="cab-plans__col">
-                    <div class="cab-plans__head green">
-                        <div class="cab-plans__arrow"><svg>
-                                <use xlink:href="/assets/img/sprite.svg#arrow-left"></use>
-                            </svg></div>
-                        <div class="cab-plans__text">
-                            <h3> <span>Untimate</span>Trader</h3>
-                        </div>
-                    </div><label><input type="radio" name="Plan" disabled id="plan-15" value="15" data-min="2500"
-                            data-max="5000">
-                        <div class="cab-plans__item" style="    cursor: not-allowed;">
-                            <h3>3% <span>(Soon)</span></h3>
-                            <p>Min-Max: <span>2500$ - 5000$</span></p>
-                            <p>total profit: <span>200%</span></p>
-                        </div>
-                    </label>
-                </div>
-            </div>
-            <div class="cab-title">enter amount<style>
-                    #dep_min,
-                    #dep_max {
-                        cursor: pointer;
-                    }
-
-                    #dep_min:hover,
-                    #dep_max:hover {
-                        text-decoration: underline;
-                    }
-                </style>
-                <div style="display: none;">15.00055277/3499.983201743733.39000000</div>
-                <div style="display: none;">15.00055277/3499.9832017</div>
-
-             <input type="hidden" name="minimum_deposit" id="minimum_deposit" value="50">
-             <input type="hidden" name="maximum_deposit" id="maximum_deposit" value="200">
-                <div>
-                    <p
-                        style="font-family: 'Estricta', sans-serif; font-size: 13px;margin-left: 10px;margin-top: -5px;">
-                        <span id="dep_curr" style="font-weight: bold;">USDT</span> <span id="dep_range">(from <span
-                                id="dep_min" style="font-weight: bold;">50</span> to <span id="dep_max"
-                                style="font-weight: bold;">200</span>)</span> 
-                    </p>
-                    <p class='bonus-info-label'></p>
-                </div>
-            </div><label class="cab-amount"><input type="text" name="Sum" value="50"
-                    placeholder="0"><img class="amount-icon" src="/assets/img/usdt.svg" alt="btc" /></label>
-            <p class="cashback-info-label"> </p>
-            
-            <input name="__Cert" value="2dca4dd8" type="hidden">
-         
-            
-            <button
-                class="main-btn main-btn_green main-btn_m main-btn_sm submit-btn" name="add_btn">create Deposit</button>
-        </form>
-    </div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-
-<script>
-	$(function(){
-		$('input[name="Sum"]').on('change keyup',function () {
-			let str = $(this).val();
-			str = str.replace(',','.');
-			$(this).val(str);
-           let min =  $('#minimum_deposit').val();
-           let max =  $('#maximum_deposit').val();
-			let amount = parseFloat(str);
-            if (amount>=min && amount<=max) 
-            {
-                $(".submit-btn").prop("disabled", false);
-                $('.cashback-info-label').html('');
-            }
-            else
-            {
-
-            $(".submit-btn").prop("disabled", true);
-            $('.cashback-info-label').html("minimum deposit is "+min+" USDT and maximum is "+max+" USDT !").css('color', 'red');
-
-            }
-		
-			//console.log(summ_usd);
-		});
-		$('input[name="PSys"]').change(function () {
-			let icon = $(this).data('icon');
-			$('.amount-icon').attr('src','/assets/img/'+icon+'.svg');
-		});
-		$('.PSys').change(function () {
-			let dep_curr_rate = parseFloat($(this).data('rate'));
-			let curr = $(this).data('curr');
-			let c_min = $(this).data('min');
-			$('#dep_curr').text(curr);
-			$('input[name="Sum"]').val('');
-
-			let dep_min = 0;
-			if(c_min>0){
-				dep_min = parseFloat(c_min);
-			}else{
-				dep_min = parseFloat($('input[name="Plan"]:checked').data('min'));
-			}
-
-			let dep_max = parseFloat($('input[name="Plan"]:checked').data('max'));
-			let dep_sum_min = parseFloat((dep_min/dep_curr_rate).toFixed(6));
-			let dep_sum_max = parseFloat((dep_max/dep_curr_rate).toFixed(6));
-			let dep_amount_min = parseFloat((dep_sum_min*dep_curr_rate));
-			let dep_amount_max = parseFloat((dep_sum_max*dep_curr_rate));
-
-			while (dep_amount_min < dep_min){
-				dep_sum_min=dep_sum_min+0.000001;
-				dep_amount_min = dep_sum_min*dep_curr_rate;
-			}
-			while (dep_amount_max > dep_max){
-				dep_sum_max=dep_sum_max-0.000001;
-				dep_amount_max = dep_sum_max*dep_curr_rate;
-			}
-			$('#dep_min').text(dep_sum_min.toFixed(6));
-			$('#dep_max').text(dep_sum_max.toFixed(6));
-            $('#minimum_deposit').val(dep_sum_min.toFixed(0));
-			$('#maximum_deposit').val(dep_sum_max.toFixed(0));
-			$('input[name="Sum"]:not(.ex_sum)').val(dep_sum_min.toFixed(6));
-			$('#eq').text((dep_sum_min*dep_curr_rate).toFixed(2));
-		});
-		$('input[name="Plan"]').change(function () {
-			let c_min = $('input[name="PSys"]:checked').data('min');
-			let d_min = parseFloat($(this).data('min'));;
-			let dep_min = 0;
-			if(c_min>0 && c_min>=d_min){
-				dep_min = parseFloat(c_min);
-			}else{
-				dep_min = d_min;
-			}
-            // alert(dep_min);
-			let dep_max = parseFloat($(this).data('max'));
-			let dep_curr_rate = parseFloat($('input[name="PSys"]:checked').data('rate'));
-			let dep_sum_min = parseFloat((dep_min/dep_curr_rate).toFixed(6));
-			let dep_sum_max = parseFloat((dep_max/dep_curr_rate).toFixed(6));
-			let dep_amount_min = parseFloat((dep_sum_min*dep_curr_rate));
-			let dep_amount_max = parseFloat((dep_sum_max*dep_curr_rate));
-
-			$('#dep_min').text(dep_min.toFixed(2));
-			$('#dep_max').text(dep_max.toFixed(2));
-			$('#minimum_deposit').val(dep_min.toFixed(0));
-			$('#maximum_deposit').val(dep_max.toFixed(0));
-			$('#eq').text((dep_sum_min*dep_curr_rate).toFixed(2));
-			$('input[name="Sum"]').val(dep_min.toFixed(2));
-		});
-		$('#dep_min,#dep_max').click(function () {
-			let amount = $(this).text();
-			$('input[name="Sum"]').val(amount).change();
-		});
-		$('.ex_sum').on('change keyup',function () {
-			let rate = $('input.PSys:checked').data('rate');
-			let amount = parseFloat($(this).val());
-			let usd_amount = amount * rate;
-			let hnb_rate = 0.9479;
-			let htb_amount = (usd_amount/hnb_rate).toFixed(6);
-			if(!isNaN(htb_amount)){
-				$('#actual_hnbt').text(htb_amount);
-			}else{
-				$('#actual_hnbt').text('0.000000');
-			}
-
-		});
-	})
-</script>
-
-<div class='d-none'>
-</div>
-
-<script>
-
-$(document).ready(function() {
-
- 	$('input[name="Sum"]').on('change keydown keypress', function() {
-		setTimeout(function() {
-			refreshBonus();
-		}, 100);
-	});
-
-	$('input[name="Plan"]').on('change', function() {
-		setTimeout(function() {
-			refreshBonus(1);
-		}, 100);
- 	});
-
- 	$('input[name="PSys"]').on('change', function() {
-		setTimeout(function() {
-			refreshBonus();
-		}, 100);
- 	});
-
-	function timerEnded(bn) {
-		$('#pbonus' + bn).hide();
-	}
-	btext = null;
-	bval = [];
-	plans = [{"id":"137","group":"0","name":"0.1% daily for 68 working days","min":"15.0000000000","max":"1000000.0000000000","days":"68","perc":"0.10","return":"100.00","period":"24"},{"id":"138","group":"0","name":"330% after 68 working days","min":"15.0000000000","max":"100000.0000000000","days":"96","perc":"230.00","return":"100.00","period":"2300"},{"id":"6","group":"1","name":"3.2% daily for 11 working days (Classic staking)","min":"15.0000000000","max":"3500.0000000000","days":"11","perc":"3.20","return":"100.00","period":"24"},{"id":"7","group":"1","name":"210% after 11 working days (Classic staking)","min":"350.0000000000","max":"35000.0100000000","days":"16","perc":"110.00","return":"100.00","period":"375"},{"id":"8","group":"1","name":"14% daily for 11 working days (Classic staking)","min":"400.0000000000","max":"75000.0100000000","days":"11","perc":"14.00","return":"0.00","period":"24"},{"id":"9","group":"2","name":"4.3% daily for 19 working days (Premium staking)","min":"1900.0000000000","max":"58000.0100000000","days":"19","perc":"4.30","return":"100.00","period":"24"},{"id":"10","group":"2","name":"330% after 19 working days (Premium staking)","min":"1800.0000000000","max":"68000.0100000000","days":"29","perc":"230.00","return":"100.00","period":"700"},{"id":"11","group":"2","name":"18% daily for 19 working days (Premium staking)","min":"2100.0000000000","max":"78000.0100000000","days":"19","perc":"18.00","return":"0.00","period":"24"},{"id":"12","group":"3","name":"5.5% daily for 25 working days (Deluxe staking)","min":"3700.0000000000","max":"89000.0100000000","days":"25","perc":"5.30","return":"100.00","period":"24"},{"id":"13","group":"3","name":"550% after 25 working days   (Deluxe staking)","min":"3500.0000000000","max":"99000.0100000000","days":"38","perc":"450.00","return":"100.00","period":"900"},{"id":"14","group":"3","name":"22% daily for 25 working days (Deluxe staking)","min":"4500.0000000000","max":"109000.0100000000","days":"25","perc":"22.00","return":"0.00","period":"24"},{"id":"15","group":"4","name":"1700% after 35 working days (Long Investment staking)","min":"10.0000000000","max":"100000.0100000000","days":"50","perc":"1600.00","return":"100.00","period":"1200"},{"id":"16","group":"4","name":"2400% after 40 working days (Long Investment staking)","min":"15.0000000000","max":"100000.0100000000","days":"58","perc":"2300.00","return":"100.00","period":"1400"},{"id":"17","group":"4","name":"6500% after 45 working days (Long Investment staking)","min":"20.0000000000","max":"100000.0100000000","days":"67","perc":"6400.00","return":"100.00","period":"1600"}];
-	var vplans = {};
-
-	for (bn in bval) {
-		for (i in plans) {
-			var planId = plans[i].id;
-			if (!vplans[planId]) {
-				vplans[planId] = {};
-			}
-			if (bn == 1) {
-				vplans[planId].bonus = bval[bn];
-			}
-			if (bn == 2 && planId == 12) {
-        vplans[planId].bonus = bval[bn];
-      }
-			if (bn == 3) {
-				vplans[planId].cashback = bval[bn];
-			}
-			if (bn == 4 && planId == 12) {
-				vplans[planId].cashback = bval[bn];
-			}
-			if (bn == 5 && planId == 14) {
-				vplans[planId].cashback = bval[bn];
-			}
-		}
-	}
-
-	//Show all label
-	for (var plan in vplans) {
-		if (vplans[plan].bonus) {
-			$('#plan-' + plan).next().prepend('<div class="epc-bonus">Bonus: +'+ vplans[plan].bonus[0] +'% <span class="timer" data-time="'+ vplans[plan].bonus[1] +'">'+ vplans[plan].bonus[1] +'</span></div>');
-			timer($('#plan-' + plan).next().find('.timer'));
-		}
-	}
-	
-	function refreshBonus( refresh = 0 ) {
-		sum = parseFloat($('input[name="Sum"]').val());
-		plan = parseInt($('input[name="Plan"]:checked').val());
-		curr = $('input[name="PSys"]:checked').data('curr');
-		$('.bonus-info-label').html('');
-		if (!vplans[plan].cashback) {
-			$('.cashback-info-label').html('');
-		}
-		if (vplans[plan].bonus) {
-			bonus = number_format(sum + sum * vplans[plan].bonus[0] / 100, 8, '.', '');
-			$('.bonus-info-label').html('You will get <b>' + bonus + ' <span>' + curr + '</span></b> deposit');
-		}
-		if (vplans[plan].cashback) {
-			cashback = number_format(sum * vplans[plan].cashback[0] / 100, 8, '.', '');
-			if (!$('.cashback-info-label').html()) {
-				$('.cashback-info-label').html('<div><p>After deposit you will get <b class="cashback-label-percent">'+vplans[plan].cashback[0]+'%</b> (<abbr class="cashback-label-amount">' + cashback + ' ' + curr + '</abbr>)<br/> cashback on your account balance.</p> Expires in: <span> [<i class="cahsback-timer" data-time="'+vplans[plan].cashback[1]+'"></i>]</span></div>');
-				timer($('.cahsback-timer'));
-			}
-			else {
-				$('.cashback-label-percent').text(vplans[plan].cashback[0]+'%');
-				$('.cashback-label-amount').text( cashback + ' ' + curr );
-				if (refresh) {
-					$('.cahsback-timer').data('time',vplans[plan].cashback[1] );
-					timer($('.cahsback-timer'),1);
-				}
-			}
-		}
-	}
-
-	function number_format(number, decimals, decPoint, thousandsSep) {
-
-		number = (number + '').replace(/[^0-9+\-Ee.]/g, '')
-		var n = !isFinite(+number) ? 0 : +number
-		var prec = !isFinite(+decimals) ? 0 : Math.abs(decimals)
-		var sep = (typeof thousandsSep === 'undefined') ? ',' : thousandsSep
-		var dec = (typeof decPoint === 'undefined') ? '.' : decPoint
-		var s = ''
-
-		var toFixedFix = function (n, prec) {
-			if (('' + n).indexOf('e') === -1) {
-				return +(Math.round(n + 'e+' + prec) + 'e-' + prec)
-			} else {
-				var arr = ('' + n).split('e')
-				var sig = ''
-				if (+arr[1] + prec > 0) {
-					sig = '+'
-				}
-				return (+(Math.round(+arr[0] + 'e' + sig + (+arr[1] + prec)) + 'e-' + prec)).toFixed(prec)
-			}
-		}
-
-		s = (prec ? toFixedFix(n, prec).toString() : '' + Math.round(n)).split('.')
-		if (s[0].length > 3) {
-			s[0] = s[0].replace(/\B(?=(?:\d3)+(?!\d))/g, sep)
-		}
-		if ((s[1] || '').length < prec) {
-			s[1] = s[1] || ''
-			s[1] += new Array(prec - s[1].length + 1).join('0')
-		}
-
-		return s.join(dec)
-	}
-
-	setTimeout(function() {
-		refreshBonus();
-	}, 100);
-
-});
 
 
-let intervalId; // объявляем переменную для хранения возвращаемого значения setInterval
 
-function timer(el, refresh = 0) {
-    let timerElem = el;
-    let timeLeft = parseInt(timerElem.data('time'), 10);
-		if (refresh) {
-			if (intervalId) {
-					clearInterval(intervalId); // останавливаем предыдущий таймер, если он существует
-			}
-		}
+<main id="as-main-deposit" class="uk-section-xsmall">
+	<div class="uk-container uk-container-expand">
+		<header class="uk-heading uk-text-center uk-margin-small-bottom">
+			<h1 class="uk-heading-line">Create a new Deposit</h1>
+		</header>
 
-    intervalId = setInterval(function() { // сохраняем возвращаемое значение setInterval
-        if (timeLeft <= 0) {
-            timerElem.text("00:00:00");
-            clearInterval(intervalId); // останавливаем таймер, если время истекло
-            return;
-        }
+		<form method="post" name="spendform" class="uk-form-stacked uk-child-width-1-2@l uk-grid" uk-height-match="target: > fieldset > div > .uk-card" uk-grid="uk-grid"><input type="hidden" name="form_id" value="17283645013574"><input type="hidden" name="form_token" value="253d04de1f924474adbbc896477198ba">
+			<input type="hidden" name="a" value="deposit">
+			<fieldset id="as-new-deposit-select" class="uk-fieldset uk-first-column">
+				<div class="uk-cube-top-left uk-cube-figure">
+					<div class="uk-card uk-card-default as-card-medium">
+						<div class="uk-legend">
+							<mark>1</mark>
+							<span class="uk-text-background">Select a payment system</span>
+						</div>
+						<label class="uk-form-label" for="as-form-amount">
+							Select payment Topup
+						</label>
+						<ul class="uk-grid-small uk-child-width-1-2@xl uk-grid uk-grid-stack" uk-grid="">
+							<li class="js-form-closest uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_51" data-fiat="USD" id="deposit_51">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/51.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">ePayCore</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_48" data-fiat="BTC" id="deposit_48">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/48.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Bitcoin</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_68" data-fiat="LTC" id="deposit_68">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/68.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Litecoin</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_69" data-fiat="ETH" id="deposit_69">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/69.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Ethereum</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_71" data-fiat="DASH" id="deposit_71">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/71.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Dash</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_79" data-fiat="DOGE" id="deposit_79">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/79.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Dogecoin</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_85" data-fiat="TRX" id="deposit_85">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/85.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Tron</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_92" data-fiat="USDT.TRC20" id="deposit_92">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/92.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Tether TRC20</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_94" data-fiat="BNB" id="deposit_94">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/94.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">BNB</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_102" data-fiat="USDT.BEP20" id="deposit_102">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/102.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Tether BEP20</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_70" data-fiat="ETC" id="deposit_70">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/70.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Ethereum Classic</div>
+									</div>
+								</div>
+							</li>
+							<li class="js-form-closest uk-grid-margin uk-first-column">
+								<div class="uk-card uk-card-default uk-card-form">
+									<input class="uk-radio" type="radio" name="type" value="process_77" data-fiat="BCH" id="deposit_77">
+									<label class="uk-icon uk-icon-button" style="background: none;">
+										<img src="{{asset('')}}massets/img/coin/77.svg" width="48" height="48">
+									</label>
+									<div>
+										<div class="as-payment-name">Bitcoin Cash</div>
+									</div>
+								</div>
+							</li>
 
-        timerElem.text(formatTime(timeLeft));
-        timeLeft--;
-    }, 1000);
-}
+						</ul>
+						<div class="uk-margin-medium-top">
+							<label class="uk-form-label" for="as-form-amount">
+								Select payment Balance
+							</label>
+							<ul class="uk-grid-small uk-child-width-1-2@xl uk-grid uk-grid-stack" uk-grid="">
+								<li class="js-form-closest uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_51" id="account_51" data-fiat="USD" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/51.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">ePayCore</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_48" id="account_48" data-fiat="BTC" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/48.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Bitcoin</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_68" id="account_68" data-fiat="LTC" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/68.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Litecoin</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_69" id="account_69" data-fiat="ETH" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/69.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Ethereum</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_71" id="account_71" data-fiat="DASH" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/71.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Dash</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_79" id="account_79" data-fiat="DOGE" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/79.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Dogecoin</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_85" id="account_85" data-fiat="TRX" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/85.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Tron</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_92" id="account_92" data-fiat="USDT.TRC20" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/92.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Tether TRC20</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_94" id="account_94" data-fiat="BNB" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/94.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">BNB</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_102" id="account_102" data-fiat="USDT.BEP20" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/102.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Tether BEP20</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_70" id="account_70" data-fiat="ETC" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/70.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Ethereum Classic</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
+								<li class="js-form-closest uk-grid-margin uk-first-column">
+									<div class="uk-card uk-card-default uk-card-form">
+										<input class="uk-radio" type="radio" name="type" value="account_77" id="account_77" data-fiat="BCH" disabled="">
+										<label class="uk-icon uk-icon-button" style="background: none;">
+											<img src="{{asset('')}}massets/img/coin/77.svg" width="48" height="48">
+										</label>
+										<div>
+											<div class="as-payment-name">Bitcoin Cash</div>
+											<ins>
+												$0.00
+											</ins>
+										</div>
+									</div>
+								</li>
 
-function formatTime(seconds) {
-	let days = Math.floor(seconds / (3600 * 24));
-	seconds -= days * 3600 * 24;
-	let hours = Math.floor(seconds / 3600);
-	seconds -= hours * 3600;
-	let minutes = Math.floor(seconds / 60);
-	seconds -= minutes * 60;
-	hours = hours.toString().padStart(2, '0');
-	minutes = minutes.toString().padStart(2, '0');
-	seconds = seconds.toString().padStart(2, '0');
-	return days + 'd ' + hours + 'h '+ minutes + 'm ' + seconds + 's';
-}
-</script>
-
+							</ul>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset id="as-new-deposit-amount" class="uk-fieldset uk-form-controls-label-figure">
+				<div class="uk-cube-bottom-left uk-cube-figure">
+					<div class="uk-card uk-card-default as-card-medium" style="min-height: 2799.88px;">
+						<div class="uk-legend">
+							<mark>2</mark>
+							<span class="uk-text-background">Choose the Staking plan</span>
+						</div>
+						<ul class="uk-subnav uk-subnav-pill uk-child-width-1-2@m uk-child-width-1-2@l uk-flex-center uk-margin">
+							<label class="js-plan-label uk-active" for="deposit_form_plan_id_0" style="cursor: pointer;">
+								<span>
+									LITE
+								</span>
+								<input type="radio" name="h_id" value="1" id="deposit_form_plan_id_0" checked="" hidden="">
+							</label>
+							<label class="js-plan-label" for="deposit_form_plan_id_1" style="cursor: pointer;">
+								<span>
+									STANDARD
+								</span>
+								<input type="radio" name="h_id" value="2" id="deposit_form_plan_id_1" hidden="">
+							</label>
+							<label class="js-plan-label" for="deposit_form_plan_id_2" style="cursor: pointer;">
+								<span>
+									PREMIUM
+								</span>
+								<input type="radio" name="h_id" value="3" id="deposit_form_plan_id_2" hidden="">
+							</label>
+							<label class="js-plan-label" for="deposit_form_plan_id_3" style="cursor: pointer;">
+								<span>
+									DIAMOND
+								</span>
+								<input type="radio" name="h_id" value="4" id="deposit_form_plan_id_3" hidden="">
+							</label>
+						</ul>
+						<div class="js-plan-tab-content">
+							<div class="js-plan-tab js-plan-tab-1" style="display: block;">
+								<div class="new-deposit-plan-block">
+									<div class="new-deposit-plan-block__inner">
+										<div class="new-deposit-plan-block__body">
+											<div class="new-deposit-plan-block__earnings-row">
+												<div class="new-deposit-plan-block__percent-cell">
+													<div class="new-deposit-plan-block__percent">
+														0.5<small>%</small>
+													</div>
+												</div>
+												<div class="new-deposit-plan-block__period-cell">
+													<div class="new-deposit-plan-block__period">
+														Daily
+														<br>
+														Income
+													</div>
+												</div>
+											</div>
+											<div class="new-deposit-plan-block__description-row">
+												<div class="new-deposit-plan-block__description-cell">
+													<div class="new-deposit-plan-block__term">
+														<div class="principal-return-widget new-deposit-plan-block__principal-return-widget">
+															For
+															30 calendar
+															days
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="js-plan-tab js-plan-tab-2" style="display: none;">
+								<div class="new-deposit-plan-block">
+									<div class="new-deposit-plan-block__inner">
+										<div class="new-deposit-plan-block__body">
+											<div class="new-deposit-plan-block__earnings-row">
+												<div class="new-deposit-plan-block__percent-cell">
+													<div class="new-deposit-plan-block__percent">
+														0.6<small>%</small>
+													</div>
+												</div>
+												<div class="new-deposit-plan-block__period-cell">
+													<div class="new-deposit-plan-block__period">
+														Daily
+														<br>
+														Income
+													</div>
+												</div>
+											</div>
+											<div class="new-deposit-plan-block__description-row">
+												<div class="new-deposit-plan-block__description-cell">
+													<div class="new-deposit-plan-block__term">
+														<div class="principal-return-widget new-deposit-plan-block__principal-return-widget">
+															For
+															90 calendar
+															days
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="js-plan-tab js-plan-tab-3" style="display: none;">
+								<div class="new-deposit-plan-block">
+									<div class="new-deposit-plan-block__inner">
+										<div class="new-deposit-plan-block__body">
+											<div class="new-deposit-plan-block__earnings-row">
+												<div class="new-deposit-plan-block__percent-cell">
+													<div class="new-deposit-plan-block__percent">
+														0.7<small>%</small>
+													</div>
+												</div>
+												<div class="new-deposit-plan-block__period-cell">
+													<div class="new-deposit-plan-block__period">
+														Daily
+														<br>
+														Income
+													</div>
+												</div>
+											</div>
+											<div class="new-deposit-plan-block__description-row">
+												<div class="new-deposit-plan-block__description-cell">
+													<div class="new-deposit-plan-block__term">
+														<div class="principal-return-widget new-deposit-plan-block__principal-return-widget">
+															For
+															180 calendar
+															days
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="js-plan-tab js-plan-tab-4" style="display: none;">
+								<div class="new-deposit-plan-block">
+									<div class="new-deposit-plan-block__inner">
+										<div class="new-deposit-plan-block__body">
+											<div class="new-deposit-plan-block__earnings-row">
+												<div class="new-deposit-plan-block__percent-cell">
+													<div class="new-deposit-plan-block__percent">
+														1<small>%</small>
+													</div>
+												</div>
+												<div class="new-deposit-plan-block__period-cell">
+													<div class="new-deposit-plan-block__period">
+														Daily
+														<br>
+														Income
+													</div>
+												</div>
+											</div>
+											<div class="new-deposit-plan-block__description-row">
+												<div class="new-deposit-plan-block__description-cell">
+													<div class="new-deposit-plan-block__term">
+														<div class="principal-return-widget new-deposit-plan-block__principal-return-widget">
+															For
+															360 calendar
+															days
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="new-deposit-amount-row uk-margin-medium-top">
+							<div class="new-deposit-amount-row__amount-cell">
+								<label class="uk-form-label" for="as-form-amount">
+									<span class="uk-flex uk-flex-between">
+										Enter Amount
+									</span>
+								</label>
+								<div class="uk-form-controls">
+									<figure class="uk-form-controls-figure">
+										<img src="{{asset('')}}massets/img/icon/form/amount.svg" width="60" height="60" loading="lazy" alt="icon">
+									</figure>
+									<small class="uk-form-icon uk-form-icon-flip js-currs-slug">
+									</small>
+									<input type="text" name="amount" value="25.00" required="required" class="uk-input form-control">
+								</div>
+							</div>
+							<div class="new-deposit-amount-row__btn-cell">
+								<button class="uk-button uk-button-primary uk-button-large">
+									Create Deposit
+									<img src="{{asset('')}}massets/img/icon/deposit.svg" width="37" height="37" loading="lazy" alt="icon">
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</main>

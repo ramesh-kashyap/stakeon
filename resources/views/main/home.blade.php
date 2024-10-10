@@ -16,7 +16,7 @@
 		<div class="wrapper">
 <header class="header">
 @include('layouts.mainsite.header')
-				
+			
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-2 d-lg-none">

@@ -36,7 +36,6 @@ class Login extends Controller
             $credentials = $request->only('username', 'password');
 
 
-
             if (Auth::attempt($credentials)) {
                 $user = Auth::user();
 
@@ -196,6 +195,13 @@ class Login extends Controller
        return redirect()->route('login')->withNotify($notify);
 
     }
+    public function logout(Request $request)
+{
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('/login')->with('status', 'You have been logged out successfully.');
+}
 
 
 

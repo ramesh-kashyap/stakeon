@@ -1,579 +1,393 @@
-<div class="cab-content">
-    
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-.cab-head {
- 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    width: 100%;
-    z-index: 1;
-    padding-bottom: 108px;
-    margin-bottom: auto;
-}
-.sample {
-  padding: 2rem;
-  text-align: center;
-}
-
-p {
-    line-height: 1.6;
-    margin-top: 1rem;
-    font-size: medium;
-}
 
 
-button {
-  background: transparent;
-  border: 0;
-  color: #666;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0 1rem;
-  text-transform: uppercase;
-
-  &:hover {
-    color: #111;
-  }
-
-  &.open-modal {
-    background: #000;
-    border-radius: 5px;
-    color: #fff;
-    display: inline-block;
-    margin: 1rem 0.5rem;
-    padding: 1rem;
-  }
-}
-
-/* Modal styles */
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 2rem;
-  position: static;
-  top: 0;
-  width: 100%;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s ease;
-
-  .modal-backdrop {
-    background: rgba(#000, 0.7);
-    height: 100%;
-    width: 100%;
-    position: fixed;
-  }
-
-  .modal-content {
-    background: #fff;
-    border-radius: 5px;
-    max-width: 600px;
-    position: fixed;
-    top: -100%;
-    transition: all 0.6s ease;
-    z-index: 1000;
-  }
-
-  .modal-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding: 1.5rem;
-
-    .close-modal {
-      font-size: 2rem;
-      padding: 0;
-      margin: 0;
-      height: 30px;
-      width: 30px;
-      text-align: center;
-
-      &:hover {
-        color: #000;
-      }
-    }
-  }
-  
-  .close-modal {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-    background-image: none;
-    height: 20px;
-    width: 20px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50%;
-    opacity: 0.3;
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-}
-
-  .modal-body {
-    padding: 1.5rem;
-  }
-
-  .modal-footer {
-    border-top: 1px solid #ccc;
-    padding: 1rem;
-    text-align: right;
-  }
-
-  &.visible {
-    opacity: 1;
-    visibility: visible;
-
-    .modal-content {
-      top: 25%;
-    }
-  }
-}
-a.result__txLink.btnText._primary {
-    text-decoration: none;
-    text-align: center;
-    font-size: 18px;
-    color: #4574eb;
-}
-
-.to-transaction
-{
-      background: #1bb257;
-    width: 200px;
-    margin: 0px auto;
-    margin-top: 18px;
-    color: #fff;
-    padding: 10px;  
-}
-.review {
-    background: #f5f6fa;
-    border-radius: 0 0 8px 8px;
-    padding: 32px 16px;
-    text-align: center;
-    width: 100%;
-}
-
-    </style>
-    
-    <div class="container">
-       <div class="cab-tabs">
-        <a class="cab-tabs__item active" href="{{route('user.profile')}}" style="text-decoration: none;">Account settings</a>
-        <a class="cab-tabs__item" href="{{route('user.wallets')}}" style="text-decoration: none;">Wallets
-            settings</a>
-        <a class="cab-tabs__item " href="{{route('user.ChangePass')}}" style="text-decoration: none;">Change
-            password</a>
-       </div>
-       <form method="post" action="{{ route('user.update-profile') }}" name="account_frm">
-
-        {{ csrf_field() }}
-        
-          <div class="cab-inputs">
-            <label class="cab-input">
-                <P>Your Upline</P>
-                <input type="text" value="{{ $profile_data->sponsor_detail ? $profile_data->sponsor_detail->username : '0' }}" readonly disabled>
-                <svg>
-                   <use xlink:href="assets/img/sprite.svg#user"></use>
-                </svg>
-             </label>
-
-             <label class="cab-input">
-                <P>Your Login</P>
-                <input type="text" value="{{ $profile_data ? $profile_data->username : '' }}" readonly disabled>
-                <svg>
-                   <use xlink:href="assets/img/sprite.svg#user"></use>
-                </svg>
-             </label>
-
-             <label class="cab-input">
-                <P>Name</P>
-                <input type="text" value="{{ $profile_data ? $profile_data->name : '' }}" name="name">
-                <svg>
-                   <use xlink:href="assets/img/sprite.svg#user"></use>
-                </svg>
-             </label>
+<main id="as-main-settings" class="uk-section-xsmall">
+    <div class="uk-container uk-container-expand">
 
 
-             <label class="cab-input">
-                <P>Your e‑mail</P>
-                <input type="text" value="{{ $profile_data ? $profile_data->email : '' }}" readonly disabled>
-                <svg>
-                   <use xlink:href="assets/img/sprite.svg#mail"></use>
-                </svg>
-             </label>
-             <label class="cab-input">
-                <P>Country</P>
-                <div class="cab-input__wrap">
 
-                    <select name="country" id="" >
+        <script language="javascript">
+            function IsNumeric(sText) {
+                var ValidChars = "0123456789.";
+                var IsNumber = true;
+                var Char;
+                if (sText == '') return false;
+                for (i = 0; i < sText.length && IsNumber == true; i++) {
+                    Char = sText.charAt(i);
+                    if (ValidChars.indexOf(Char) == -1) {
+                        IsNumber = false;
+                    }
+                }
+                return IsNumber;
+            }
 
-                        <option>
-                            {{ $profile_data ? $profile_data->country : '' }}
-                        </option>
-                        <option value="AFGHANISTAN">
-                            AFGHANISTAN</option>
-                        <option value="ALBANIA">ALBANIA
-                        </option>
-                        <option value="ALGERIA">ALGERIA
-                        </option>
-                        <option value="AMERICAN SAMOA">
-                            AMERICAN SAMOA</option>
-                        <option value="ANDORRA">ANDORRA
-                        </option>
-                        <option value="ANGOLA">ANGOLA
-                        </option>
-                        <option value="ANGUILLA">ANGUILLA
-                        </option>
-                        <option value="ANTARCTICA">
-                            ANTARCTICA</option>
-                        <option value="ANTIGUA AND BARBUDA">
-                            ANTIGUA AND BARBUDA</option>
-                        <option value="ARGENTINA">
-                            ARGENTINA</option>
-                        <option value="ARMENIA">ARMENIA
-                        </option>
-                        <option value="ARUBA">ARUBA
-                        </option>
-                        <option value="AUSTRALIA">
-                            AUSTRALIA</option>
-                        <option value="AUSTRIA">AUSTRIA
-                        </option>
-                        <option value="AZERBAIJAN">
-                            AZERBAIJAN</option>
-                        <option value="BAHAMAS">BAHAMAS
-                        </option>
-                        <option value="BAHRAIN">BAHRAIN
-                        </option>
-                        <option value="BANGLADESH">
-                            BANGLADESH</option>
-                        <option value="BARBADOS">
-                            BARBADOS</option>
-                        <option value="BELARUS">BELARUS
-                        </option>
-                        <option value="BELGIUM">BELGIUM
-                        </option>
-                        <option value="BELIZE">BELIZE
-                        </option>
-                        <option value="BENIN">BENIN
-                        </option>
-                        <option value="BERMUDA">BERMUDA
-                        </option>
-                        <option value="BHUTAN">BHUTAN
-                        </option>
-                        <option value="BOLIVIA">BOLIVIA
-                        </option>
-                        <option value="BOSNIA AND HERZEGOVINA">
-                            BOSNIA AND HERZEGOVINA
-                        </option>
-                        <option value="BOTSWANA">
-                            BOTSWANA</option>
-                        <option value="BOUVET ISLAND">
-                            BOUVET ISLAND</option>
-                        <option value="BRAZIL">BRAZIL
-                        </option>
-                        <option value="BRITISH INDIAN OCEAN TERRITORY">
-                            BRITISH INDIAN OCEAN
-                            TERRITORY</option>
-                        <option value="BRUNEI DARUSSALAM">
-                            BRUNEI DARUSSALAM</option>
-                        <option value="BULGARIA">
-                            BULGARIA</option>
-                        <option value="BURKINA FASO">
-                            BURKINA FASO</option>
-                        <option value="BURUNDI">BURUNDI
-                        </option>
-                        <option value="CAMBODIA">
-                            CAMBODIA</option>
-                        <option value="CAMEROON">
-                            CAMEROON</option>
-                        <option value="CANADA">CANADA
-                        </option>
-                        <option value="CAPE VERDE">CAPE
-                            VERDE</option>
-                        <option value="CAYMAN ISLANDS">
-                            CAYMAN ISLANDS</option>
-                        <option value="CENTRAL AFRICAN REPUBLIC">
-                            CENTRAL AFRICAN REPUBLIC
-                        </option>
-                        <option value="CHAD">CHAD
-                        </option>
-                        <option value="CHILE">CHILE
-                        </option>
-                        <option value="CHINA">CHINA
-                        </option>
-                        <option value="CHRISTMAS ISLAND">
-                            CHRISTMAS ISLAND</option>
-                        <option value="COCOS (KEELING) ISLANDS">
-                            COCOS (KEELING) ISLANDS
-                        </option>
-                        <option value="COLOMBIA">
-                            COLOMBIA</option>
-                        <option value="COMOROS">COMOROS
-                        </option>
-                        <option value="CONGO">CONGO
-                        </option>
-                        <option value="CONGO, THE DEMOCRATIC REPUBLIC OF THE">
-                            CONGO, THE DEMOCRATIC
-                            REPUBLIC OF THE</option>
-                        <option value="COOK ISLANDS">
-                            COOK ISLANDS</option>
-                        <option value="COSTA RICA">COSTA
-                            RICA</option>
-                        <option value="COTE D'IVOIRE">
-                            COTE D'IVOIRE</option>
-                        <option value="CROATIA">CROATIA
-                        </option>
-                        <option value="CUBA">CUBA
-                        </option>
-                        <option value="CYPRUS">CYPRUS
-                        </option>
-                        <option value="CZECH REPUBLIC">
-                            CZECH REPUBLIC</option>
-                        <option value="DENMARK">DENMARK
-                        </option>
-                        <option value="DJIBOUTI">
-                            DJIBOUTI</option>
-                        <option value="DOMINICA">
-                            DOMINICA</option>
-                        <option value="DOMINICAN REPUBLIC">
-                            DOMINICAN REPUBLIC</option>
-                        <option value="ECUADOR">ECUADOR
-                        </option>
-                        <option value="EGYPT">EGYPT
-                        </option>
-                        <option value="EL SALVADOR">EL
-                            SALVADOR</option>
-                        <option value="EQUATORIAL GUINEA">
-                            EQUATORIAL GUINEA</option>
-                        <option value="ERITREA">ERITREA
-                        </option>
-                        <option value="ESTONIA">ESTONIA
-                        </option>
-                        <option value="ETHIOPIA">
-                            ETHIOPIA</option>
-                        <option value="FALKLAND ISLANDS (MALVINAS)">
-                            FALKLAND ISLANDS (MALVINAS)
-                        </option>
-                        <option value="FAROE ISLANDS">
-                            FAROE ISLANDS</option>
-                        <option value="FIJI">FIJI
-                        </option>
-                        <option value="FINLAND">FINLAND
-                        </option>
-                        <option value="FRANCE">FRANCE
-                        </option>
-                        <option value="FRENCH GUIANA">
-                            FRENCH GUIANA</option>
-                        <option value="FRENCH POLYNESIA">
-                            FRENCH POLYNESIA</option>
-                        <option value="FRENCH SOUTHERN TERRITORIES">
-                            FRENCH SOUTHERN TERRITORIES
-                        </option>
-                        <option value="GABON">GABON
-                        </option>
-                        <option value="GAMBIA">GAMBIA
-                        </option>
-                        <option value="GEORGIA">GEORGIA
-                        </option>
-                        <option value="GERMANY">GERMANY
-                        </option>
-                        <option value="GHANA">GHANA
-                        </option>
-                        <option value="GIBRALTAR">
-                            GIBRALTAR</option>
-                        <option value="GREECE">GREECE
-                        </option>
-                        <option value="GREENLAND">
-                            GREENLAND</option>
-                        <option value="GRENADA">GRENADA
-                        </option>
-                        <option value="GUADELOUPE">
-                            GUADELOUPE</option>
-                        <option value="GUAM">GUAM
-                        </option>
-                        <option value="GUATEMALA">
-                            GUATEMALA</option>
-                        <option value="GUINEA">GUINEA
-                        </option>
-                        <option value="GUINEA-BISSAU">
-                            GUINEA-BISSAU</option>
-                        <option value="GUYANA">GUYANA
-                        </option>
-                        <option value="HAITI">HAITI
-                        </option>
-                        <option value="HEARD ISLAND AND MCDONALD ISLANDS">
-                            HEARD ISLAND AND MCDONALD
-                            ISLANDS</option>
-                        <option value="HOLY SEE (VATICAN CITY STATE)">
-                            HOLY SEE (VATICAN CITY STATE)
-                        </option>
-                        <option value="HONDURAS">
-                            HONDURAS</option>
-                        <option value="HONG KONG">HONG
-                            KONG</option>
-                        <option value="HUNGARY">HUNGARY
-                        </option>
-                        <option value="ICELAND">ICELAND
-                        </option>
-                        <option value="INDIA">INDIA
-                        </option>
-                        <option value="INDONESIA">
-                            INDONESIA</option>
-                        <option value="IRAN, ISLAMIC REPUBLIC OF">
-                            IRAN, ISLAMIC REPUBLIC OF
-                        </option>
-                        <option value="IRAQ">IRAQ
-                        </option>
-                        <option value="IRELAND">IRELAND
-                        </option>
-                        <option value="ISRAEL">ISRAEL
-                        </option>
-                        <option value="ITALY">ITALY
-                        </option>
-                        <option value="JAMAICA">JAMAICA
-                        </option>
-                        <option value="JAPAN">JAPAN
-                        </option>
-                        <option value="JORDAN">JORDAN
-                        </option>
-                        <option value="KAZAKHSTAN">
-                            KAZAKHSTAN</option>
-                        <option value="KENYA">KENYA
-                        </option>
-                        <option value="KIRIBATI">
-                            KIRIBATI</option>
-                        <option value="KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF">
-                            KOREA, DEMOCRATIC PEOPLE'S
-                            REPUBLIC OF</option>
-                        <option value="KOREA, REPUBLIC OF">
-                            KOREA, REPUBLIC OF</option>
-                        <option value="KUWAIT">KUWAIT
-                        </option>
-                        <option value="KYRGYZSTAN">
-                            KYRGYZSTAN</option>
-                        <option value="LAO PEOPLE'S DEMOCRATIC REPUBLIC">
-                            LAO PEOPLE'S DEMOCRATIC
-                            REPUBLIC</option>
-                        <option value="LATVIA">LATVIA
-                        </option>
-                        <option value="LEBANON">LEBANON
-                        </option>
-                        <option value="LESOTHO">LESOTHO
-                        </option>
-                        <option value="LIBERIA">LIBERIA
-                        </option>
-                        <option value="LIBYAN ARAB JAMAHIRIYA">
-                            LIBYAN ARAB JAMAHIRIYA
-                        </option>
-                        <option value="LIECHTENSTEIN">
-                            LIECHTENSTEIN</option>
-                        <option value="LITHUANIA">
-                            LITHUANIA</option>
-                        <option value="LUXEMBOURG">
-                            LUXEMBOURG</option>
-                        <option value="MACAO">MACAO
-                        </option>
-                        <option value="MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF">
-                            MACEDONIA, THE FORMER
-                            YUGOSLAV REPUBLIC OF</option>
-                        <option value="MADAGASCAR">
-                            MADAGASCAR</option>
-                        <option value="MALAWI">MALAWI
-                        </option>
-                        <option value="MALAYSIA">
-                            MALAYSIA</option>
-                        <option value="MALDIVES">
-                            MALDIVES</option>
-                        <option value="MALI">MALI
-                        </option>
-                        <option value="MALTA">MALTA
-                        </option>
-                        <option value="MARSHALL ISLANDS">
-                            MARSHALL ISLANDS</option>
-                        <option value="MARTINIQUE">
-                            MARTINIQUE</option>
-                        <option value="MAURITANIA">
-                            MAURITANIA</option>
-                        <option value="MAURITIUS">
-                            MAURITIUS</option>
-                        <option value="MAYOTTE">MAYOTTE
-                        </option>
-                        <option value="MEXICO">MEXICO
-                        </option>
-                        <option value="MICRONESIA, FEDERATED STATES OF">
-                            MICRONESIA, FEDERATED STATES
-                            OF</option>
-                        <option value="MOLDOVA, REPUBLIC OF">
-                            MOLDOVA, REPUBLIC OF</option>
-                        <option value="MONACO">MONACO
-                        </option>
-                        <option value="MONGOLIA">
-                            MONGOLIA</option>
-                        <option value="MONTSERRAT">
-                            MONTSERRAT</option>
-                        <option value="MOROCCO">MOROCCO
-                        </option>
-                        <option value="MOZAMBIQUE">
-                            MOZAMBIQUE</option>
-                        <option value="MYANMAR">MYANMAR
-                        </option>
-                        <option value="NAMIBIA">NAMIBIA
-                        </option>
-                        <option value="NAURU">NAURU
-                        </option>
-                        <option value="NEPAL">NEPAL
-                        </option>
-                        <option value="NETHERLANDS">
-                            NETHERLANDS</option>
-                        <option value="NETHERLANDS ANTILLES">
-                            NETHERLANDS ANTILLES</option>
-                        <option value="NEW CALEDONIA">
-                            NEW CALEDONIA</option>
-                        <option value="NEW ZEALAND">NEW
-                            ZEALAND</option>
-                        <option value="NICARAGUA">
-                            NICARAGUA</option>
-                    </select>
-
-                </div>
-             </label>
-         
-             <label class="cab-input">
-                <P>Mobile No</P>
-                <input type="text" value="{{ $profile_data ? $profile_data->phone : '' }}"  name="phone">
-                
-             </label>
-
-             <label class="cab-input">
-                <P>Registration Date</P>
-                <input type="text" value="{{ date("D, d M Y", strtotime($profile_data->created_at))}}"   readonly disabled >
-                
-             </label>
-            <label class="cab-input">
-                <P>Telegram</P>
-                <input type="text" value="{{ $profile_data ? $profile_data->telegram : '' }}"  Placeholder="Telegram" name="telegram" >
-                 <svg>
-                   <use xlink:href="assets/img/sprite.svg#mail"></use>
-                </svg>
-             </label>
+            function checkform() {
+                if (document.editform.fullname.value == '') {
+                    alert("Please type your full name!");
+                    document.editform.fullname.focus();
+                    return false;
+                }
 
 
-           
-          </div>
-          <button name="account_frm_btn" class="main-btn main-btn_orange main-btn_m">save</button>
-       </form>
-       <!--<button class="open-modal">Open modal</button>-->
+                if (document.editform.password.value != document.editform.password2.value) {
+                    alert("Please check your password!");
+                    document.editform.fullname.focus();
+                    return false;
+                }
+
+
+
+
+
+                for (i in document.editform.elements) {
+                    f = document.editform.elements[i];
+                    if (f.name && f.name.match(/^pay_account/)) {
+                        if (f.value == '') continue;
+                        var notice = f.getAttribute('data-validate-notice');
+                        var invalid = 0;
+                        if (f.getAttribute('data-validate') == 'regexp') {
+                            var re = new RegExp(f.getAttribute('data-validate-regexp'));
+                            if (!f.value.match(re)) {
+                                invalid = 1;
+                            }
+                        } else if (f.getAttribute('data-validate') == 'email') {
+                            var re = /^[^\@]+\@[^\@]+\.\w{2,4}$/;
+                            if (!f.value.match(re)) {
+                                invalid = 1;
+                            }
+                        }
+                        if (invalid) {
+                            alert('Invalid account format. Expected ' + notice);
+                            f.focus();
+                            return false;
+                        }
+                    }
+                }
+
+                return true;
+            }
+        </script>
+
+
+
+
+
+
+
+
+        <form action="" method="post" onsubmit="return checkform()" name="editform"><input type="hidden" name="form_id" value="17283246054070"><input type="hidden" name="form_token" value="f6dc633b8314629a5f9324db92432ce9">
+            <input type="hidden" name="a" value="edit_account">
+            <input type="hidden" name="action" value="edit_account">
+            <input type="hidden" name="say" value="">
+            <div class="uk-grid uk-grid-stack" uk-grid="">
+                <section class="uk-width-1-2@xl uk-first-column">
+
+                    <div class="uk-child-width-1-2@l uk-child-width-1-1@xl uk-grid uk-grid-stack" uk-grid="">
+                        <div class="uk-first-column">
+
+                            <div id="as-settings-personal" class="uk-cube-bottom-left uk-cube-figure">
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <header class="uk-heading uk-text-center">
+                                        <h3 class="uk-margin-small-bottom">Personal Information</h3>
+                                    </header>
+
+                                    <div class="uk-margin-small-top uk-margin-bottom">
+                                        <label class="uk-form-label" for="as-form-user">Your Login</label>
+                                        <div class="uk-form-controls">
+                                            <figure class="uk-form-controls-figure">
+                                                <img src="{{asset('')}}massets/img/icon/form/user.svg" width="60" height="60" loading="lazy" alt="icon">
+                                            </figure>
+                                            <input class="uk-input uk-text-emphasis" type="text" id="as-form-user" value="Rameshk" disabled="">
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin-small-top uk-margin-bottom">
+                                        <label class="uk-form-label" for="as-form-user">Fullname</label>
+                                        <div class="uk-form-controls">
+                                            <figure class="uk-form-controls-figure">
+                                                <img src="{{asset('')}}massets/img/icon/form/user.svg" width="60" height="60" loading="lazy" alt="icon">
+                                            </figure>
+                                            <input class="uk-input uk-text-emphasis" type="text" name="fullname" value="Ramesh">
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="as-form-email">Your Email address</label>
+                                        <div class="uk-form-controls">
+                                            <figure class="uk-form-controls-figure">
+                                                <img src="{{asset('')}}massets/img/icon/form/email.svg" width="60" height="60" loading="lazy" alt="icon">
+                                            </figure>
+                                            <input class="uk-input uk-text-emphasis" type="email" name="email" value="rameshkashyap8801@gmail.com">
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="as-form-Date">Date of registration</label>
+                                        <div class="uk-form-controls">
+                                            <figure class="uk-form-controls-figure">
+                                                <img src="{{asset('')}}massets/img/icon/form/date.svg" width="60" height="60" loading="lazy" alt="icon">
+                                            </figure>
+                                            <input class="uk-input uk-text-emphasis" type="text" id="as-form-Date" value="Oct-7-2024 07:31:10 AM" disabled="">
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="as-form-password-New">New Password</label>
+                                        <div class="uk-form-controls">
+                                            <figure class="uk-form-controls-figure">
+                                                <img src="{{asset('')}}massets/img/icon/form/password.svg" width="60" height="60" loading="lazy" alt="icon">
+                                            </figure>
+                                            <input type="password" name="password" value="" class="uk-input form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="uk-margin">
+                                        <label class="uk-form-label" for="as-form-password-Define">Define Password</label>
+                                        <div class="uk-form-controls">
+                                            <figure class="uk-form-controls-figure">
+                                                <img src="{{asset('')}}massets/img/icon/form/password.svg" width="60" height="60" loading="lazy" alt="icon">
+                                            </figure>
+                                            <input type="password" name="password2" value="" class="uk-input form-control">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <section class="uk-width-1-2@xl uk-first-column uk-grid-margin">
+                    <div class="uk-card uk-card-default uk-card-body uk-margin uk-form-controls-label-figure" id="as-settings-wallets">
+                        <header class="uk-heading uk-text-center">
+                            <h1 class="uk-heading-line">Your wallets</h1>
+                        </header>
+
+                        <ul class="uk-child-width-1-2@l uk-flex-bottom uk-grid-medium uk-grid" uk-grid="">
+                            <li class="uk-first-column">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    ePayCore wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/51.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[51]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Bitcoin wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/48.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[48]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-first-column uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Litecoin wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/68.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[68]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Dogecoin wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/79.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[79]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-first-column uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Ethereum wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/69.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[69]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Bitcoin Cash wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/77.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[77]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-first-column uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Dash wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/71.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[71]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Tron wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/85.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[85]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-first-column uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    BNB wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/94.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[94]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Tether TRC20 wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/92.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[92]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-first-column uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Tether BEP20 wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/102.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[102]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+                            <li class="uk-grid-margin">
+                                <label class="uk-form-label" for="as-form-wallet-rpcbtc">
+                                    Ethereum Classic wallet
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/coin/70.svg" width="50" height="50" loading="lazy" alt="icon">
+                                    </figure>
+                                    <input type="text" name="pay_account[70]" value="" class="uk-input uk-text-emphasis form-control">
+                                </div>
+                            </li>
+
+                        </ul>
+                        <br>
+                        <button class="uk-button uk-button-primary uk-button-large" type="submit">
+                            Save Changes
+                            <img class="uk-visible@s" src="{{asset('')}}massets/img/icon/form/save-changes.svg" width="36" height="36" loading="lazy" alt="icon">
+                        </button>
+                    </div>
+
+                </section>
+            </div>
+        </form>
+
     </div>
- </div>
- 
-   
+</main>
+
+<aside id="asOffcanvasRight" uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <div class="uk-offcanvas-header">
+            Close Menu
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+        </div>
+
+        <ul class="uk-nav uk-nav-default uk-hidden@s">
+            <li>
+                <a href="?a=account">
+                    <img src="{{asset('')}}massets/img/icon/account/dashboard.svg" width="31" height="30" loading="lazy" alt="" uk-svg>
+                    Dashboard
+                </a>
+            </li>
+            <li class="">
+            <a href="?a=deposit">
+                <img src="{{asset('')}}massets/img/icon/account/new-deposit.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
+                New Deposit
+            </a>
+			</li>
+			<li class="">
+				<a href="?a=withdraw">
+					<img src="{{asset('')}}massets/img/icon/account/withdrawal.svg" width="28" height="28" loading="lazy" alt="" uk-svg>
+					Withdrawals
+				</a>
+			</li>
+			<li class="">
+				<a href="?a=history&type=earning">
+					<img src="{{asset('')}}massets/img/icon/account/my-deposit.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
+					Transactions
+				</a>
+			</li>
+			<li class="">
+				<a href="?a=referals">
+					<img src="{{asset('')}}massets/img/icon/account/partners.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
+					Partners
+				</a>
+			</li>
+			<li class="">
+				<a href="?a=edit_account">
+					<img src="{{asset('')}}massets/img/icon/account/account-menu-support.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
+					Settings
+				</a>
+			</li>
+			<li class="">
+				<a href="?a=security">
+					<img src="{{asset('')}}massets/img/icon/account/account-menu-history.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
+					Security
+				</a>
+			</li>
+
+            <li class="uk-nav-divider"></li>
+        </ul>
+
+        <ul class="uk-nav uk-nav-default">
+            
+                            <li>
+                    <a href="https://t.me/stakeonpro" target="_blank">
+                        <img src="{{asset('')}}massets/img/another/telegram-yellow-icon.svg" width="29" height="29" loading="lazy" alt="" uk-svg>
+                        Telegram
+                    </a>
+                </li>
+            
+            <li class="uk-nav-divider"></li>
+
+            <li>
+                <a href="?a=logout">
+                    <img src="{{asset('')}}massets/img/icon/sign-in.svg" width="21" height="21" loading="lazy" alt="icon" uk-svg>
+                    Log out
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</aside>
+    
     
 
-</div>
-
+</body>
+</html>

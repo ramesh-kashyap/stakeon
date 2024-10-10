@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\login;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/', function () {
     return view('main.home');
 });
 
+
 Auth::routes();
 
 Route::get('/generate_roi', [App\Http\Controllers\Cron::class, 'generate_roi'])->name('generate_roi');
@@ -49,6 +51,8 @@ Route::get('resetPassword', [App\Http\Controllers\Login::class, 'resetPassword']
 Route::post('/getUserName', [App\Http\Controllers\Register::class, 'getUserNameAjax'])->name('getUserName');
 Route::post('/registers', [App\Http\Controllers\Register::class, 'register'])->name('registers');
 Route::get('/register_sucess', [App\Http\Controllers\Register::class, 'index'])->name('register_sucess');
+
+Route::get('/logout', [login::class, 'logout'])->name('logout');
 
 Route::get('/Index', [App\Http\Controllers\FrontController::class, 'index'])->name('Index');
 Route::get('/about-us', [App\Http\Controllers\FrontController::class, 'about'])->name('about-us');
@@ -116,6 +120,7 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 // end invest
 
 // withdraw
+
 Route::get('/debitReport', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'debitReport'])->name('user.debitReport');
 Route::get('/Withdraw', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.Withdraw');
 Route::get('/withdrawPrinciple', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'withdrawPrinciple'])->name('user.withdrawPrinciple');
