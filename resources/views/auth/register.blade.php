@@ -1,159 +1,250 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+		<title>StakeOn</title>
+		<!--<base href="https://stakeon.pro/" src="https://stakeon.pro/" />-->
+		<link rel="icon" type="image/png" sizes="32x32"
+			href="assets/img/favicon-32x32.png">
+		<meta content="ie=edge" http-equiv="x-ua-compatible">
+		<link rel="stylesheet" href="assets/css/vendor.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+        @include('layouts.mainsite.header')
 
-<head>
-    <!-- Google Tag Manager -->
+ 
 
-    <!-- End Google Tag Manager -->
-    <meta charset="utf-8">
-    <title>{{siteName()}}</title>
-    <base href="{{asset('')}}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-iconf9e3.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32f9e3.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16f9e3.png?v=1.1">
-    <link rel="manifest" href="/favicons/site.webmanifest?v=1.1">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=1.0" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="theme-color" content="#ffffff">
+ <script language=javascript>
+ function checkform() {
+  if (document.regform.fullname.value == '') {
+    alert("Please enter your full name!");
+    document.regform.fullname.focus();
+    return false;
+  }
+ 
+  
+  if (document.regform.username.value == '') {
+    alert("Please enter your username!");
+    document.regform.username.focus();
+    return false;
+  }
+  if (!document.regform.username.value.match(/^[A-Za-z0-9_\-]+$/)) {
+    alert("For username you should use English letters and digits only!");
+    document.regform.username.focus();
+    return false;
+  }
+  if (document.regform.password.value == '') {
+    alert("Please enter your password!");
+    document.regform.password.focus();
+    return false;
+  }
+  if (document.regform.password.value != document.regform.password2.value) {
+    alert("Please check your password!");
+    document.regform.password2.focus();
+    return false;
+  }
+ 
+  
+  if (document.regform.email.value == '') {
+    alert("Please enter your e-mail address!");
+    document.regform.email.focus();
+    return false;
+  }
+  if (document.regform.email.value != document.regform.email1.value) {
+    alert("Please retype your e-mail!");
+    document.regform.email.focus();
+    return false;
+  }
 
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="ie=edge" http-equiv="x-ua-compatible">
-
-
-    <link rel="stylesheet" href="{{asset('')}}assets/css/libs.css">
-    <link rel="stylesheet" href="{{asset('')}}assets/css/app54f9.css?v=1.009995">
-    <link rel="stylesheet" href="{{asset('')}}assets/css/customb361.css?v=1.000099999">
-    <!--[if lt IE 9]>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
-
-</head>
-
-<body>
-
-
-    <div class="copy-success">
-        <svg>
-            <use xlink:href="/assets/img/sprite.svg#check"></use>
-        </svg>
-    </div>
-    <div class="wrapper">
-        <section class="sign">
-            <div class="container"> <a class="sign-logo" href="/"><img style="    width: 200px;" src="/assets/img/Clogo.png?v=1.0"
-                alt="logo" /></a>
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-3">
-                        <form method="post" action="{{ route('registers') }}" name="register_frm" id="registr">
-                              {{ csrf_field() }}
-                              
-                            <div class="sign-box">
-                                <div class="sign-img"> <img src="/assets/img/contacts-form-img.png"
-                                        alt="contacts-form-img" /></div>
-                                <div class="sign-title">Sign up<p>Welcome to {{siteName()}}</p>
-                                </div>
-                                <div class="contacts-form__inputs">
-                                    <label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="text"
-                                            name="name" value="" placeholder="Your Name"><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#user"></use>
-                                        </svg></label>
-                                        
-                                        <label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="text"
-                                            name="email" value="" placeholder="Your email"><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#mail"></use>
-                                        </svg></label>
-                                        
-                                        <label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="password"
-                                            name="password" value="" placeholder="Your Password"><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#pass"></use>
-                                        </svg></label>
-                                        
-                                        <label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="password"
-                                            name="password_confirmation" value="" placeholder="Retype password"><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#pass"></use>
-                                        </svg></label>
-                                        
-                                         <label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="text"
-                                            name="telegram" value="" placeholder="Your Telegram"><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#mail"></use>
-                                        </svg></label>
-                                        
-                                           <label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="text"
-                                            name="captcha" value="" placeholder="Enter Captcha"><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#mail"></use>
-                                        </svg></label>
-                                        
-                                      
-                                        
-                                        
-                                        
-                                        @php
-                                    $sponsor = @$_GET['ref'];
-                                    $name = \App\Models\User::where('username', $sponsor)->first();
-                                    @endphp
-                                     @if ($name)
-                                     
-                                      <label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="text"
-                                            name="sponsor" value="{{$name->username}}" readonly ><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#user"></use>
-                                        </svg></label>
-                                        
-                                        
-                                    <div class="sign-sponsor">Invited by: <span> {{$name->name}} </span></div>
-                                        @else
-                                       <div class="sign-sponsor">Invited by: <span><input type="hidden" name="uRef"
-                                                value=""></span></div>  
-                                        
-                                        @endif
-                                    <input name="__Cert"
-                                        value="c94003ff" type="hidden">
-                                </div>
-                                
-                                  <label
-                                        class="contacts-form__input contacts-form__input_icon">
-                                              @php
-                                                $captcha = getCustomCaptcha($height = 46, $width = '100%', $bgcolor = '#003');
-                                                @endphp 
-
-                                              @php echo  $captcha @endphp
-                                            @if(reCaptcha())
-                                            @php echo reCaptcha(); @endphp
-                                            @endif
-                                            
-                                        </label>
-                                        <br>
-                                        
-                                <label class="sign-check"><input type="checkbox" name="Agree" value="1"
-                                        checked><span>I agree with <a href="terms" target="_blank">Terms and
-                                            Conditions</a></span></label><button name="register_frm_btn" type="submit"
-                                    class="main-btn main-btn_orange main-btn_m">Sign up</button>
-                                <div class="sign-bot">Do you have an account?<a href="login"> Sign IN</a></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="sign-footer">Copyright © 2023 etriton.co All rights reserved</div>
-        </section>
-    </div>
-@include('partials.notify')
-    <script src="{{asset('')}}assets/js/libsb883.js?v=1.01"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-<script src="{{asset('')}}assets/js/app437f.js?v=1.000991"></script>
-    <script>
-        var images = document.getElementsByTagName('img');
-        for (var i = 0; i < images.length; i++) {
-            var imageUrl = images[i].src;
-            images[i].src = imageUrl + '?v=1.0';
+  for (i in document.regform.elements) {
+    f = document.regform.elements[i];
+    if (f.name && f.name.match(/^pay_account/)) {
+      if (f.value == '') continue;
+      var notice = f.getAttribute('data-validate-notice');
+      var invalid = 0;
+      if (f.getAttribute('data-validate') == 'regexp') {
+        var re = new RegExp(f.getAttribute('data-validate-regexp'));
+        if (!f.value.match(re)) {
+          invalid = 1;
         }
-    </script>
+      } else if (f.getAttribute('data-validate') == 'email') {
+        var re = /^[^\@]+\@[^\@]+\.\w{2,4}$/;
+        if (!f.value.match(re)) {
+          invalid = 1;
+        }
+      }
+      if (invalid) {
+        alert('Invalid account format. Expected '+notice);
+        f.focus();
+        return false;
+      }
+    }
+  }
+
+  if (document.regform.agree.checked == false) {
+    alert("You have to agree with the Terms and Conditions!");
+    return false;
+  }
+
+  return true;
+ }
+
+ function IsNumeric(sText) {
+  var ValidChars = "0123456789";
+  var IsNumber=true;
+  var Char;
+  if (sText == '') return false;
+  for (i = 0; i < sText.length && IsNumber == true; i++) { 
+    Char = sText.charAt(i); 
+    if (ValidChars.indexOf(Char) == -1) {
+      IsNumber = false;
+    }
+  }
+  return IsNumber;
+ }
+ </script>
 
 
-</body>
+<section class="sign">
+<div class="container">
+            <div class="row">
+               <div class="col-lg-5 offset-lg-3">
+                  <form method=post onsubmit="return checkform()" name="regform"><input type="hidden" name="form_id" value="17282798569842"><input type="hidden" name="form_token" value="74de2cf27ae6f0944343ac9c1d966615">
+<input type=hidden name=a value="signup">
+<input type=hidden name=action value="signup">
+                     <div class="sign-box">
+                        <div class="sign-title">
+                           Sign UP
+                           <p>Create an account</p>
+                        </div>
+						
+						 
 
+						
+                        <div class="contacts-form__inputs">
+                           <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="text" name=fullname value='' placeholder="Full Name">
+                              <svg>
+                                 <use xlink:href="assets/img/sprite.svg#user"></use>
+                              </svg>
+                           </label>
+						   <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="text" name=username value="" placeholder="Username">
+                              <svg>
+                                 <use xlink:href="assets/img/sprite.svg#user"></use>
+                              </svg>
+                           </label>
+						   <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="text" name=email value="" placeholder="Your Email">
+                              <svg>
+                                 <use xlink:href="assets/img/sprite.svg#mail"></use>
+                              </svg>
+                           </label>
+						   <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="text" name=email1 value="" placeholder="Confirm Email">
+                              <svg>
+                                 <use xlink:href="assets/img/sprite.svg#mail"></use>
+                              </svg>
+                           </label>
+                           <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="password" name=password value="" placeholder="Your Password">
+                              <svg>
+                                 <use xlink:href="assets/img/sprite.svg#pass"></use>
+                              </svg>
+                           </label>
+						   <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="password" name=password2 value="" placeholder="Confirm Password">
+                              <svg>
+                                 <use xlink:href="assets/img/sprite.svg#pass"></use>
+                              </svg>
+                           </label>
+                        </div>
+						<div class="sign-sponsor">Invited by: <span>N/A</span></div>
+						<label class="sign-check mt-4"><input type="checkbox" name=agree value=1  checked><span>I agree with <a href="index%EF%B9%96a=rules.html" target="_blank" style="color:#d0ff96">Terms and Conditions</a></span></label>
+                        <button type="submit" class="main-btn main-btn_orange main-btn_m"  style="width:100%">Sign UP</button>
+                        <div class="sign-bot">Already have an account?<a href="index%EF%B9%96a=login.html"> Sign In</a></div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+
+</section>
+
+
+@include('layouts.mainsite.footer')
+
+		</div>
+		<script src="assets/js/vendor.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="assets/js/nicescroll.min.js"></script>
+		<script>
+$(document).ready(function() {
+    // Define the minimum and maximum investment amounts
+    var minAmount = 25;
+    var maxAmount = 500000;
+
+    // Listen for changes in the plan or amount fields
+    $('#cal_plan, #cal_amount').on('change keyup', function() {
+        calculateProfits();
+    });
+
+    function calculateProfits() {
+        // Get the selected plan and amount
+        var plan = $('#cal_plan').val();
+        var amount = parseFloat($('#cal_amount').val());
+
+        // Validate the amount
+        if (isNaN(amount) || amount < minAmount || amount > maxAmount) {
+            $('#daily_res').text('$0');
+            $('#total_res').text('$0');
+            return;
+        }
+
+        // Define the daily profit percentages for each plan
+        var dailyRates = {
+            1: 0.005, // 0.5% daily for 30 days
+            2: 0.006, // 0.6% daily for 90 days
+            3: 0.007, // 0.7% daily for 180 days
+            4: 0.01   // 1% daily for 360 days
+        };
+
+        // Define the duration of each plan
+        var planDurations = {
+            1: 30,
+            2: 90,
+            3: 180,
+            4: 360
+        };
+
+        // Calculate the daily and total profits
+        var dailyProfit = amount * dailyRates[plan];
+        var totalProfit = dailyProfit * planDurations[plan];
+
+        // Update the result fields
+        $('#daily_res').text('$' + dailyProfit.toFixed(2));
+        $('#total_res').text('$' + totalProfit.toFixed(2));
+    }
+});
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6666ac609a809f19fb3bf20a/1i00h2mjc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+	</body>
 </html>

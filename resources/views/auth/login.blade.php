@@ -1,112 +1,144 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+		<title>StakeOn</title>
+		<!--<base href="https://stakeon.pro/" src="https://stakeon.pro/" />-->
+		<link rel="icon" type="image/png" sizes="32x32"
+			href="assets/img/favicon-32x32.png">
+		<meta content="ie=edge" http-equiv="x-ua-compatible">
+		<link rel="stylesheet" href="assets/css/vendor.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+        @include('layouts.mainsite.header')
 
-<head>
-    <!-- Google Tag Manager -->
 
+<script language=javascript>
+function checkform() {
+  if (document.mainform.username.value=='') {
+    alert("Please type your username!");
+    document.mainform.username.focus();
+    return false;
+  }
+  if (document.mainform.password.value=='') {
+    alert("Please type your password!");
+    document.mainform.password.focus();
+    return false;
+  }
+  return true;
+}
+</script>
 
-    <!-- End Google Tag Manager -->
-    <meta charset="utf-8">
-    <title>{{siteName()}}</title>
-    <base href="{{asset('')}}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-iconf9e3.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32f9e3.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16f9e3.png?v=1.1">
-    <link rel="manifest" href="/favicons/site.webmanifest?v=1.1">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=1.0" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="theme-color" content="#ffffff">
-
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="ie=edge" http-equiv="x-ua-compatible">
-
-    <link rel="stylesheet" href="{{asset('')}}assets/css/libs.css">
-    <link rel="stylesheet" href="{{asset('')}}assets/css/app54f9.css?v=1.009995">
-    <link rel="stylesheet" href="{{asset('')}}assets/css/customb361.css?v=1.000099999">
-    <!--[if lt IE 9]>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
-
-</head>
-
-<body>
- 
-    <div class="copy-success">
-        <svg>
-            <use xlink:href="/assets/img/sprite.svg#check"></use>
-        </svg>
-    </div>
-    <div class="wrapper">
-        <section class="sign">
-            <div class="container"> <a class="sign-logo" href="/"><img style="    width: 200px;" src="/assets/img/Clogo.png?v=1.0"
-                        alt="logo" /></a>
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-3">
-                        <form action="{{ route('login') }}" method="POST" name="login_frm">
-                            {{ csrf_field() }}
-                            <div class="sign-box">
-                                <div class="sign-img"> <img src="/assets/img/contacts-form-img.png"
-                                        alt="contacts-form-img" /></div>
-                                <div class="sign-title">Sign IN<p>Welcome to {{siteName()}}</p>
-                                </div>
-                                <div class="contacts-form__inputs"><label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="text"
-                                            name="username" value="" placeholder="Your Login Id"><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#user"></use>
-                                        </svg></label>
-                                        
-                                        <label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="password"
-                                            name="password" value="" placeholder="Your Password"><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#pass"></use>
-                                        </svg></label>
-                                        
-                                          <label
-                                        class="contacts-form__input contacts-form__input_icon"><input type="text"
-                                            name="captcha" value="" placeholder="Enter Captcha"><svg>
-                                            <use xlink:href="/assets/img/sprite.svg#pass"></use>
-                                        </svg></label>
-                                        
-                                        <label
-                                        class="contacts-form__input contacts-form__input_icon">
-                                              @php
-                                                $captcha = getCustomCaptcha($height = 46, $width = '100%', $bgcolor = '#003');
-                                                @endphp 
-
-                                              @php echo  $captcha @endphp
-                                            @if(reCaptcha())
-                                            @php echo reCaptcha(); @endphp
-                                            @endif
-                                            
-                                        </label>
-                                        
-                                        
-                                        <input name="__Cert" value="dbfcbcc5" type="hidden"></div><a
-                                    class="sign-link" href="/forgot-password">Forgot your password?</a><button
-                                    name="login_frm_btn" type="submit" class="main-btn main-btn_orange main-btn_m">Sign
-                                    IN</button>
-                                <div class="sign-bot">Don't you have an account yet?<a href="register"> Sign Up</a></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+<section class="sign">
+<div class="container">
+            <div class="row">
+               <div class="col-lg-5 offset-lg-3">
+                  <form method=post name=mainform onsubmit="return checkform()"><input type="hidden" name="form_id" value="17282798556938"><input type="hidden" name="form_token" value="14200c6aaf348e5a86c897e0fefdee6b">
+					<input type=hidden name=a value='do_login'>
+					<input type=hidden name=follow value=''>
+					<input type=hidden name=follow_id value=''>
+                     <div class="sign-box">
+                        <div class="sign-title">
+                           Sign IN
+                           <p>Welcome to StakeOn</p>
+                        </div>
+						                        <div class="contacts-form__inputs">
+                           <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="text" name=username value='' placeholder="Your Login">
+                              <svg>
+                                 <use xlink:href="assets/img/sprite.svg#user"></use>
+                              </svg>
+                           </label>
+                           <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="password" name=password value='' placeholder="Your Password">
+                              <svg>
+                                 <use xlink:href="assets/img/sprite.svg#pass"></use>
+                              </svg>
+                           </label>
+                        </div>
+                        <a class="sign-link" href="https://stakeon.pro/?a=forgot_password">Forgot your password?</a><button name="login_frm_btn" type="submit" class="main-btn main-btn_orange main-btn_m"  style="width:100%">Sign IN</button>
+                        <div class="sign-bot">Don't you have an account yet?<a href="https://stakeon.pro/?a=signup"> Sign Up</a></div>
+                     </div>
+                  </form>
+               </div>
             </div>
-            <div class="sign-footer">Copyright © 2023 etriton.co All rights reserved</div>
-        </section>
-    </div>
-@include('partials.notify')
-    <script src="{{asset('')}}assets/js/libsb883.js?v=1.01"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
-<script src="{{asset('')}}assets/js/app437f.js?v=1.000991"></script>
+         </div>
 
-    <script>
-        var images = document.getElementsByTagName('img');
-        for (var i = 0; i < images.length; i++) {
-            var imageUrl = images[i].src;
-            images[i].src = imageUrl + '?v=1.0';
+</section>
+
+@include('layouts.mainsite.footer')
+
+		</div>
+		<script src="https://stakeon.pro/assets/js/vendor.js"></script>
+		<script src="https://stakeon.pro/assets/js/main.js"></script>
+		<script src="https://stakeon.pro/assets/js/nicescroll.min.js"></script>
+		<script>
+$(document).ready(function() {
+    // Define the minimum and maximum investment amounts
+    var minAmount = 25;
+    var maxAmount = 500000;
+
+    // Listen for changes in the plan or amount fields
+    $('#cal_plan, #cal_amount').on('change keyup', function() {
+        calculateProfits();
+    });
+
+    function calculateProfits() {
+        // Get the selected plan and amount
+        var plan = $('#cal_plan').val();
+        var amount = parseFloat($('#cal_amount').val());
+
+        // Validate the amount
+        if (isNaN(amount) || amount < minAmount || amount > maxAmount) {
+            $('#daily_res').text('$0');
+            $('#total_res').text('$0');
+            return;
         }
-    </script>
 
+        // Define the daily profit percentages for each plan
+        var dailyRates = {
+            1: 0.005, // 0.5% daily for 30 days
+            2: 0.006, // 0.6% daily for 90 days
+            3: 0.007, // 0.7% daily for 180 days
+            4: 0.01   // 1% daily for 360 days
+        };
 
-</body>
+        // Define the duration of each plan
+        var planDurations = {
+            1: 30,
+            2: 90,
+            3: 180,
+            4: 360
+        };
 
+        // Calculate the daily and total profits
+        var dailyProfit = amount * dailyRates[plan];
+        var totalProfit = dailyProfit * planDurations[plan];
+
+        // Update the result fields
+        $('#daily_res').text('$' + dailyProfit.toFixed(2));
+        $('#total_res').text('$' + totalProfit.toFixed(2));
+    }
+});
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6666ac609a809f19fb3bf20a/1i00h2mjc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+	</body>
 </html>
