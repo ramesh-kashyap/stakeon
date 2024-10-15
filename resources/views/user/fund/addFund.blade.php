@@ -1,74 +1,53 @@
-   <!--**********************************
-            Content body start
-        ***********************************-->
-        <div class="content-body">
-            <div class="container-fluid">
-                <div class="row page-titles">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Fund</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Add Fund</a></li>
-                    </ol>
-                </div>
-                <!-- row -->
-                <div class="row">
-     
-     
-                    <div class="col-xl-6 col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Add Fund</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="basic-form">
-                                    <form action="{{ route('user.SubmitBuyFund') }}" method="POST">
-                                     {{ csrf_field() }}
-
-                                     @if(@$_GET['res'])
-                                     <div class="alert alert-success">
-                                     <strong style="color:#006633;">
-                                    Fund  Request Submited successfully
-                                     </strong>
-                                     </div>
-                                     @endif
-                                     
-                                        <div class="row">
-                                            <div class="mb-3 col-md-12">
-                                                <label class="form-label">Enter Amount</label>
-                                                <input class="form-control" placeholder="Enter Amount" min="0" required type="number" name="amount"
-                                                    value=""
-                                                    >
-                                            </div>
-     
-                                            <div class="mb-3 col-md-12">
-                                                <label class="form-label">Payment Mode</label>
-                                                <input class="form-control" readonly type="text" placeholder=""  name="memberID"
-                                                    value="USDT">
-                                            </div>
-                                           
-                                        </div>
-     
-                                        <div class="mb-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input" required type="checkbox">
-                                                <label class="form-check-label">
-                                                    Check me out
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-     
-     
-     
-     
-                </div>
-            </div>
+<main id="as-main-settings" class="uk-section-xsmall">
+    <div class="uk-container uk-container-expand">
+        <div class="uk-grid uk-grid-stack" uk-grid="">
+            <!-- Left Form -->
+            <section class="uk-width-1-2@l">
+                <div id="as-settings-personal" class="uk-cube-bottom-left uk-cube-figure">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <header class="uk-heading uk-text-center">
+                            <h3 class="uk-margin-small-bottom">Add Fund</h3>
+                        </header>
+                        <form action="{{ route('user.SubmitBuyFund') }}" method="POST" name="editform" enctype="multipart/form-data">
+    {{ csrf_field() }}
+    
+    <!-- Enter Amount Input -->
+    <div class="uk-margin-small-top uk-margin-bottom">
+        <label class="uk-form-label" for="amount">Enter Amount</label>
+        <div class="uk-form-controls">
+            <input class="uk-input uk-text-emphasis" type="text" placeholder="Enter Amount" name="amount" value="">
         </div>
-        <!--**********************************
-                 Content body end
-             ***********************************-->
-     
+    </div>
+
+    <!-- Payment Mode Input -->
+    <div class="uk-margin">
+        <label class="uk-form-label" for="transaction_hash">Trx Password</label>
+        <div class="uk-form-controls">
+            <input class="uk-input uk-text-emphasis"  type="text" placeholder="Enter Transaction Password" name="transaction_hash" value="">
+        </div>
+    </div>
+
+    <!-- Choose File Input -->
+    <div class="uk-margin">
+        <label class="uk-form-label" for="payment_proof">Upload Payment Proof</label>
+        <div class="uk-form-controls">
+            <input class="uk-input uk-text-emphasis" type="file" name="icon_image">
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button class="uk-button uk-button-primary uk-button-large" type="submit">Submit</button>
+</form>
+
+
+                    </div>
+                    @include('partials.notify')
+
+                </div>
+            </section>
+
+            <!-- Right Form -->
+           
+        </div>
+    </div>
+</main>

@@ -1,101 +1,196 @@
-<div class="contentLk">
+<style>
+    /* Custom Select Dropdown */
+.custom-select {
+    max-width: 150px;  /* Adjust as per design */
+}
+
+/* Custom Search Input */
+.custom-search {
+    max-width: 250px;  /* Adjust as per design */
+    width: 100%;       /* Responsive */
+    margin-left: 10px; /* Gap between select and input */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 400px) {
+    .custom-search {
+        max-width: 100%; /* Full width on small screens */
+    }
+    .custom-select {
+        max-width: 100%; /* Full width on small screens */
+    }
+}
+
+    </style>
+<main id="as-main-settings" class="uk-section-xsmall">
+    <div class="uk-container uk-container-expand">
+
+        <figure id="as-transactions-list" class="uk-width-expand@xl uk-first-column">
+            <div class="uk-card uk-card-default uk-card-body">
+                <header class="uk-heading uk-text-center">
+                    <h1 class="uk-heading-line">Level Income</h1>
+                </header>
+                <form action="{{ route('user.level-income') }}" method="GET" name="opts">
+
+<!-- Form Grid with Flexbox for better alignment -->
+<div class="uk-grid-medium uk-flex-middle uk-flex-start uk-grid" uk-grid="">
+
+    <!-- Form Control 1: Select Dropdown -->
+    <div class="uk-form-controls"> 
+        <select name="type" class="uk-input form-control" onchange="window.location.href = this.value;">
+            <option value="">Select History</option>
+            <option value="{{ route('user.DepositHistory') }}">Deposit History</option>
+            <option value="{{ route('user.Withdraw-History') }}">Withdraw History</option>
+            <option value="{{ route('user.fundHistory') }}">Fund History</option>
+
+            <option value="{{ route('user.level-income') }}">Direct Income</option>
+            <option value="{{ route('user.level-income') }}">Level Income</option>
+            <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
+        </select>
+    </div>
+
+    <!-- Form Control 2: Limit Dropdown -->
+    <div class="uk-form-controls" style="margin-right: 10px;">
+        <select name="limit" class="uk-input form-control custom-select">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <!-- Search Input with custom width and spacing -->
+    <input type="text" 
+           placeholder="Search Users"
+           name="search" 
+           class="uk-input uk-text-emphasis custom-search" 
+           value="{{ @$search }}">
+
+    <!-- Buttons aligned with margin-left for larger screens -->
+    <div class="uk-form-controls uk-width-auto uk-text-left search-reset-btns">
+        <input type="submit" 
+               name="submit" 
+               class="uk-button uk-button-primary" 
+               value="Search" />
+
+        <a href="{{ route('user.level-income') }}" 
+           name="reset" 
+           class="uk-button uk-button-default" 
+           value="Reset">Reset</a>
+    </div>
+
+</div>
+</form>
 
 
-
-    <h2 class="titleLk">Referral Bonus</h2>
-    <div class="historyPage">
-        <form id="filter-form" class="filterBl" action="{{ route('user.level-income') }}" method="GET">
-           
-            <span class="iconBl icon-filtration"></span>
-            <div class="col">
-                <div class="inputLine">
-                    <label for="">date from:</label>
-                    <input type="text" name="from" id="from" class="setDate" value="">
-                    <span class="iconArrow"></span>
-                </div>
-            </div>
-            <div class="col">
-                <div class="inputLine">
-                    <label for="">to:</label>
-                    <input type="text" name="to" id="to" class="setDate" value="">
-                    <span class="iconArrow"></span>
-                </div>
-            </div>
-            <div class="col">
-                <div class="inputLine">
-                    <?php 
-                    $segments=request()->segments(); 
-                    
-                    $page= end($segments);
-                    
-                    // dd($page);
-                    ?>
-    
-                    <label for="">type:</label>
-                    <select name="type" class="selectricBl" onchange="location = this.value;">
-                        <option value="">--SELECT--</option>
-                        <option <?php ($page=="roi-bonus")?'selected':'';?> value="{{route('user.roi-bonus')}}">Roi Bonus</option>
                        
-                        <option <?php ($page=="level-income")?'selected':'';?> value="{{route('user.level-income')}}" >Referral Bonus</option>
-                        <option  <?php ($page=="dailyIncentive")?'selected':'';?> value="{{route('user.dailyIncentive')}}">Leadership Bonus</option>
-                        <option  <?php ($page=="reward-bonus")?'selected':'';?> value="{{route('user.reward-bonus')}}">Royalty Bonus</option>
-                        <option  <?php ($page=="DepositHistory")?'selected':'';?> value="{{route('user.DepositHistory')}}" >Deposit </option>
-                 
-                        <option  <?php ($page=="WithdrawHistory")?'selected':'';?> value="{{route('user.Withdraw-History')}}" >Withdrawal</option>
-                    </select>
-                </div>
-            </div>
-            
-            <button type="submit" class="btn btnBlue">Filter</button>
-        </form>
-        <div class="tablePartners">
-            <div class="thead">
-                <span class="tit">SR</span>
-                <span class="tit">Package</span>
-                <span class="tit">Commission</span>
-                <span class="tit">Date</span>
-                <span class="tit">From ID</span>
-          
-                <span class="tit">Description</span>
-            </div>
-            <?php if(is_array($level_income) || is_object($level_income)){ ?>
+                        <div class="uk-overflow-auto uk-margin-bottom">
+                                                            <div>
+                                    <div class="uk-card uk-card-default uk-margin-top">
+                                        <div class="as-card-no-ticket">
+										<div class="table-responsive">
+                                           <table class="table">
+											   <thead>
+												  <tr>
+													 <th class="table__th">SR</th>
+													 <th class="table__th">Package</th>
+													 <th class="table__th"> Commission</th>
+                                                     <th class="table__th">Date</th>
+													 <th class="table__th">From ID</th>
+                                                     <th class="table__th"> Description</th>
 
-                <?php $cnt = $level_income->perPage() * ($level_income->currentPage() - 1); ?>
-                @foreach ($level_income as $value)
-            <div id="el830">
-                <div class="slideBlock branch1">
-                    <div class="slideTitle" onclick="return clickRef(2, 1074);" id="el1074" data-level="1">
-                        <div class="line">
-                            <span class="name"> <span class="mobileTiTPart">SR</span> <?= $cnt += 1 ?></span>
-                            <span class="txt"><span class="mobileTiTPart">Package</span><a
-                                    href="#" class="txt">{{currency()}} {{ $value->amt }}</a></span>
-                            <span class="txt"> <span class="mobileTiTPart">Commission</span> {{currency()}} {{ $value->comm }}</span>
-                            <span class="txt"> <span class="mobileTiTPart">Date</span> {{ date('D, d M Y', strtotime($value->created_at)) }}</span>
-                            <span class="txt"> <span class="mobileTiTPart">From ID</span>{{ $value->rname }}</span>
-                            <span class="txt"> <span class="mobileTiTPart">Description</span> {{ $value->remarks }}</span>
-                        </div>
+												  </tr>
+											   </thead>
+											   <tbody>
+                                               <?php if(is_array($level_income) || is_object($level_income)){ ?>
+
+<?php $cnt = $level_income->perPage() * ($level_income->currentPage() - 1); ?>
+@foreach ($level_income as $value)
+<tr>
+                                    <td>
+                                        <div ><?= $cnt += 1 ?></div>
+                                    </td>
+
+                                    <td>
+                                        <div >{{currency()}} {{ $value->amt }}</div>
+                                    </td>
+
+                                    
+
+    
+                                    <td>
+                                        <div >{{currency()}} {{ $value->comm }}</div>
+                                    </td>
+
+                                   
+
+                                    <td>
+                                        <div >{{ date('D, d M Y', strtotime($value->created_at)) }}</div>
+                                    </td>
+                                    
+                                    <td>
+                                        <div >{{ $value->rname }}</div>
+                                    </td>
+                                    
+                                    <td>
+                                        <div >{{ $value->remarks }}</div>
+                                    </td>
+
+    
+                                </tr>
+                            @endforeach
+    
+                            <?php }?>
+
+											     
+											   </tbody>
+											</table>
+                                            <br>
+                                            {{ $level_income->withQueryString()->links() }}
+
+											</div>
+											
+                                        </div>
+                                    </div>
+                                </div>
+                                                    </div>
+                        
+                        
                     </div>
-                    <div class="slideContent"></div>
-                </div>
-            </div>
 
-            @endforeach
+                </figure>
 
-            <?php }?>
-
-            
-
-        </div>
-        
-    </div>
-    <div class="pagination">
-<br>
-        {{ $level_income->withQueryString()->links() }}
-    </div>
-
-</div>
 
 
 
 
 </div>
+</main>
+<!-- Custom inline CSS for responsive design -->
+<style>
+/* Style for buttons */
+.search-reset-btns {
+    margin-left: 600px; /* Large screens margin */
+}
+
+/* Responsive Design: Adjust margin-left on smaller screens */
+@media screen and (max-width: 1200px) {
+    .search-reset-btns {
+        margin-left: 300px; /* Medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-reset-btns {
+        margin-left: 100px; /* Small screens like tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-reset-btns {
+        margin-left: 0; /* Mobile screens: no margin */
+        text-align: center; /* Center buttons on mobile */
+    }
+}
+</style>
+

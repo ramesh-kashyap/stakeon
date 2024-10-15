@@ -1,32 +1,94 @@
+<main id="as-main-settings" class="uk-section-xsmall">
+    <div class="uk-container uk-container-expand">
+        <div class="uk-grid uk-grid-stack" uk-grid="">
+            <!-- Left Form -->
+            <section class="uk-width-1-2@l">
+                <div id="as-settings-password" class="uk-cube-bottom-left uk-cube-figure">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <header class="uk-heading uk-text-center">
+                            <h3 class="uk-margin-small-bottom">Change Password</h3>
+                        </header>
+                        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+            <div>{{$error}}</div>
+            @endforeach
+            @endif
+                        <form action="{{ route('user.edit-password') }}" method="post" name="editform">
+                            {{ csrf_field() }}
+                            <!-- Old Password -->
+                            <div class="uk-margin-small-top uk-margin-bottom">
+                                <label class="uk-form-label" for="as-form-old-password">Old password</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-text-emphasis" type="password" name="old_password">
+                                </div>
+                            </div>
+                            <!-- New Password -->
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="as-form-password">New password</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-text-emphasis" type="password" name="password">
+                                </div>
+                            </div>
+                            <!-- Confirm New Password -->
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="as-form-password-confirm">Confirm new password</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-text-emphasis" type="password" name="password_confirmation">
+                                </div>
+                            </div>
+                            <!-- Save Changes Button -->
+                            <button class="uk-button uk-button-primary uk-button-large" type="submit">Save Changes</button>
+                        </form>
+                        @include('partials.notify')
 
-            <div class="cab-content">
-                <div class="container">
-                    <div class="cab-tabs">
-                        <a class="cab-tabs__item" href="{{route('user.profile')}}" style="text-decoration: none;">Account settings</a>
-                        <a class="cab-tabs__item" href="{{route('user.wallets')}}" style="text-decoration: none;">Wallets
-                            settings</a>
-                        <a class="cab-tabs__item active" href="{{route('user.ChangePass')}}" style="text-decoration: none;">Change
-                            password</a>
-                     
                     </div>
-                    <form method="post" action="{{ route('user.edit-password') }}" >
-                        {{ csrf_field() }}
-                        <div class="cab-inputs"><label class="cab-input">
-                                <p>Old password</p><input type="password" name="old_password"><svg>
-                                    <use xlink:href="assets/img/sprite.svg#pass"></use>
-                                </svg>
-                            </label><label class="cab-input">
-                                <p>New password</p><input type="password" name="password"><svg>
-                                    <use xlink:href="assets/img/sprite.svg#pass"></use>
-                                </svg>
-                            </label><label class="cab-input">
-                                <p>Confirm new password</p><input type="password" name="password_confirmation"><svg>
-                                    <use xlink:href="assets/img/sprite.svg#pass"></use>
-                                </svg>
-                            </label></div><input name="__Cert" value="44b7be27" type="hidden"><button
-                            name="account/change_pass_frm_btn"
-                            class="main-btn main-btn_orange main-btn_m">save</button>
-                    </form>
+
                 </div>
-            </div>
-         
+            </section>
+
+            <!-- Right Form -->
+            <section class="uk-width-1-2@l">
+                <div id="as-settings-password" class="uk-cube-bottom-left uk-cube-figure">
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <header class="uk-heading uk-text-center">
+                            <h3 class="uk-margin-small-bottom">Change Transaction Password</h3>
+                        </header>
+                        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+            <div>{{$error}}</div>
+            @endforeach
+            @endif
+                        <form action="{{ route('user.change-trxpasswword') }}" method="post" name="editform">
+                            {{ csrf_field() }}
+                            <!-- Old Password -->
+                            <div class="uk-margin-small-top uk-margin-bottom">
+                                <label class="uk-form-label" for="as-form-old-password">Old password</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-text-emphasis" type="password" name="old_password">
+                                </div>
+                            </div>
+                            <!-- New Password -->
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="as-form-password">New password</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-text-emphasis" type="password" name="password">
+                                </div>
+                            </div>
+                            <!-- Confirm New Password -->
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="as-form-password-confirm">Confirm new password</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input uk-text-emphasis" type="password" name="password_confirmation">
+                                </div>
+                            </div>
+                            <!-- Save Changes Button -->
+                            <button class="uk-button uk-button-primary uk-button-large" type="submit">Save Changes</button>
+                        </form>
+                    </div>
+                    @include('partials.notify')
+
+                </div>
+            </section>
+        </div>
+    </div>
+</main>

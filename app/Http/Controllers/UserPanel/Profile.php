@@ -96,9 +96,9 @@ public function BankDetail()
     {
         try{
             $validation =  Validator::make($request->all(), [
-                // 'email' => 'required|string',
+                'email' => 'required|string',
                 'name' => 'required|string',
-                'country' => 'required|string',
+                // 'country' => 'required|string',
                 // 'city' => 'required',
                 // 'zipCode' => 'required',
                 // 'usdtAddress' => 'required',
@@ -119,8 +119,8 @@ public function BankDetail()
 
           $update_data['name']=$post_array['name'];
           $update_data['phone']=$post_array['phone'];
-          $update_data['telegram']=$post_array['telegram'];
-          $update_data['country']=$post_array['country'];
+        //   $update_data['telegram']=$post_array['telegram'];
+          $update_data['email']=$post_array['email'];
         //   $update_data['zipCode']=$post_array['zipCode'];
         //   $update_data['city']=$post_array['city'];
         //   $update_data['lastname']=$post_array['lastname'];
@@ -269,13 +269,13 @@ public function BankDetail()
             $password->created_at = \Carbon\Carbon::now();
             $password->save();
 
-               sendEmail($user->email, 'Your One-Time Password', [
-                'name' => $user->name,
-                'code' => $code,
-                'purpose' => 'Change Password',
-                'viewpage' => 'one_time_password',
+            //    sendEmail($user->email, 'Your One-Time Password', [
+            //     'name' => $user->name,
+            //     'code' => $code,
+            //     'purpose' => 'Change Password',
+            //     'viewpage' => 'one_time_password',
 
-             ]);
+            //  ]);
              $userID = $user->id;
             session()->put('NewPassword',$data['password']);
 
@@ -299,10 +299,10 @@ public function BankDetail()
             $request->validate(['code' => 'required']);
             $code = $request->code;
              $user = Auth::user();
-            if (PasswordReset::where('token', $code)->where('email', $user->email)->count() != 1) {
-                $notify[] = ['error', 'Invalid token'];
-                return redirect()->route('user.codeVerifyPassword')->withNotify($notify);
-            }
+            // if (PasswordReset::where('token', $code)->where('email', $user->email)->count() != 1) {
+            //     $notify[] = ['error', 'Invalid token'];
+            //     return redirect()->route('user.codeVerifyPassword')->withNotify($notify);
+            // }
             
                     
                 
