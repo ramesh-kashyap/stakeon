@@ -39,6 +39,10 @@
                             <!-- Save Changes Button -->
                             <button class="uk-button uk-button-primary uk-button-large" type="submit">Save Changes</button>
                         </form>
+<<<<<<< HEAD
+=======
+                        @include('partials.notify')
+>>>>>>> 1abec5b (ruutu)
 
                     </div>
 
@@ -52,7 +56,15 @@
                         <header class="uk-heading uk-text-center">
                             <h3 class="uk-margin-small-bottom">Change Transaction Password</h3>
                         </header>
+<<<<<<< HEAD
               
+=======
+                        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+            <div>{{$error}}</div>
+            @endforeach
+            @endif
+>>>>>>> 1abec5b (ruutu)
                         <form action="{{ route('user.change-trxpasswword') }}" method="post" name="editform">
                             {{ csrf_field() }}
                             <!-- Old Password -->
@@ -84,7 +96,10 @@
 
                 </div>
             </section>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1abec5b (ruutu)
         </div>
     </div>
 </main>

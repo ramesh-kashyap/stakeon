@@ -96,6 +96,10 @@ class Register extends Controller
                 //  
           
             $data['name'] = $post_array['name'];
+<<<<<<< HEAD
+=======
+            $data['phone'] = $post_array['phone'];
+>>>>>>> 1abec5b (ruutu)
             $data['username'] = $username;
             $data['email'] = $post_array['email'];
             $data['password'] =   Hash::make($post_array['password']);

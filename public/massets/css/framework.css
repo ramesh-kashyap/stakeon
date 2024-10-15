@@ -125,7 +125,11 @@ audio,canvas,iframe,img,svg,video {
 }
 
 canvas,img,svg,video {
+<<<<<<< HEAD
     /* max-width: 100%; */
+=======
+    max-width: 100%;
+>>>>>>> 1abec5b (ruutu)
     height: auto;
     box-sizing: border-box
 }

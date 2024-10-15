@@ -151,9 +151,15 @@
                             <img src="{{asset('')}}massets/img/another/balance-stats-4.svg">
                         </div>
                         <div class="uk-panel">
+<<<<<<< HEAD
                             <div class="as-exit-name">Royalty Income</div>
                             <ins class="js-stats-withdrawn-amount">
                             {{ currency() }}{{ number_format(Auth::user()->reward_bonus->sum('comm'), 2) }}                            </ins>
+=======
+                            <div class="as-exit-name">Leadership Income</div>
+                            <ins class="js-stats-withdrawn-amount">
+                            {{ currency() }}{{ number_format(Auth::user()->level_bonus->sum('comm'), 2) }}                            </ins>
+>>>>>>> 1abec5b (ruutu)
                         </div>
                     </li>
                 </ul>
@@ -193,7 +199,11 @@
                         <div class="uk-panel">
                             <div class="as-exit-name">E Wallet</div>
                             <ins class="js-stats-deposits-amount">
+<<<<<<< HEAD
                             {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
+=======
+                            {{ currency() }}{{ number_format(Auth::user()->withdraw(), 2) }}                            </ins>
+>>>>>>> 1abec5b (ruutu)
                         </div>
                     </li>
                     <li class="uk-grid-margin">
@@ -211,12 +221,16 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     
     
+=======
+>>>>>>> 1abec5b (ruutu)
     <!-- Move the referral link section below the statistics -->
     
 
 </section>
+<<<<<<< HEAD
 
 
 
@@ -335,6 +349,8 @@
 
 
 </section>
+=======
+>>>>>>> 1abec5b (ruutu)
 <div id="as-dashboard-bottom_inputs" class="uk-form-controls-label-figure uk-grid-margin uk-first-column">
         <div class="week-limit-widget">
             <div class="week-limit-widget__inner">

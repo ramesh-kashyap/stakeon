@@ -146,11 +146,20 @@ public function fundHistory(Request $request)
 
 public function SubmitBuyFund(Request $request)
 {
+<<<<<<< HEAD
     try {
         $validation = Validator::make($request->all(), [
             'amount' => 'required|numeric',
             'payment_type' => 'required',
             'transaction_id' => 'required|string|max:255', // Validate transaction ID
+=======
+
+  try{
+        $validation =  Validator::make($request->all(), [
+            'amount' => 'required|numeric|min:30',
+            'transaction_hash' => 'required',
+            'icon_image'=>'max:4096',
+>>>>>>> 1abec5b (ruutu)
         ]);
 
         if ($validation->fails()) {
@@ -158,6 +167,7 @@ public function SubmitBuyFund(Request $request)
             return redirect()->route('user.AddFund')->withErrors($validation->getMessageBag()->first())->withInput();
         }
 
+<<<<<<< HEAD
         $user = Auth::user();
         $invoice = substr(str_shuffle("0123456789"), 0, 7);
 
@@ -177,12 +187,41 @@ public function SubmitBuyFund(Request $request)
         $notify[] = ['success', 'Fund Request Submitted successfully'];
         return redirect()->route('user.AddFund')->withNotify($notify);
     } catch (\Exception $e) {
+=======
+        $user=Auth::user();
+
+        $icon_image = $this->saveDocument($request->file('icon_image'), 'icon_image');
+
+
+               $data = [
+                    'txn_no' =>$request->transaction_hash,
+                    'user_id' => $user->id, 
+                    'user_id_fk' => $user->username,
+                    'amount' => $request->amount,
+                    'status'=>'Pending', 
+                    'type' => 'USDT',
+                    'slip'=>$icon_image,
+                    'bdate' => Date("Y-m-d"),
+
+                ];
+                // dd($data);
+               $payment =  BuyFund::create($data);
+
+
+      $notify[] = ['success', 'Fund Request Submited successfully'];
+      return redirect()->route('user.AddFund')->withNotify($notify);
+      }
+       catch(\Exception $e){
+>>>>>>> 1abec5b (ruutu)
         Log::info('error here');
         Log::info($e->getMessage());
         return redirect()->route('user.AddFund')->withErrors('error', $e->getMessage())->withInput();
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1abec5b (ruutu)
 public function saveDocument($document)
 {
     $documentName = time() . '_' . $document->getClientOriginalName();

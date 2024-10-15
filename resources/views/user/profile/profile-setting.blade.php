@@ -35,8 +35,11 @@
                             <button class="uk-button uk-button-primary uk-button-large" type="submit">Save Changes</button>
                         </form>
                     </div>
+<<<<<<< HEAD
                     @include('partials.notify')
 
+=======
+>>>>>>> 1abec5b (ruutu)
                 </div>
             </section>
 

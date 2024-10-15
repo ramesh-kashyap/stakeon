@@ -380,6 +380,10 @@ public function cancel_payment($id)
 try{
     $validation =  Validator::make($request->all(), [
         'amount' => 'required|numeric|min:5',
+<<<<<<< HEAD
+=======
+        'walletType' => 'required|in:1,2',
+>>>>>>> 1abec5b (ruutu)
         'user_id' => 'required|exists:users,username',
         'transaction_password' => 'required',
 
@@ -409,7 +413,11 @@ try{
             $last_package=($invest_check)?$invest_check->amount:0;
 
          $balance=0;
+<<<<<<< HEAD
           // $walletType = $request->walletType;
+=======
+          $walletType = $request->walletType;
+>>>>>>> 1abec5b (ruutu)
       
           $balance=round(Auth::user()->FundBalance(),2);
        
@@ -437,12 +445,19 @@ try{
                 'status' => 'Active',
                 'sdate' => Date("Y-m-d"),
                 'active_from' => $user->username,
+<<<<<<< HEAD
                 'walletType' =>1,
+=======
+                'walletType' =>$request->walletType,
+>>>>>>> 1abec5b (ruutu)
                 'created_at' =>Date('Y-m-d H:i:s'),
 
             ];
             $payment = Investment::insert($data);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1abec5b (ruutu)
             if ($user_detail->active_status=="Pending")
             {
              $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
@@ -454,6 +469,7 @@ try{
               $user_update=array('active_status'=>'Active','package'=>$request->amount);
               User::where('id',$user_detail->id)->update($user_update);
             }
+<<<<<<< HEAD
             
             add_level_income($user_detail->id,$request->amount);
             add_direct_income($user_detail->id,$request->amount);
@@ -495,6 +511,47 @@ try{
       return Redirect::back()->withErrors(array('Invalid Transaction Password'));
     }
 
+=======
+ 
+            // add_level_income($user_detail->id,$request->amount);
+
+            // // add pickup bonus
+            //   sendEmail($user_detail->email, 'Invoice at '.siteName(), [
+            //     'name' => $user_detail->name,
+            //     'address' => $user_detail->address,
+            //     'amount' =>$request->amount,
+            //     'plan' =>$request->plan,
+            //     'orderId' =>$invoice,
+            //     'invoiceDate' =>Date('m/d/Y h:i:s a'),
+            //     'viewpage' => 'invoice',
+            // ]);
+            // SendSMSActivation($user_detail->name,$user_detail->phone,$user_detail->username,$request->plan,$request->amount);
+          
+
+
+         
+
+
+      $notify[] = ['success', $user_detail->username.' User Activation  Submited successfully'];
+      return redirect()->back()->withNotify($notify);
+
+      }
+      else
+      {
+         return Redirect::back()->withErrors(array('Insufficient Balance in Wallet'));
+      }
+
+  
+      
+
+      
+    }
+    else
+    {
+      return Redirect::back()->withErrors(array('Invalid Transaction Password'));
+    }
+
+>>>>>>> 1abec5b (ruutu)
 
   }
    catch(\Exception $e){

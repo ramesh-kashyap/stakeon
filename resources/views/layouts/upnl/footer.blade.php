@@ -51,11 +51,26 @@
 				</a>
 			</li>
 
+<<<<<<< HEAD
+=======
+            <li class="uk-nav-divider"></li>
+>>>>>>> 1abec5b (ruutu)
         </ul>
 
         <ul class="uk-nav uk-nav-default">
             
+<<<<<<< HEAD
                      
+=======
+                            <li>
+                    <a href="https://t.me/stakeonpro" target="_blank">
+                        <img src="{{asset('')}}massets/img/another/telegram-yellow-icon.svg" width="29" height="29" loading="lazy" alt="" uk-svg>
+                        Telegram
+                    </a>
+                </li>
+            
+            <li class="uk-nav-divider"></li>
+>>>>>>> 1abec5b (ruutu)
 
             <li>
                 <a href="?a=logout">

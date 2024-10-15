@@ -42,6 +42,7 @@
             <option value="{{ route('user.DepositHistory') }}">Deposit History</option>
             <option value="{{ route('user.Withdraw-History') }}">Withdraw History</option>
             <option value="{{ route('user.fundHistory') }}">Fund History</option>
+<<<<<<< HEAD
             <option value="{{ route('user.direct-income') }}">Direct Income</option>
             <option value="{{ route('user.level-income') }}">Level Income</option>
             <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
@@ -63,6 +64,32 @@
            class="uk-input uk-text-emphasis custom-search" 
            value="{{ @$search }}">
 
+=======
+
+            <option value="{{ route('user.level-income') }}">Direct Income</option>
+            <option value="{{ route('user.level-income') }}">Level Income</option>
+            <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
+        </select>
+    </div>
+
+    <!-- Form Control 2: Limit Dropdown -->
+    <div class="uk-form-controls" style="margin-right: 10px;">
+        <select name="limit" class="uk-input form-control custom-select">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <!-- Search Input with custom width and spacing -->
+    <input type="text" 
+           placeholder="Search Users"
+           name="search" 
+           class="uk-input uk-text-emphasis custom-search" 
+           value="{{ @$search }}">
+
+>>>>>>> 1abec5b (ruutu)
     <!-- Buttons aligned with margin-left for larger screens -->
     <div class="uk-form-controls uk-width-auto uk-text-left search-reset-btns">
         <input type="submit" 
