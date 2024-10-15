@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
 
                   				@include('layouts.mainsite.header')
 
@@ -250,6 +253,7 @@
 	<body>
 		<div class="wrapper">
 		@include('layouts.mainsite.header')
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 
@@ -482,6 +486,66 @@
                             </div>
                         </div>
 <<<<<<< HEAD
+=======
+
+
+
+<script language=javascript>
+
+function checkform() {
+  if (document.mainform.name.value == '') {
+    alert("Please type your full name!");
+    document.mainform.name.focus();
+    return false;
+  }
+  if (document.mainform.email.value == '') {
+    alert("Please enter your e-mail address!");
+    document.mainform.email.focus();
+    return false;
+  }
+  if (document.mainform.message.value == '') {
+    alert("Please type your message!");
+    document.mainform.message.focus();
+    return false;
+  }
+  return true;
+}
+
+</script>
+
+
+<section class="sign">
+<div class="container">
+            <div class="row">
+               <div class="col-lg-5 offset-lg-3">
+                  <form method=post name=mainform onsubmit="return checkform()"><input type="hidden" name="form_id" value="17282798556363"><input type="hidden" name="form_token" value="3e8fc41a2c2f072f4054ec9f803c41fd">
+					<input type=hidden name=a value=support>
+					<input type=hidden name=action value=send>
+                     <div class="sign-box">
+                        <div class="sign-title">
+                           Contact
+                           <p>Leave a message</p>
+                        </div>
+						
+						 						 
+                        <div class="contacts-form__inputs">
+                           <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="text" name="name" value="" placeholder="Your Name">
+                              <svg>
+                                 <use xlink:href="{{asset('')}}assets/img/sprite.svg#user"></use>
+                              </svg>
+                           </label>
+						   <label class="contacts-form__input contacts-form__input_icon">
+                              <input type="text" name="email" value="" placeholder="Your Email">
+                              <svg>
+                                 <use xlink:href="{{asset('')}}assets/img/sprite.svg#mail"></use>
+                              </svg>
+                           </label>
+                           <label class="contacts-form__input">
+								<textarea name="message" placeholder="message" rows="6"></textarea>
+							</label>
+                        </div>
+>>>>>>> da964d8 (ruutu)
                         <button name="login_frm_btn" type="submit" class="main-btn main-btn_orange main-btn_m" style="width:100%">Send Message</button>
 
                      </div>
@@ -567,9 +631,13 @@ s0.parentNode.insertBefore(s1,s0);
 
 	</body>
 </html>
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
                     </div>
                 </div>
                 @include('layouts.mainsite.footer')
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)

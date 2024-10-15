@@ -53,17 +53,26 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             <li class="uk-nav-divider"></li>
 >>>>>>> 1abec5b (ruutu)
 =======
 >>>>>>> 58591ea (new one)
+=======
+=======
+            <li class="uk-nav-divider"></li>
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
         </ul>
 
         <ul class="uk-nav uk-nav-default">
             
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
                      
 =======
                             <li>
@@ -74,10 +83,14 @@
                 </li>
             
             <li class="uk-nav-divider"></li>
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
                      
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
 
             <li>
                 <a href="?a=logout">

@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> da964d8 (ruutu)
 <div class="outer__footer-cell">
 	<div class="sbde03e8dcbeadda33ed">
 		<div class="sf4f625148df40a9b356">
@@ -67,6 +70,7 @@
 												</span>
 											</a>
 =======
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 
@@ -101,6 +105,37 @@
 											</a>
 										</div>
 <<<<<<< HEAD
+=======
+
+<footer class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 offset-lg-12">
+							<div class="footer-wallets py-4 py-lg-5">
+								<div class="swiper-button-prev">
+									<svg>
+										<use xlink:href="{{asset('')}}assets/img/sprite.svg#arrow"></use>
+									</svg>
+								</div>
+								<div class="swiper-button-next">
+									<svg>
+										<use xlink:href="{{asset('')}}assets/img/sprite.svg#arrow"></use>
+									</svg>
+								</div>
+								<div class="swiper">
+									<div class="swiper-wrapper">
+
+										<div class="swiper-slide">
+											<div class="footer-wallets__item"> <img
+													src="{{asset('')}}assets/img/btc-white.svg" alt="btc-white" />
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="footer-wallets__item"> <img
+													src="{{asset('')}}assets/img/eth-white.svg" alt="eth-white" />
+											</div>
+										</div>
+>>>>>>> da964d8 (ruutu)
 										<div class="swiper-slide">
 											<div class="footer-wallets__item"> <img
 													src="{{asset('')}}assets/img/bch-white.svg" alt="xrp-white" />
@@ -140,6 +175,7 @@
 											<div class="footer-wallets__item"> <img
 													src="{{asset('')}}assets/img/xlm-white.svg" alt="epc-white" />
 											</div>
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
 										<div class="s33c3761b3091ae8112d socials-gutter__cell--3">
@@ -156,6 +192,9 @@
 												</span>
 											</a>
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
 										</div>
 									</div>
 								</div>
@@ -163,8 +202,11 @@
 						</div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> da964d8 (ruutu)
 						<div class="s68280e68b7649396fc4">
 							<div class="s7ebeb2a9fe6777f8611">
 								<div class="s4c8118ff52454be8a1a s736598a381373ae01df">
@@ -204,11 +246,17 @@
 							<div class="footer-bg"> <a class="footer-logo" href="/"><img src="{{asset('')}}assets/img/logo-white.png" alt="logo-white" /></a>
 								<div class="footer-text">
 									<p><strong class="footer-text__warning">Risk Warning:</strong> The performance of most cryptoassets can be highly volatile, with their value dropping as quickly as it can rise. You should be prepared to lose all the money you invest in cryptoassets. The cryptoasset market is largely unregulated.</p>
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 								</div>
 							</div>
 <<<<<<< HEAD
+=======
+								</div>
+								<div class="footer-copy">Copyright © 2024 StakeOn. All rights reserved</div>
+							</div>
+>>>>>>> da964d8 (ruutu)
 						</div>
 						<div class="col-lg-9 order-1 oreder-lg-2">
 							<div class="footer-bot">
@@ -270,19 +318,26 @@
 										</div>
 									</div>
 								</div>
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
 							<div class="s31f257875c7e312d967">
 								
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
 							</div>
 						</div>
 					</div>
 				</div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> da964d8 (ruutu)
 			</div>
 		</div>
 	</div>
@@ -324,6 +379,7 @@
 </body>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 </html>
 =======
 			</footer>
@@ -331,3 +387,9 @@
 =======
 </html>
 >>>>>>> 58591ea (new one)
+=======
+</html>
+=======
+			</footer>
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)

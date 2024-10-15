@@ -37,6 +37,7 @@
                     </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     @include('partials.notify')
 
 =======
@@ -45,6 +46,12 @@
                     @include('partials.notify')
 
 >>>>>>> 58591ea (new one)
+=======
+                    @include('partials.notify')
+
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
                 </div>
             </section>
 

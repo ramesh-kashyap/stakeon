@@ -31,7 +31,11 @@
                     <h1 class="uk-heading-line">Level Income</h1>
                 </header>
                 <form action="{{ route('user.level-income') }}" method="GET" name="opts">
+<<<<<<< HEAD
 @csrf
+=======
+
+>>>>>>> db9cd7b (ruutu)
 <!-- Form Grid with Flexbox for better alignment -->
 <div class="uk-grid-medium uk-flex-middle uk-flex-start uk-grid" uk-grid="">
 
@@ -45,6 +49,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
             <option value="{{ route('user.direct-income') }}">Direct Income</option>
 =======
             <option value="{{ route('user.level-income') }}">Direct Income</option>
@@ -103,6 +110,48 @@
 </form>
 
 
+=======
+            <option value="{{ route('user.level-income') }}">Direct Income</option>
+            <option value="{{ route('user.level-income') }}">Level Income</option>
+            <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
+        </select>
+    </div>
+
+    <!-- Form Control 2: Limit Dropdown -->
+    <div class="uk-form-controls" style="margin-right: 10px;">
+        <select name="limit" class="uk-input form-control custom-select">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <!-- Search Input with custom width and spacing -->
+    <input type="text" 
+           placeholder="Search Users"
+           name="search" 
+           class="uk-input uk-text-emphasis custom-search" 
+           value="{{ @$search }}">
+
+    <!-- Buttons aligned with margin-left for larger screens -->
+    <div class="uk-form-controls uk-width-auto uk-text-left search-reset-btns">
+        <input type="submit" 
+               name="submit" 
+               class="uk-button uk-button-primary" 
+               value="Search" />
+
+        <a href="{{ route('user.level-income') }}" 
+           name="reset" 
+           class="uk-button uk-button-default" 
+           value="Reset">Reset</a>
+    </div>
+
+</div>
+</form>
+
+
+>>>>>>> db9cd7b (ruutu)
                        
                         <div class="uk-overflow-auto uk-margin-bottom">
                                                             <div>
@@ -186,5 +235,35 @@
 
 </div>
 </main>
+<<<<<<< HEAD
 
+=======
+<!-- Custom inline CSS for responsive design -->
+<style>
+/* Style for buttons */
+.search-reset-btns {
+    margin-left: 600px; /* Large screens margin */
+}
+
+/* Responsive Design: Adjust margin-left on smaller screens */
+@media screen and (max-width: 1200px) {
+    .search-reset-btns {
+        margin-left: 300px; /* Medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-reset-btns {
+        margin-left: 100px; /* Small screens like tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-reset-btns {
+        margin-left: 0; /* Mobile screens: no margin */
+        text-align: center; /* Center buttons on mobile */
+    }
+}
+</style>
+>>>>>>> db9cd7b (ruutu)
 

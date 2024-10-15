@@ -41,11 +41,17 @@
                         </form>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                         @include('partials.notify')
 >>>>>>> 1abec5b (ruutu)
 =======
 >>>>>>> 58591ea (new one)
+=======
+=======
+                        @include('partials.notify')
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
 
                     </div>
 
@@ -61,6 +67,9 @@
                         </header>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
               
 =======
                         @if ($errors->any())
@@ -68,10 +77,14 @@
             <div>{{$error}}</div>
             @endforeach
             @endif
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
               
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
                         <form action="{{ route('user.change-trxpasswword') }}" method="post" name="editform">
                             {{ csrf_field() }}
                             <!-- Old Password -->
@@ -105,12 +118,18 @@
             </section>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 1abec5b (ruutu)
 =======
 
 >>>>>>> 58591ea (new one)
+=======
+
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
         </div>
     </div>
 </main>

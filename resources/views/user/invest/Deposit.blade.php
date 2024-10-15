@@ -7,6 +7,9 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
         <form method=post action="{{ route('user.fundActivation') }}" name="spendform"
             class="uk-form-stacked uk-child-width-1-2@l" uk-height-match="target: &gt; fieldset &gt; div &gt; .uk-card"
             uk-grid="uk-grid">
@@ -490,13 +493,18 @@
                                 </li>
 
                             </ul>
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
                         </div>
                     </div>
                 </div>
             </fieldset>
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
 =======
         <form method=post action="{{ route('user.fundActivation') }}" name="spendform"
             class="uk-form-stacked uk-child-width-1-2@l" uk-height-match="target: &gt; fieldset &gt; div &gt; .uk-card"
@@ -520,6 +528,188 @@
                                 <label class="uk-form-label" for="as-form-amount">
                                     <span class="uk-flex uk-flex-between">
                                         Wallet Type </span>
+=======
+            <fieldset id="as-new-deposit-amount" class="uk-fieldset uk-form-controls-label-figure">
+                <div class="uk-cube-bottom-left uk-cube-figure">
+                    <div class="uk-card uk-card-default as-card-medium">
+                        <div class="uk-legend">
+                            <mark>2</mark>
+                            <span class="uk-text-background">Choose the Staking plan</span>
+                        </div>
+                        <ul
+                            class="uk-subnav uk-subnav-pill uk-child-width-1-2@m uk-child-width-1-2@l uk-flex-center uk-margin">
+                            <label class="js-plan-label" for="deposit_form_plan_id_0" style="cursor: pointer;">
+                                <span>
+                                    LITE
+                                </span>
+                                <input type="radio" name="h_id" value="1" id="deposit_form_plan_id_0" checked hidden />
+                            </label>
+                            <label class="js-plan-label" for="deposit_form_plan_id_1" style="cursor: pointer;">
+                                <span>
+                                    STANDARD
+                                </span>
+                                <input type="radio" name="h_id" value="2" id="deposit_form_plan_id_1" hidden />
+                            </label>
+                            <label class="js-plan-label" for="deposit_form_plan_id_2" style="cursor: pointer;">
+                                <span>
+                                    PREMIUM
+                                </span>
+                                <input type="radio" name="h_id" value="3" id="deposit_form_plan_id_2" hidden />
+                            </label>
+                            <label class="js-plan-label" for="deposit_form_plan_id_3" style="cursor: pointer;">
+                                <span>
+                                    DIAMOND
+                                </span>
+                                <input type="radio" name="h_id" value="4" id="deposit_form_plan_id_3" hidden />
+                            </label>
+                        </ul>
+                        <div class="js-plan-tab-content">
+                            <div class="js-plan-tab js-plan-tab-1">
+                                <div class="new-deposit-plan-block">
+                                    <div class="new-deposit-plan-block__inner">
+                                        <div class="new-deposit-plan-block__body">
+                                            <div class="new-deposit-plan-block__earnings-row">
+                                                <div class="new-deposit-plan-block__percent-cell">
+                                                    <div class="new-deposit-plan-block__percent">
+                                                        0.5<small>%</small>
+                                                    </div>
+                                                </div>
+                                                <div class="new-deposit-plan-block__period-cell">
+                                                    <div class="new-deposit-plan-block__period">
+                                                        Daily
+                                                        <br>
+                                                        Income
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="new-deposit-plan-block__description-row">
+                                                <div class="new-deposit-plan-block__description-cell">
+                                                    <div class="new-deposit-plan-block__term">
+                                                        <div
+                                                            class="principal-return-widget new-deposit-plan-block__principal-return-widget">
+                                                            For
+                                                            30 calendar
+                                                            days
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="js-plan-tab js-plan-tab-2">
+                                <div class="new-deposit-plan-block">
+                                    <div class="new-deposit-plan-block__inner">
+                                        <div class="new-deposit-plan-block__body">
+                                            <div class="new-deposit-plan-block__earnings-row">
+                                                <div class="new-deposit-plan-block__percent-cell">
+                                                    <div class="new-deposit-plan-block__percent">
+                                                        0.6<small>%</small>
+                                                    </div>
+                                                </div>
+                                                <div class="new-deposit-plan-block__period-cell">
+                                                    <div class="new-deposit-plan-block__period">
+                                                        Daily
+                                                        <br>
+                                                        Income
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="new-deposit-plan-block__description-row">
+                                                <div class="new-deposit-plan-block__description-cell">
+                                                    <div class="new-deposit-plan-block__term">
+                                                        <div
+                                                            class="principal-return-widget new-deposit-plan-block__principal-return-widget">
+                                                            For
+                                                            90 calendar
+                                                            days
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="js-plan-tab js-plan-tab-3">
+                                <div class="new-deposit-plan-block">
+                                    <div class="new-deposit-plan-block__inner">
+                                        <div class="new-deposit-plan-block__body">
+                                            <div class="new-deposit-plan-block__earnings-row">
+                                                <div class="new-deposit-plan-block__percent-cell">
+                                                    <div class="new-deposit-plan-block__percent">
+                                                        0.7<small>%</small>
+                                                    </div>
+                                                </div>
+                                                <div class="new-deposit-plan-block__period-cell">
+                                                    <div class="new-deposit-plan-block__period">
+                                                        Daily
+                                                        <br>
+                                                        Income
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="new-deposit-plan-block__description-row">
+                                                <div class="new-deposit-plan-block__description-cell">
+                                                    <div class="new-deposit-plan-block__term">
+                                                        <div
+                                                            class="principal-return-widget new-deposit-plan-block__principal-return-widget">
+                                                            For
+                                                            180 calendar
+                                                            days
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="js-plan-tab js-plan-tab-4">
+                                <div class="new-deposit-plan-block">
+                                    <div class="new-deposit-plan-block__inner">
+                                        <div class="new-deposit-plan-block__body">
+                                            <div class="new-deposit-plan-block__earnings-row">
+                                                <div class="new-deposit-plan-block__percent-cell">
+                                                    <div class="new-deposit-plan-block__percent">
+                                                        1<small>%</small>
+                                                    </div>
+                                                </div>
+                                                <div class="new-deposit-plan-block__period-cell">
+                                                    <div class="new-deposit-plan-block__period">
+                                                        Daily
+                                                        <br>
+                                                        Income
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="new-deposit-plan-block__description-row">
+                                                <div class="new-deposit-plan-block__description-cell">
+                                                    <div class="new-deposit-plan-block__term">
+                                                        <div
+                                                            class="principal-return-widget new-deposit-plan-block__principal-return-widget">
+                                                            For
+                                                            360 calendar
+                                                            days
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+           
+                        <div class="new-deposit-amount-row uk-margin-medium-top">
+
+
+                        <div class="new-deposit-amount-row__amount-cell">
+                                <label class="uk-form-label" for="as-form-amount">
+                                    <span class="uk-flex uk-flex-between">
+                                    Wallet Type                                    </span>
+>>>>>>> da964d8 (ruutu)
                                 </label>
                                 <div class="uk-form-controls">
                                     <figure class="uk-form-controls-figure">
@@ -528,6 +718,7 @@
                                     </figure>
                                     <small class="uk-form-icon uk-form-icon-flip js-currs-slug">
                                     </small>
+<<<<<<< HEAD
                                     <input type="text" name=walletType readonly
                                         value="Activation Wallet( {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }})"
                                         class="uk-input form-control" />
@@ -587,12 +778,26 @@
                                     </small>
                                     <input type="text" name=user_id required class="uk-input form-control" />
                                 </div>
+=======
+                                    <select  name="walletType"  class="uk-select form-control uniform-input">
+                                        <option value="1">Activation Wallet( {{ currency() }}
+                                        {{ number_format(Auth::user()->FundBalance(), 2) }})</option>
+                                        <option value="2">Available Balance( {{ currency() }}
+                                        {{ number_format(Auth::user()->available_balance(), 2) }})</option>
+                                      
+                                    </select>
+                                </div>
+>>>>>>> da964d8 (ruutu)
 
                             </div>
                             <div class="new-deposit-amount-row__amount-cell">
                                 <label class="uk-form-label" for="as-form-amount">
                                     <span class="uk-flex uk-flex-between">
+<<<<<<< HEAD
                                         Transaction Password
+=======
+                                        Enter Amount
+>>>>>>> da964d8 (ruutu)
                                     </span>
                                 </label>
                                 <div class="uk-form-controls">
@@ -602,18 +807,67 @@
                                     </figure>
                                     <small class="uk-form-icon uk-form-icon-flip js-currs-slug">
                                     </small>
+<<<<<<< HEAD
                                     <input type="password" name="transaction_password" required
+=======
+                                    <input type="text" name=amount  required   
+>>>>>>> da964d8 (ruutu)
                                         class="uk-input form-control" />
                                 </div>
 
                             </div>
+<<<<<<< HEAD
 
 
+=======
+                            <div class="new-deposit-amount-row__amount-cell">
+                                <label class="uk-form-label" for="as-form-amount">
+                                    <span class="uk-flex uk-flex-between">
+                                         Member Id
+                                    </span>
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/icon/form/amount.svg" width="60" height="60"
+                                            loading="lazy" alt="icon">
+                                    </figure>
+                                    <small class="uk-form-icon uk-form-icon-flip js-currs-slug">
+                                    </small>
+                                    <input type="text" name=user_id  required 
+                                        class="uk-input form-control" />
+                                </div>
+
+                            </div>
+                            <div class="new-deposit-amount-row__amount-cell">
+                                <label class="uk-form-label" for="as-form-amount">
+                                    <span class="uk-flex uk-flex-between">
+                                    Transaction Password
+                                    </span>
+                                </label>
+                                <div class="uk-form-controls">
+                                    <figure class="uk-form-controls-figure">
+                                        <img src="{{asset('')}}massets/img/icon/form/amount.svg" width="60" height="60"
+                                            loading="lazy" alt="icon">
+                                    </figure>
+                                    <small class="uk-form-icon uk-form-icon-flip js-currs-slug">
+                                    </small>
+                                    <input type="password" name="transaction_password"  required    
+                                        class="uk-input form-control" />
+                                </div>
+
+                            </div>
+                        
+                        
+>>>>>>> da964d8 (ruutu)
 
 
 
                             <div class="new-deposit-amount-row__btn-cell">
+<<<<<<< HEAD
                                 <button type="submit" class="uk-button uk-button-primary uk-button-large">
+=======
+                                <button  type="submit"class="uk-button uk-button-primary uk-button-large">
+>>>>>>> da964d8 (ruutu)
                                     Create Deposit
                                     <img src="{{asset('')}}massets/img/icon/deposit.svg" width="37" height="37"
                                         loading="lazy" alt="icon">
@@ -623,11 +877,16 @@
                     </div>
                 </div>
             </fieldset>
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
         </form>
     
 
     </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     @include('partials.notify')
@@ -636,6 +895,11 @@
 =======
     @include('partials.notify')
 >>>>>>> 58591ea (new one)
+=======
+    @include('partials.notify')
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
 </main>
 
 
@@ -701,4 +965,43 @@
     }
 
 </script>
+<style>
+/* Ensure the select box has the same height and width as the input fields */
+.uniform-input,
+.uk-input {
+    width: 100%; /* Make the width responsive */
+    height: 60px; /* Set height to match input fields */
+    padding: 10px 15px; /* Add padding to match input style */
+    box-sizing: border-box; /* Ensure padding is included in the width and height */
+    border: 1px solid #ccc; /* Same border as input fields */
+    border-radius: 4px; /* Rounded corners to match input */
+    font-size: 16px; /* Adjust font size to match */
+}
 
+.uniform-input {
+    appearance: none; /* Remove default select arrow styling */
+}
+
+.uk-form-controls-figure {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.uk-form-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Add custom arrow for select box */
+.uniform-input::after {
+    content: '\25BC'; /* Down arrow symbol */
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    pointer-events: none;
+}
+
+
+
+
+   </style>

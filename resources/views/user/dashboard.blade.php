@@ -153,6 +153,9 @@
                         <div class="uk-panel">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
                             <div class="as-exit-name">Royalty Income</div>
                             <ins class="js-stats-withdrawn-amount">
                             {{ currency() }}{{ number_format(Auth::user()->reward_bonus->sum('comm'), 2) }}                            </ins>
@@ -160,12 +163,16 @@
                             <div class="as-exit-name">Leadership Income</div>
                             <ins class="js-stats-withdrawn-amount">
                             {{ currency() }}{{ number_format(Auth::user()->level_bonus->sum('comm'), 2) }}                            </ins>
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
                             <div class="as-exit-name">Royalty Income</div>
                             <ins class="js-stats-withdrawn-amount">
                             {{ currency() }}{{ number_format(Auth::user()->reward_bonus->sum('comm'), 2) }}                            </ins>
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
                         </div>
                     </li>
                 </ul>
@@ -207,6 +214,7 @@
                             <ins class="js-stats-deposits-amount">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
 =======
                             {{ currency() }}{{ number_format(Auth::user()->withdraw(), 2) }}                            </ins>
@@ -214,6 +222,12 @@
 =======
                             {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
 >>>>>>> 58591ea (new one)
+=======
+                            {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
+=======
+                            {{ currency() }}{{ number_format(Auth::user()->withdraw(), 2) }}                            </ins>
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
                         </div>
                     </li>
                     <li class="uk-grid-margin">
@@ -233,6 +247,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     
 =======
@@ -241,14 +256,23 @@
     
     
 >>>>>>> 58591ea (new one)
+=======
+    
+    
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
     <!-- Move the referral link section below the statistics -->
     
 
 </section>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> da964d8 (ruutu)
 
 
 
@@ -368,10 +392,15 @@
 
 </section>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1abec5b (ruutu)
 =======
 >>>>>>> 58591ea (new one)
+=======
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
 <div id="as-dashboard-bottom_inputs" class="uk-form-controls-label-figure uk-grid-margin uk-first-column">
         <div class="week-limit-widget">
             <div class="week-limit-widget__inner">

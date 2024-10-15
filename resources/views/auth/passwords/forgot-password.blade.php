@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
 <html>
 
 <head>
@@ -360,6 +363,7 @@
 =======
 
 <!DOCTYPE html>
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 <html>
@@ -502,6 +506,114 @@
 }
 
 <<<<<<< HEAD
+=======
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+		<title>StakeOn</title>
+		<base href="https://stakeon.pro/" src="https://stakeon.pro/" />
+		<link rel="icon" type="image/png" sizes="32x32"
+			href="{{asset('')}}assets/img/favicon-32x32.png">
+		<meta content="ie=edge" http-equiv="x-ua-compatible">
+		<link rel="stylesheet" href="{{asset('')}}assets/css/vendor.css">
+		<link rel="stylesheet" href="{{asset('')}}assets/css/style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="header header_page">
+            @include('layouts.mainsite.header')
+
+				
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-2 d-lg-none">
+							<div class="header-side">
+								<div class="nicescroll-box">
+									<div class="wrap">
+										<div class="header-menu">
+											<a class="header-menu__item" href="?a=home">
+												<span>
+													<i style="font-style: normal;">Home
+													</i>
+												</span>main
+												<div class="header-menu__icon">
+													<svg>
+														<use xlink:href="{{asset('')}}assets/img/sprite.svg#arrow"></use>
+													</svg>
+												</div>
+											</a>
+											<a class="header-menu__item" href="?a=faq">
+												<span>
+													<i style="font-style: normal;">FAQ
+													</i>
+												</span>answers
+												<div class="header-menu__icon">
+													<svg>
+														<use xlink:href="{{asset('')}}assets/img/sprite.svg#arrow"></use>
+													</svg>
+												</div>
+											</a>
+											
+											<a class="header-menu__item" href="?a=rules">
+												<span>
+													<i style="font-style: normal;">Terms
+													</i>
+												</span>rules
+												<div class="header-menu__icon">
+													<svg>
+														<use xlink:href="{{asset('')}}assets/img/sprite.svg#arrow"></use>
+													</svg>
+												</div>
+											</a>
+											<a class="header-menu__item" href="?a=support">
+												<span>
+													<i style="font-style: normal;">Contacts
+													</i>
+												</span>Support
+												<div class="header-menu__icon">
+													<svg>
+														<use xlink:href="{{asset('')}}assets/img/sprite.svg#arrow"></use>
+													</svg>
+												</div>
+											</a>
+										</div>
+										<div class="header-btns mt-4">
+											<a class="main-btn main-btn_line" href="?a=login">
+												<img src="{{asset('')}}assets/img/btn-login.svg" alt="btn-login" />login
+											</a>
+											<a class="main-btn main-btn_orange main-btn_sign" href="?a=signup">
+												<img src="{{asset('')}}assets/img/btn-sign.svg" alt="btn-sign" />register
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+
+
+<script language=javascript>
+function checkform() {
+  if (document.mainform.username.value=='') {
+    alert("Please type your username!");
+    document.mainform.username.focus();
+    return false;
+  }
+  if (document.mainform.password.value=='') {
+    alert("Please type your password!");
+    document.mainform.password.focus();
+    return false;
+  }
+  return true;
+}
+</script>
+
+>>>>>>> da964d8 (ruutu)
 <section class="sign">
 <div class="container">
             <div class="row">
@@ -531,6 +643,7 @@
                                         </svg>
                            </label>
                            <label class="contacts-form__input contacts-form__input_icon">
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
 /* Responsive Design for mobile */
@@ -752,6 +865,9 @@
                                             class="s946795edf26ee7709c9 scdf91f4cb2842256173 log-form__form-label">
                                            
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
                            @php
                                                 $captcha = getCustomCaptcha($height = 46, $width = '100%', $bgcolor = '#003');
                                                 @endphp 
@@ -762,8 +878,11 @@
                                             @endif
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> da964d8 (ruutu)
 
                                         </label>
                                        
@@ -845,6 +964,7 @@
 
 =======
                            </label>
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
                         </div>
@@ -865,6 +985,18 @@
 </body>
 
 <<<<<<< HEAD
+=======
+                        </div>
+                        <input name="__Cert" value="c27d13f6" type="hidden"><button name="account/reset_pass_frm_btn" type="submit" class="main-btn main-btn_orange main-btn_m"  style="width:100%">Recover</button>
+                     </div>
+                  </form>
+               </div>
+               @include('partials.notify')
+
+            </div>
+         </div>
+
+>>>>>>> da964d8 (ruutu)
 </section>
 
 <footer class="footer">
@@ -1084,7 +1216,11 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 
 	</body>
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
 </html>

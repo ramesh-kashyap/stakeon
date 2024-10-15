@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
 
 
 <main id="as-main-deposit" class="uk-section-xsmall">
@@ -177,6 +180,7 @@
     <!-- Submit Button -->
     <button class="uk-button uk-button-primary uk-button-large" type="submit">Submit</button>
 </form>
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 
@@ -319,3 +323,19 @@
    }
 </script>
 >>>>>>> 58591ea (new one)
+=======
+
+
+                    </div>
+                    @include('partials.notify')
+
+                </div>
+            </section>
+
+            <!-- Right Form -->
+           
+        </div>
+    </div>
+</main>
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)

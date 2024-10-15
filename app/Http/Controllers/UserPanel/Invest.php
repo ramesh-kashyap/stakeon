@@ -382,11 +382,17 @@ try{
         'amount' => 'required|numeric|min:5',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         'walletType' => 'required|in:1,2',
 >>>>>>> 1abec5b (ruutu)
 =======
 >>>>>>> 58591ea (new one)
+=======
+=======
+        'walletType' => 'required|in:1,2',
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
         'user_id' => 'required|exists:users,username',
         'transaction_password' => 'required',
 
@@ -418,6 +424,7 @@ try{
          $balance=0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           // $walletType = $request->walletType;
 =======
           $walletType = $request->walletType;
@@ -425,6 +432,12 @@ try{
 =======
           // $walletType = $request->walletType;
 >>>>>>> 58591ea (new one)
+=======
+          // $walletType = $request->walletType;
+=======
+          $walletType = $request->walletType;
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
       
           $balance=round(Auth::user()->FundBalance(),2);
        
@@ -454,6 +467,7 @@ try{
                 'active_from' => $user->username,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'walletType' =>1,
 =======
                 'walletType' =>$request->walletType,
@@ -461,10 +475,17 @@ try{
 =======
                 'walletType' =>1,
 >>>>>>> 58591ea (new one)
+=======
+                'walletType' =>1,
+=======
+                'walletType' =>$request->walletType,
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
                 'created_at' =>Date('Y-m-d H:i:s'),
 
             ];
             $payment = Investment::insert($data);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -473,6 +494,11 @@ try{
 =======
 
 >>>>>>> 58591ea (new one)
+=======
+
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
             if ($user_detail->active_status=="Pending")
             {
              $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
@@ -486,8 +512,11 @@ try{
             }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> da964d8 (ruutu)
             
             add_level_income($user_detail->id,$request->amount);
             add_direct_income($user_detail->id,$request->amount);
@@ -533,8 +562,11 @@ try{
 =======
  
             // add_level_income($user_detail->id,$request->amount);
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> da964d8 (ruutu)
 
             // // add pickup bonus
             //   sendEmail($user_detail->email, 'Invoice at '.siteName(), [
@@ -572,7 +604,11 @@ try{
       return Redirect::back()->withErrors(array('Invalid Transaction Password'));
     }
 
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
 
   }
    catch(\Exception $e){

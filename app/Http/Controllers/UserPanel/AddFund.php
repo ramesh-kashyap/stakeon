@@ -148,14 +148,20 @@ public function SubmitBuyFund(Request $request)
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> da964d8 (ruutu)
     try {
         $validation = Validator::make($request->all(), [
             'amount' => 'required|numeric',
             'payment_type' => 'required',
             'transaction_id' => 'required|string|max:255', // Validate transaction ID
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
 =======
 
   try{
@@ -163,9 +169,13 @@ public function SubmitBuyFund(Request $request)
             'amount' => 'required|numeric|min:30',
             'transaction_hash' => 'required',
             'icon_image'=>'max:4096',
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
         ]);
 
         if ($validation->fails()) {
@@ -175,6 +185,9 @@ public function SubmitBuyFund(Request $request)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> da964d8 (ruutu)
         $user = Auth::user();
         $invoice = substr(str_shuffle("0123456789"), 0, 7);
 
@@ -196,6 +209,7 @@ public function SubmitBuyFund(Request $request)
     } catch (\Exception $e) {
 =======
         $user=Auth::user();
+<<<<<<< HEAD
 =======
         $user = Auth::user();
         $invoice = substr(str_shuffle("0123456789"), 0, 7);
@@ -215,6 +229,12 @@ public function SubmitBuyFund(Request $request)
         $payment = BuyFund::create($data);
 
 <<<<<<< HEAD
+=======
+
+        $icon_image = $this->saveDocument($request->file('icon_image'), 'icon_image');
+
+
+>>>>>>> da964d8 (ruutu)
                $data = [
                     'txn_no' =>$request->transaction_hash,
                     'user_id' => $user->id, 
@@ -234,12 +254,16 @@ public function SubmitBuyFund(Request $request)
       return redirect()->route('user.AddFund')->withNotify($notify);
       }
        catch(\Exception $e){
+<<<<<<< HEAD
 >>>>>>> 1abec5b (ruutu)
 =======
         $notify[] = ['success', 'Fund Request Submitted successfully'];
         return redirect()->route('user.AddFund')->withNotify($notify);
     } catch (\Exception $e) {
 >>>>>>> 58591ea (new one)
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
         Log::info('error here');
         Log::info($e->getMessage());
         return redirect()->route('user.AddFund')->withErrors('error', $e->getMessage())->withInput();
@@ -247,12 +271,18 @@ public function SubmitBuyFund(Request $request)
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 1abec5b (ruutu)
 =======
 
 >>>>>>> 58591ea (new one)
+=======
+
+=======
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
 public function saveDocument($document)
 {
     $documentName = time() . '_' . $document->getClientOriginalName();

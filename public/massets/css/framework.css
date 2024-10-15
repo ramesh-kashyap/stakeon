@@ -127,6 +127,7 @@ audio,canvas,iframe,img,svg,video {
 canvas,img,svg,video {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* max-width: 100%; */
 =======
     max-width: 100%;
@@ -134,6 +135,12 @@ canvas,img,svg,video {
 =======
     /* max-width: 100%; */
 >>>>>>> 58591ea (new one)
+=======
+    /* max-width: 100%; */
+=======
+    max-width: 100%;
+>>>>>>> db9cd7b (ruutu)
+>>>>>>> da964d8 (ruutu)
     height: auto;
     box-sizing: border-box
 }

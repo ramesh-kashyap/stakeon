@@ -31,6 +31,7 @@
                     <h1 class="uk-heading-line">Deposit History</h1>
                 </header>
                 <form action="{{ route('user.DepositHistory') }}" method="GET" name="opts">
+<<<<<<< HEAD
 @csrf
 <!-- Form Grid with Flexbox for better alignment -->
 <div class="uk-grid-medium uk-flex-middle uk-flex-start uk-grid" uk-grid="">
@@ -61,6 +62,26 @@
 
         </select>
     </div>
+=======
+
+<!-- Form Grid with Flexbox for better alignment -->
+<div class="uk-grid-medium uk-flex-middle uk-flex-start uk-grid" uk-grid="">
+
+    <!-- Form Control 1: Select Dropdown -->
+    <div class="uk-form-controls"> 
+        <select name="type" class="uk-input form-control" onchange="window.location.href = this.value;">
+            <option value="">Select History</option>
+            <option value="{{ route('user.DepositHistory') }}">Deposit History</option>
+            <option value="{{ route('user.Withdraw-History') }}">Withdraw History</option>
+            <option value="{{ route('user.fundHistory') }}">Fund History</option>
+
+            <option value="{{ route('user.level-income') }}">Direct Income</option>
+            <option value="{{ route('user.level-income') }}">Level Income</option>
+            <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
+        </select>
+    </div>
+
+>>>>>>> db9cd7b (ruutu)
     <!-- Form Control 2: Limit Dropdown -->
     <div class="uk-form-controls" style="margin-right: 10px;">
         <select name="limit" class="uk-input form-control custom-select">
@@ -70,6 +91,10 @@
             <option value="100">100</option>
         </select>
     </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> db9cd7b (ruutu)
     <!-- Search Input with custom width and spacing -->
     <input type="text" 
            placeholder="Search Users"
@@ -200,5 +225,34 @@ $cnt = 0; ?>
 </div>
 </main>
 <!-- Custom inline CSS for responsive design -->
+<<<<<<< HEAD
 
+=======
+<style>
+/* Style for buttons */
+.search-reset-btns {
+    margin-left: 600px; /* Large screens margin */
+}
+
+/* Responsive Design: Adjust margin-left on smaller screens */
+@media screen and (max-width: 1200px) {
+    .search-reset-btns {
+        margin-left: 300px; /* Medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-reset-btns {
+        margin-left: 100px; /* Small screens like tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-reset-btns {
+        margin-left: 0; /* Mobile screens: no margin */
+        text-align: center; /* Center buttons on mobile */
+    }
+}
+</style>
+>>>>>>> db9cd7b (ruutu)
 
