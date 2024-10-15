@@ -53,406 +53,446 @@ public function cancel_payment($id)
     
 }
 
-    public function confirmDeposit(Request $request)
-    {
-   try{
-     $validation =  Validator::make($request->all(), [
-        'Sum' => 'required|numeric|min:50',
-        'PSys' => 'required',
-     ]);
+//     public function confirmDeposit(Request $request)
+//     {
+//    try{
+//      $validation =  Validator::make($request->all(), [
+//         'Sum' => 'required|numeric|min:50',
+//         'PSys' => 'required',
+//      ]);
 
 
-    //  dd($request->all());
-    if($validation->fails()) {
-        Log::info($validation->getMessageBag()->first());
+//     //  dd($request->all());
+//     if($validation->fails()) {
+//         Log::info($validation->getMessageBag()->first());
 
-        return redirect()->route('user.invest')->withErrors($validation->getMessageBag()->first())->withInput();
-    }
-
-
+//         return redirect()->route('user.invest')->withErrors($validation->getMessageBag()->first())->withInput();
+//     }
 
 
-    $user=Auth::user();
-    $invest_check=Investment::where('user_id',$user->id)->where('status','Pending')->first();
 
-    if ($invest_check) 
-    {
-      return redirect()->route('user.DepositHistory')->withErrors(array('your deposit already pending please cancel it if you dont want to pay this transaction'));
-    }
+
+//     $user=Auth::user();
+//     $invest_check=Investment::where('user_id',$user->id)->where('status','Pending')->first();
+
+//     if ($invest_check) 
+//     {
+//       return redirect()->route('user.DepositHistory')->withErrors(array('your deposit already pending please cancel it if you dont want to pay this transaction'));
+//     }
    
 
-    $min_amount = $request->minimum_deposit;
-    $max_amount = $request->maximum_deposit;
-    $plan = $request->Plan;
-    $paymentMode = $request->PSys;
-    $amount = $request->Sum;
+//     $min_amount = $request->minimum_deposit;
+//     $max_amount = $request->maximum_deposit;
+//     $plan = $request->Plan;
+//     $paymentMode = $request->PSys;
+//     $amount = $request->Sum;
 
    
        
-    if ($amount<$min_amount || $amount>$max_amount) 
-    {
-      return Redirect::back()->withErrors(array('minimum deposit is $ '.$min_amount.' and maximum is $ '.$max_amount));
-    }
+//     if ($amount<$min_amount || $amount>$max_amount) 
+//     {
+//       return Redirect::back()->withErrors(array('minimum deposit is $ '.$min_amount.' and maximum is $ '.$max_amount));
+//     }
     
     
-        $plan ='BEGINNER';
-      if ($amount>=50 && $amount<=200) 
-       {
-        $plan ='BEGINNER';
-       }
-       elseif($amount>=400 && $amount<=800)
-       {
-        $plan ='STANDARD';
-       }
-       elseif($amount>=1000 && $amount<=2000)
-       {
-        $plan ='EXCLUSIVE';
-       }
-       elseif($amount>=2500 && $amount<=5000)
-       {
-        $plan ='ULTIMATE';
-       }
+//         $plan ='BEGINNER';
+//       if ($amount>=50 && $amount<=200) 
+//        {
+//         $plan ='BEGINNER';
+//        }
+//        elseif($amount>=400 && $amount<=800)
+//        {
+//         $plan ='STANDARD';
+//        }
+//        elseif($amount>=1000 && $amount<=2000)
+//        {
+//         $plan ='EXCLUSIVE';
+//        }
+//        elseif($amount>=2500 && $amount<=5000)
+//        {
+//         $plan ='ULTIMATE';
+//        }
 
-       elseif($amount>=5000 && $amount<=10000)
-       {
-        $plan ='PREMIUM';
-       }
+//        elseif($amount>=5000 && $amount<=10000)
+//        {
+//         $plan ='PREMIUM';
+//        }
 
-       elseif($amount>=5000)
-       {
-        $plan ='PREMIUM';
-       }
+//        elseif($amount>=5000)
+//        {
+//         $plan ='PREMIUM';
+//        }
        
-    $invest_check=Investment::where('user_id',$user->id)->where('plan',$plan)->where('status','!=','Decline')->orderBy('id','desc')->limit(1)->first();
+//     $invest_check=Investment::where('user_id',$user->id)->where('plan',$plan)->where('status','!=','Decline')->orderBy('id','desc')->limit(1)->first();
     
-    if($invest_check)
-    {
-          return Redirect::back()->withErrors(array('you have already chosen this plan choose another plan'));
-    }
+//     if($invest_check)
+//     {
+//           return Redirect::back()->withErrors(array('you have already chosen this plan choose another plan'));
+//     }
    
-    $amountTotal= $request->Sum;
+//     $amountTotal= $request->Sum;
   
   
-    if($paymentMode=="USDT.BEP20")
-    {
-       $paymentMode= "USDT_BSC"; 
-    }
-    else
-    {
-      $paymentMode= "USDT_TRX";    
-    }
+//     if($paymentMode=="USDT.BEP20")
+//     {
+//        $paymentMode= "USDT_BSC"; 
+//     }
+//     else
+//     {
+//       $paymentMode= "USDT_TRX";    
+//     }
     
-       $invoice = substr(str_shuffle("0123456789"), 0, 7);
-       $apiURL = 'https://plisio.net/api/v1/invoices/new';
-        $postInput = [
-        'source_currency' => 'USD',
-        'source_amount' => $amountTotal,
-        'order_number' => $invoice,
-        'currency' => $paymentMode,
-        'email' => $user->email,
-        'order_name' =>$user->username,
-        'callback_url' => 'https://etriton.co/dynamicupicallback?json=true',
-        'api_key' => '4iJxhwNsKCrdhtDn8Q9ctk_vdMvDs6JoXb7DeiRm95R45OeCUhFH8RcgRDOK-lIM',
-        ];
+//        $invoice = substr(str_shuffle("0123456789"), 0, 7);
+//        $apiURL = 'https://plisio.net/api/v1/invoices/new';
+//         $postInput = [
+//         'source_currency' => 'USD',
+//         'source_amount' => $amountTotal,
+//         'order_number' => $invoice,
+//         'currency' => $paymentMode,
+//         'email' => $user->email,
+//         'order_name' =>$user->username,
+//         'callback_url' => 'https://etriton.co/dynamicupicallback?json=true',
+//         'api_key' => '4iJxhwNsKCrdhtDn8Q9ctk_vdMvDs6JoXb7DeiRm95R45OeCUhFH8RcgRDOK-lIM',
+//         ];
   
-        $headers = [
-            'Content-Type' => 'application/json'
-        ];
+//         $headers = [
+//             'Content-Type' => 'application/json'
+//         ];
   
-        $response = Http::withHeaders($headers)->get($apiURL, $postInput);
+//         $response = Http::withHeaders($headers)->get($apiURL, $postInput);
   
-        $statusCode = $response->status();
-        $resultAarray = json_decode($response->getBody(), true);
+//         $statusCode = $response->status();
+//         $resultAarray = json_decode($response->getBody(), true);
         
 
-    if($resultAarray['status']=="success")
-    {
+//     if($resultAarray['status']=="success")
+//     {
 
-       $data = [
-            'plan' => $plan,
-            'orderId' => $invoice,
-            'transaction_id' =>$resultAarray['data']['txn_id'],
-            'user_id' => $user->id,
-            'user_id_fk' => $user->username,
-            'amount' => $amountTotal,
-            'payment_mode' =>$paymentMode,
-            'status' => 'Pending',
-            'sdate' => Date("Y-m-d"),
-            'active_from' => $user->username,
-        ];
-        $payment =  Investment::insert($data);
+//        $data = [
+//             'plan' => $plan,
+//             'orderId' => $invoice,
+//             'transaction_id' =>$resultAarray['data']['txn_id'],
+//             'user_id' => $user->id,
+//             'user_id_fk' => $user->username,
+//             'amount' => $amountTotal,
+//             'payment_mode' =>$paymentMode,
+//             'status' => 'Pending',
+//             'sdate' => Date("Y-m-d"),
+//             'active_from' => $user->username,
+//         ];
+//         $payment =  Investment::insert($data);
                 
             
     
-    $this->data['walletAddress'] =$resultAarray['data']['wallet_hash'];
-    $this->data['paymentMode'] =$paymentMode;
-    $this->data['transaction_id'] =$resultAarray['data']['txn_id'];
-    $this->data['qr_code'] =$resultAarray['data']['qr_code'];
-    $this->data['orderId'] =$invoice;
-    $this->data['amount'] =$amount;
-    $this->data['invoice_total_sum'] =$resultAarray['data']['invoice_total_sum'];
-    $this->data['page'] = 'user.invest.confirmDeposit';
-    return $this->dashboard_layout();
+//     $this->data['walletAddress'] =$resultAarray['data']['wallet_hash'];
+//     $this->data['paymentMode'] =$paymentMode;
+//     $this->data['transaction_id'] =$resultAarray['data']['txn_id'];
+//     $this->data['qr_code'] =$resultAarray['data']['qr_code'];
+//     $this->data['orderId'] =$invoice;
+//     $this->data['amount'] =$amount;
+//     $this->data['invoice_total_sum'] =$resultAarray['data']['invoice_total_sum'];
+//     $this->data['page'] = 'user.invest.confirmDeposit';
+//     return $this->dashboard_layout();
 
-  }
-  else
-  {
-    return Redirect::back()->withErrors(array('try again'));
-  }
+//   }
+//   else
+//   {
+//     return Redirect::back()->withErrors(array('try again'));
+//   }
 
-  }
-   catch(\Exception $e){
-    Log::info('error here');
-    Log::info($e->getMessage());
-    print_r($e->getMessage());
-    die("hi");
-    return  redirect()->route('user.invest')->withErrors('error', $e->getMessage())->withInput();
-      }
+//   }
+//    catch(\Exception $e){
+//     Log::info('error here');
+//     Log::info($e->getMessage());
+//     print_r($e->getMessage());
+//     die("hi");
+//     return  redirect()->route('user.invest')->withErrors('error', $e->getMessage())->withInput();
+//       }
 
- }
-
-
-
-    public function confirmDeposit_new(Request $request)
-    {
-   try{
-     $validation =  Validator::make($request->all(), [
-        'Sum' => 'required|numeric|min:2',
-        'PSys' => 'required',
-     ]);
-
-
-    //  dd($request->all());
-    if($validation->fails()) {
-        Log::info($validation->getMessageBag()->first());
-
-        return redirect()->route('user.invest')->withErrors($validation->getMessageBag()->first())->withInput();
-    }
+//  }
 
 
 
+//     public function confirmDeposit_new(Request $request)
+//     {
+//    try{
+//      $validation =  Validator::make($request->all(), [
+//         'Sum' => 'required|numeric|min:2',
+//         'PSys' => 'required',
+//      ]);
 
-    $user=Auth::user();
-    $invest_check=Investment::where('user_id',$user->id)->where('status','Pending')->first();
 
-    if ($invest_check) 
-    {
-      return Redirect::back()->withErrors(array('your deposit already pending'));
-    }
+//     //  dd($request->all());
+//     if($validation->fails()) {
+//         Log::info($validation->getMessageBag()->first());
+
+//         return redirect()->route('user.invest')->withErrors($validation->getMessageBag()->first())->withInput();
+//     }
+
+
+
+
+//     $user=Auth::user();
+//     $invest_check=Investment::where('user_id',$user->id)->where('status','Pending')->first();
+
+//     if ($invest_check) 
+//     {
+//       return Redirect::back()->withErrors(array('your deposit already pending'));
+//     }
    
 
-    $min_amount = $request->minimum_deposit;
-    $max_amount = $request->maximum_deposit;
-    $plan = $request->Plan;
-    $paymentMode = $request->PSys;
-    $amount = $request->Sum;
+//     $min_amount = $request->minimum_deposit;
+//     $max_amount = $request->maximum_deposit;
+//     $plan = $request->Plan;
+//     $paymentMode = $request->PSys;
+//     $amount = $request->Sum;
 
    
        
-    if ($amount<$min_amount || $amount>$max_amount) 
-    {
-      return Redirect::back()->withErrors(array('minimum deposit is $ '.$min_amount.' and maximum is $ '.$max_amount));
-    }
+//     if ($amount<$min_amount || $amount>$max_amount) 
+//     {
+//       return Redirect::back()->withErrors(array('minimum deposit is $ '.$min_amount.' and maximum is $ '.$max_amount));
+//     }
     
     
-        $plan ='BEGINNER';
-      if ($amount>=50 && $amount<=200) 
-       {
-        $plan ='BEGINNER';
-       }
-       elseif($amount>=400 && $amount<=800)
-       {
-        $plan ='STANDARD';
-       }
-       elseif($amount>=1000 && $amount<=2000)
-       {
-        $plan ='EXCLUSIVE';
-       }
-       elseif($amount>=2500 && $amount<=5000)
-       {
-        $plan ='ULTIMATE';
-       }
+//         $plan ='BEGINNER';
+//       if ($amount>=50 && $amount<=200) 
+//        {
+//         $plan ='BEGINNER';
+//        }
+//        elseif($amount>=400 && $amount<=800)
+//        {
+//         $plan ='STANDARD';
+//        }
+//        elseif($amount>=1000 && $amount<=2000)
+//        {
+//         $plan ='EXCLUSIVE';
+//        }
+//        elseif($amount>=2500 && $amount<=5000)
+//        {
+//         $plan ='ULTIMATE';
+//        }
 
-       elseif($amount>=5000 && $amount<=10000)
-       {
-        $plan ='PREMIUM';
-       }
+//        elseif($amount>=5000 && $amount<=10000)
+//        {
+//         $plan ='PREMIUM';
+//        }
 
-       elseif($amount>=5000)
-       {
-        $plan ='PREMIUM';
-       }
+//        elseif($amount>=5000)
+//        {
+//         $plan ='PREMIUM';
+//        }
        
-    $invest_check=Investment::where('user_id',$user->id)->where('plan',$plan)->where('status','!=','Decline')->orderBy('id','desc')->limit(1)->first();
+//     $invest_check=Investment::where('user_id',$user->id)->where('plan',$plan)->where('status','!=','Decline')->orderBy('id','desc')->limit(1)->first();
     
-    if($invest_check)
-    {
-          return Redirect::back()->withErrors(array('you have already chosen this plan choose another plan'));
-    }
+//     if($invest_check)
+//     {
+//           return Redirect::back()->withErrors(array('you have already chosen this plan choose another plan'));
+//     }
    
-    $amountTotal= $request->Sum;
+//     $amountTotal= $request->Sum;
   
   
-    if($paymentMode=="USDT.BEP20")
-    {
-       $paymentMode= "USDT_BSC"; 
-    }
-    else
-    {
-      $paymentMode= "USDT_TRX";    
-    }
+//     if($paymentMode=="USDT.BEP20")
+//     {
+//        $paymentMode= "USDT_BSC"; 
+//     }
+//     else
+//     {
+//       $paymentMode= "USDT_TRX";    
+//     }
     
-       $invoice = substr(str_shuffle("0123456789"), 0, 7);
-       $apiURL = 'https://plisio.net/api/v1/invoices/new';
-        $postInput = [
-        'source_currency' => 'USD',
-        'source_amount' => $amountTotal,
-        'order_number' => $invoice,
-        'currency' => $paymentMode,
-        'email' => $user->email,
-        'order_name' =>$user->username,
-        'callback_url' => 'https://etriton.co/dynamicupicallback?json=true',
-        'api_key' => '4iJxhwNsKCrdhtDn8Q9ctk_vdMvDs6JoXb7DeiRm95R45OeCUhFH8RcgRDOK-lIM',
-        ];
+//        $invoice = substr(str_shuffle("0123456789"), 0, 7);
+//        $apiURL = 'https://plisio.net/api/v1/invoices/new';
+//         $postInput = [
+//         'source_currency' => 'USD',
+//         'source_amount' => $amountTotal,
+//         'order_number' => $invoice,
+//         'currency' => $paymentMode,
+//         'email' => $user->email,
+//         'order_name' =>$user->username,
+//         'callback_url' => 'https://etriton.co/dynamicupicallback?json=true',
+//         'api_key' => '4iJxhwNsKCrdhtDn8Q9ctk_vdMvDs6JoXb7DeiRm95R45OeCUhFH8RcgRDOK-lIM',
+//         ];
   
-        $headers = [
-            'Content-Type' => 'application/json'
-        ];
+//         $headers = [
+//             'Content-Type' => 'application/json'
+//         ];
   
-        $response = Http::withHeaders($headers)->get($apiURL, $postInput);
+//         $response = Http::withHeaders($headers)->get($apiURL, $postInput);
   
-        $statusCode = $response->status();
-        $resultAarray = json_decode($response->getBody(), true);
+//         $statusCode = $response->status();
+//         $resultAarray = json_decode($response->getBody(), true);
         
 
-    if($resultAarray['status']=="success")
-    {
+//     if($resultAarray['status']=="success")
+//     {
 
-       $data = [
-            'plan' => $plan,
-            'orderId' => $invoice,
-            'transaction_id' =>$resultAarray['data']['txn_id'],
-            'user_id' => $user->id,
-            'user_id_fk' => $user->username,
-            'amount' => $amountTotal,
-            'payment_mode' =>$paymentMode,
-            'status' => 'Pending',
-            'sdate' => Date("Y-m-d"),
-            'active_from' => $user->username,
-        ];
-        $payment =  Investment::insert($data);
+//        $data = [
+//             'plan' => $plan,
+//             'orderId' => $invoice,
+//             'transaction_id' =>$resultAarray['data']['txn_id'],
+//             'user_id' => $user->id,
+//             'user_id_fk' => $user->username,
+//             'amount' => $amountTotal,
+//             'payment_mode' =>$paymentMode,
+//             'status' => 'Pending',
+//             'sdate' => Date("Y-m-d"),
+//             'active_from' => $user->username,
+//         ];
+//         $payment =  Investment::insert($data);
                 
             
     
-    $this->data['walletAddress'] =$resultAarray['data']['wallet_hash'];
-    $this->data['paymentMode'] =$paymentMode;
-    $this->data['transaction_id'] =$resultAarray['data']['txn_id'];
-    $this->data['qr_code'] =$resultAarray['data']['qr_code'];
-    $this->data['orderId'] =$invoice;
-    $this->data['amount'] =$amount;
-    $this->data['invoice_total_sum'] =$resultAarray['data']['invoice_total_sum'];
-    $this->data['page'] = 'user.invest.confirmDeposit';
-    return $this->dashboard_layout();
+//     $this->data['walletAddress'] =$resultAarray['data']['wallet_hash'];
+//     $this->data['paymentMode'] =$paymentMode;
+//     $this->data['transaction_id'] =$resultAarray['data']['txn_id'];
+//     $this->data['qr_code'] =$resultAarray['data']['qr_code'];
+//     $this->data['orderId'] =$invoice;
+//     $this->data['amount'] =$amount;
+//     $this->data['invoice_total_sum'] =$resultAarray['data']['invoice_total_sum'];
+//     $this->data['page'] = 'user.invest.confirmDeposit';
+//     return $this->dashboard_layout();
 
-  }
-  else
-  {
-    return Redirect::back()->withErrors(array('try again'));
-  }
+//   }
+//   else
+//   {
+//     return Redirect::back()->withErrors(array('try again'));
+//   }
 
-  }
-   catch(\Exception $e){
-    Log::info('error here');
-    Log::info($e->getMessage());
-    print_r($e->getMessage());
-    die("hi");
-    return  redirect()->route('user.invest')->withErrors('error', $e->getMessage())->withInput();
-      }
+//   }
+//    catch(\Exception $e){
+//     Log::info('error here');
+//     Log::info($e->getMessage());
+//     print_r($e->getMessage());
+//     die("hi");
+//     return  redirect()->route('user.invest')->withErrors('error', $e->getMessage())->withInput();
+//       }
 
- }
-
-
+//  }
 
 
 
-    public function fundActivation(Request $request)
+
+ public function fundActivation(Request $request)
     {
 
-      // dd("hiii");
-  try{
+try{
     $validation =  Validator::make($request->all(), [
-        'amount' => 'required|numeric|min:50',
-        'paymentMode' => 'required',
-        'transaction_id' => 'required|unique:investments,transaction_id',
+        'amount' => 'required|numeric|min:5',
+        'walletType' => 'required|in:1,2',
+        'user_id' => 'required|exists:users,username',
+        'transaction_password' => 'required',
+
     ]);
 
+
     if($validation->fails()) {
         Log::info($validation->getMessageBag()->first());
 
-        return redirect()->route('user.invest')->withErrors($validation->getMessageBag()->first())->withInput();
+        return Redirect::back()->withErrors($validation->getMessageBag()->first())->withInput();
     }
-
- 
-
        $user=Auth::user();
-       
-       $plan="1";
 
-       $user_detail=User::where('username',$user->username)->orderBy('id','desc')->limit(1)->first();
-       $invest_check=Investment::where('user_id',$user_detail->id)->where('status','!=','Decline')->orderBy('id','desc')->limit(1)->first();
-       $invoice = substr(str_shuffle("0123456789"), 0, 7);
-       $joining_amt =$request->amount;
-        $plan ='BEGINNER';
-       if ($joining_amt>=50 && $joining_amt<=200) 
-       {
-        $plan ='BEGINNER';
-       }
-       elseif($joining_amt>=400 && $joining_amt<=800)
-       {
-        $plan ='STANDARD';
-       }
-       elseif($joining_amt>=1000 && $joining_amt<=2000)
-       {
-        $plan ='EXCLUSIVE';
-       }
-       elseif($joining_amt>=2500 && $joining_amt<=5000)
-       {
-        $plan ='ULTIMATE';
-       }
+       $password= $request->transaction_password;
 
-       elseif($joining_amt>=5000 && $joining_amt<=10000)
+       if (Hash::check($password, $user->tpassword))
        {
-        $plan ='PREMIUM';
-       }
-
-       elseif($joining_amt>=5000)
-       {
-        $plan ='PREMIUM';
-       }
       
 
+      $user_detail=User::where('username',$request->user_id)->orderBy('id','desc')->limit(1)->first();
 
-      $last_package = ($invest_check)?$invest_check->amount:0;
+         date_default_timezone_set("Asia/Kolkata");   //India time (GMT+5:30)
+        $invest_check=Investment::where('user_id',$user_detail->id)->where('status','!=','Decline')->orderBy('id','desc')->limit(1)->first();
 
-        
+
+            $invoice = substr(str_shuffle("0123456789"), 0, 7);
+            $last_package=($invest_check)?$invest_check->amount:0;
+
+         $balance=0;
+          $walletType = $request->walletType;
+      
+          $balance=round(Auth::user()->FundBalance(),2);
+       
+          // if ($invest_check)
+          // {
+          //   return Redirect::back()->withErrors(array('User Id Already Activated'));
+          // }
+
+
+              // dd($balance); die;
+            
+              
+            if ($balance>=$request->amount)
+             {
+             
+              
            $data = [
-                'plan' => $plan,
-                'transaction_id' =>$request->transaction_id,
+                'orderId' => $invoice,
+                // 'plan' => $request->plan,
+                'transaction_id' =>md5(uniqid(rand(), true)),
                 'user_id' => $user_detail->id,
                 'user_id_fk' => $user_detail->username,
                 'amount' => $request->amount,
-                'payment_mode' =>$request->paymentMode,
-                'status' => 'Pending',
+                'payment_mode' => 'USDT',
+                'status' => 'Active',
                 'sdate' => Date("Y-m-d"),
                 'active_from' => $user->username,
+                'walletType' =>$request->walletType,
+                'created_at' =>Date('Y-m-d H:i:s'),
+
             ];
-            $payment =  Investment::insert($data);
-            
+            $payment = Investment::insert($data);
+            if ($user_detail->active_status=="Pending")
+            {
+             $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
+              User::where('id',$user_detail->id)->update($user_update);
+            }
+            else
+            {
+              
+              $user_update=array('active_status'=>'Active','package'=>$request->amount);
+              User::where('id',$user_detail->id)->update($user_update);
+            }
+ 
+            // add_level_income($user_detail->id,$request->amount);
 
-        $notify[] = ['success','Deposit request submitted successfully'];
-        return redirect()->route('user.invest')->withNotify($notify);
+            // // add pickup bonus
+            //   sendEmail($user_detail->email, 'Invoice at '.siteName(), [
+            //     'name' => $user_detail->name,
+            //     'address' => $user_detail->address,
+            //     'amount' =>$request->amount,
+            //     'plan' =>$request->plan,
+            //     'orderId' =>$invoice,
+            //     'invoiceDate' =>Date('m/d/Y h:i:s a'),
+            //     'viewpage' => 'invoice',
+            // ]);
+            // SendSMSActivation($user_detail->name,$user_detail->phone,$user_detail->username,$request->plan,$request->amount);
+          
 
-   
+
+         
+
+
+      $notify[] = ['success', $user_detail->username.' User Activation  Submited successfully'];
+      return redirect()->back()->withNotify($notify);
+
+      }
+      else
+      {
+         return Redirect::back()->withErrors(array('Insufficient Balance in Wallet'));
+      }
+
+  
+      
+
+      
+    }
+    else
+    {
+      return Redirect::back()->withErrors(array('Invalid Transaction Password'));
+    }
+
 
   }
    catch(\Exception $e){
@@ -463,7 +503,11 @@ public function cancel_payment($id)
     return  redirect()->route('user.invest')->withErrors('error', $e->getMessage())->withInput();
       }
 
- }
+
+
+        }
+
+
 
 
 

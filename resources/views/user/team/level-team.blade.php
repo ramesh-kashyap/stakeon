@@ -1,100 +1,198 @@
-<div class="contentLk">
+<style>
+    /* Custom Select Dropdown */
+.custom-select {
+    max-width: 150px;  /* Adjust as per design */
+}
+
+/* Custom Search Input */
+.custom-search {
+    max-width: 250px;  /* Adjust as per design */
+    width: 100%;       /* Responsive */
+    margin-left: 10px; /* Gap between select and input */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 400px) {
+    .custom-search {
+        max-width: 100%; /* Full width on small screens */
+    }
+    .custom-select {
+        max-width: 100%; /* Full width on small screens */
+    }
+}
 
 
+    </style>
+<main id="as-main-settings" class="uk-section-xsmall">
+    <div class="uk-container uk-container-expand">
 
-    <h2 class="titleLk">Total Team</h2>
-    <div class="historyPage">
-        <form id="filter-form" class="filterBl" action="{{ route('user.referral-team') }}" method="GET">
+        <figure id="as-transactions-list" class="uk-width-expand@xl uk-first-column">
+            <div class="uk-card uk-card-default uk-card-body">
+                <header class="uk-heading uk-text-center">
+                    <h1 class="uk-heading-line">Level Team</h1>
+                </header>
+
+
            
-            <span class="iconBl icon-filtration"></span>
-            <div class="col">
-                <div class="inputLine">
-                    <label for="">date from:</label>
-                    <input type="text" name="from" id="from" class="setDate" value="">
-                    <span class="iconArrow"></span>
-                </div>
-            </div>
-            <div class="col">
-                <div class="inputLine">
-                    <label for="">to:</label>
-                    <input type="text" name="to" id="to" class="setDate" value="">
-                    <span class="iconArrow"></span>
-                </div>
-            </div>
-            <div class="col">
-                <div class="inputLine">
-                    <?php 
-                    $segments=request()->segments(); 
-                    $page= end($segments);?>
 
-                    <label for="">type:</label>
-                    <select name="type" class="selectricBl" onchange="location = this.value;">
-                        <option value="">--SELECT--</option>
-                        <option <?php ($page=="roi-bonus")?'selected':'';?> value="{{route('user.referral-team')}}">Referral Team</option>
+<form  action="{{ route('user.level-team') }}" method="GET" name="opts">
+
+<!-- Form Grid with Flexbox for better alignment -->
+<div class="uk-grid-medium uk-flex-middle uk-flex-start uk-grid" uk-grid="">
+
+    <!-- Form Control 1: Select Dropdown -->
+    <div class="uk-form-controls"> 
+        <select name="type" class="uk-input form-control" onchange="window.location.href = this.value;">
+            <option value="">Select  History</option>
+            <option value="{{ route('user.level-team') }}">Level Team</option>
+            <option value="{{ route('user.referral-team') }}">Direct Team</option>
+        </select>
+    </div>
+
+    <!-- Form Control 2: Limit Dropdown -->
+    <div class="uk-form-controls" style="margin-right: 10px;">
+        <select name="limit" class="uk-input form-control custom-select">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <!-- Search Input with custom width and spacing -->
+    <input type="text" 
+           placeholder="Search Users"
+           name="search" 
+           class="uk-input uk-text-emphasis custom-search" 
+           value="{{ @$search }}">
+
+    <!-- Buttons aligned with margin-left for larger screens -->
+    <div class="uk-form-controls uk-width-auto uk-text-left search-reset-btns">
+        <input type="submit" 
+               name="submit" 
+               class="uk-button uk-button-primary" 
+               value="Search" />
+
+        <a href="{{ route('user.level-team') }}" 
+           name="reset" 
+           class="uk-button uk-button-default" 
+           value="Reset">Reset</a>
+    </div>
+
+</div>
+</form>
                        
-                        <option <?php ($page=="level-income")?'selected':'';?> value="{{route('user.level-team')}}" >Total Team</option>
+                        <div class="uk-overflow-auto uk-margin-bottom">
+                                                            <div>
+                                    <div class="uk-card uk-card-default uk-margin-top">
+                                        <div class="as-card-no-ticket">
+										<div class="table-responsive">
+                                           <table class="table">
+											   <thead>
+												  <tr>
+													 <th class="table__th">Name</th>
+													 <th class="table__th">User ID</th>
+													 <th class="table__th">Email</th>
+                                                     <th class="table__th">Joining Date</th>
+													 <th class="table__th">Level</th>
+                                                     <th class="table__th">Sponsor ID</th>
+                                                     <th class="table__th">Status</th>
 
-                      
-                       
-                    </select>
-                </div>
-            </div>
-            
-            <button type="submit" class="btn btnBlue">Filter</button>
-        </form>
-        <div class="tablePartners">
-            <div class="thead">
-                <span class="tit">Name </span>
-                <span class="tit">User ID</span>
-                <span class="tit">Email</span>
+												  </tr>
+											   </thead>
+											   <tbody>
+                                               <?php if(is_array($direct_team) || is_object($direct_team)){ ?>
 
-                <span class="tit">Joining Date</span>
-                <span class="tit">Level</span>
-                <span class="tit">Sponsor ID</span>
-          
-                <span class="tit">Status</span>
-            </div>
-            <?php if(is_array($direct_team) || is_object($direct_team)){ ?>
+<?php $cnt = $direct_team->perPage() * ($direct_team->currentPage() - 1); ?>
+@foreach ($direct_team as $value)
+<tr>
+                                    <td>
+                                        <div >{{ $value->name }}</div>
+                                    </td>
 
-                <?php $cnt = $direct_team->perPage() * ($direct_team->currentPage() - 1); ?>
-                @foreach ($direct_team as $value)
-            <div id="el830">
-                <div class="slideBlock branch1">
-                    <div class="slideTitle" onclick="return clickRef(2, 1074);" id="el1074" data-level="1">
-                        <div class="line">
-                         
-                            <span class="txt"><span class="mobileTiTPart">Name</span><a
-                                    href="#" class="txt">{{ $value->name }}</a></span>
-                            <span class="txt"> <span class="mobileTiTPart">User ID</span>{{ $value->username }}</span>
-                            <span class="txt"> <span class="mobileTiTPart">Email ID</span>{{ $value->email }}</span>
-                            <span class="txt"> <span class="mobileTiTPart">Joining Date</span> {{ date('D, d M Y', strtotime($value->created_at)) }}</span>
-                            <span class="txt"> <span class="mobileTiTPart">Level </span> {{$value->level - Auth::user()->level}}</span>
-                            <span class="txt"> <span class="mobileTiTPart">Sponsor ID </span> {{$value->sponsor_detail->username}}</span>
-      
-                            <span class="txt"> <span class="mobileTiTPart">Status</span> {{ $value->active_status }}</span>
-                        </div>
+                                    <td>
+                                        <div > {{ $value->username }}</div>
+                                    </td>
+
+                                    
+
+    
+                                    <td>
+                                        <div >{{ $value->email }}</div>
+                                    </td>
+
+                                    <td>
+                                        <div >{{ date('D, d M Y', strtotime($value->created_at)) }}</div>
+                                    </td>
+
+                                    <td>
+                                        <div >{{$value->level - Auth::user()->level}}</div>
+                                    </td>
+                                    <td>
+                                        <div >{{$value->sponsor_detail->username}}</div>
+                                    </td>
+                                    <td>
+                                        <div >{{ $value->active_status }}</div>
+                                    </td>
+
+
+
+    
+                                </tr>
+                            @endforeach
+    
+                            <?php }?>
+
+											     
+											   </tbody>
+											</table>
+                                            <br>
+                                            {{ $direct_team->withQueryString()->links() }}
+
+											</div>
+											
+                                        </div>
+                                    </div>
+                                </div>
+                                                    </div>
+                        
+                        
                     </div>
-                    <div class="slideContent"></div>
-                </div>
-            </div>
 
-            @endforeach
+                </figure>
 
-            <?php }?>
-
-            
-
-        </div>
-        
-    </div>
-    <div class="pagination">
-<br>
-        {{ $direct_team->withQueryString()->links() }}
-    </div>
-
-</div>
 
 
 
 
 </div>
+</main>
+
+
+<!-- Custom inline CSS for responsive design -->
+<style>
+/* Style for buttons */
+.search-reset-btns {
+    margin-left: 600px; /* Large screens margin */
+}
+
+/* Responsive Design: Adjust margin-left on smaller screens */
+@media screen and (max-width: 1200px) {
+    .search-reset-btns {
+        margin-left: 300px; /* Medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-reset-btns {
+        margin-left: 100px; /* Small screens like tablets */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .search-reset-btns {
+        margin-left: 0; /* Mobile screens: no margin */
+        text-align: center; /* Center buttons on mobile */
+    }
+}
+</style>
