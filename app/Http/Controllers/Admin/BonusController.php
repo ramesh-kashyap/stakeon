@@ -9,14 +9,14 @@ use App\Models\User_trade;
 
 class BonusController extends Controller
 {
-    public function roi_bonus(Request $request)
+    public function pool_bonus(Request $request)
     {
 
 
            $limit = $request->limit ? $request->limit :  paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-             $notes = Income::where('remarks','Roi Income')->orderBy('id', 'DESC');
+             $notes = Income::where('remarks','Pool Income')->orderBy('id', 'DESC');
 
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
@@ -35,7 +35,7 @@ class BonusController extends Controller
 
                 $this->data['direct_incomes'] =  $notes;
                 $this->data['search'] = $search;
-                $this->data['page'] = 'admin.bonus.roi-bonus';
+                $this->data['page'] = 'admin.bonus.pool-bonus';
                 return $this->admin_dashboard();
 
 
@@ -107,6 +107,39 @@ class BonusController extends Controller
 
 
 
+
+
+    
+    public function leadership_bonus(Request $request)
+    {
+
+
+           $limit = $request->limit ? $request->limit :  paginationLimit();
+            $status = $request->status ? $request->status : null;
+            $search = $request->search ? $request->search : null;
+            $notes = Income::where('remarks','Leadership Income')->orderBy('id', 'DESC');
+           if($search <> null && $request->reset!="Reset"){
+            $notes = $notes->where(function($q) use($search){
+              $q->Where('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('ttime', 'LIKE', '%' . $search . '%')
+              ->orWhere('user_id_fk', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+              ->orWhere('amt', 'LIKE', '%' . $search . '%')
+              ->orWhere('comm', 'LIKE', '%' . $search . '%');
+            });
+
+      }
+
+            $notes = $notes->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+                $this->data['level_incomes'] =  $notes;
+                $this->data['search'] = $search;
+                $this->data['page'] = 'admin.bonus.leadership-income';
+                return $this->admin_dashboard();
+    }
     public function booster_bonus(Request $request)
     {
 

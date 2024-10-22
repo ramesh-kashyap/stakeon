@@ -28,13 +28,10 @@
         <figure id="as-transactions-list" class="uk-width-expand@xl uk-first-column">
             <div class="uk-card uk-card-default uk-card-body">
                 <header class="uk-heading uk-text-center">
-                    <h1 class="uk-heading-line">Withdrawal History</h1>
+                    <h1 class="uk-heading-line">Level Income</h1>
                 </header>
-     
-
-              
-<form  action="{{ route('user.Withdraw-History') }}" method="GET" name="opts">
-
+                <form action="{{ route('user.package-auto-income') }}" method="GET" name="opts">
+@csrf
 <!-- Form Grid with Flexbox for better alignment -->
 <div class="uk-grid-medium uk-flex-middle uk-flex-start uk-grid" uk-grid="">
 
@@ -88,7 +85,7 @@
                class="uk-button uk-button-primary" 
                value="Search" />
 
-        <a href="{{ route('user.Withdraw-History') }}" 
+        <a href="{{ route('user.package-auto-income') }}" 
            name="reset" 
            class="uk-button uk-button-default" 
            value="Reset">Reset</a>
@@ -96,6 +93,7 @@
 
 </div>
 </form>
+
 
                        
                         <div class="uk-overflow-auto uk-margin-bottom">
@@ -106,44 +104,48 @@
                                            <table class="table">
 											   <thead>
 												  <tr>
-													 <th class="table__th">Date</th>
-													 <th class="table__th">Amount</th>
-													 <th class="table__th">Transaction Id</th>
-                                                     <th class="table__th">Status</th>
-													 <th class="table__th">Payment System</th>
+													 <th class="table__th">SR</th>
+													 <th class="table__th">Package</th>
+													 <th class="table__th"> Commission</th>
+                                                     <th class="table__th">Date</th>
+													 <th class="table__th">From ID</th>
+                                                     <th class="table__th"> Description</th>
+
 												  </tr>
 											   </thead>
 											   <tbody>
-                                               <?php if(is_array($withdraw_report) || is_object($withdraw_report)){ ?>
+                                               <?php if(is_array($level_income) || is_object($level_income)){ ?>
 
-<?php
-date_default_timezone_set('UTC');
-$cnt = 0; ?>
-@foreach($withdraw_report as $value)
-
+<?php $cnt = $level_income->perPage() * ($level_income->currentPage() - 1); ?>
+@foreach ($level_income as $value)
 <tr>
                                     <td>
-                                        <div >{{date("D, d M Y H:i:s ", strtotime($value->created_at))}}</div>
+                                        <div ><?= $cnt += 1 ?></div>
                                     </td>
 
                                     <td>
-                                        <div > {{ $value->amount }} </div>
+                                        <div >{{currency()}} {{ $value->amt }}</div>
                                     </td>
 
                                     
 
     
                                     <td>
-                                        <div >{{ $value->txn_id }}</div>
+                                        <div >{{currency()}} {{ $value->comm }}</div>
                                     </td>
 
-                                    <td>
-                                        <div ><span
-                                            class="badge badge-{{ ($value->status=='Approved')?'success':'danger' }}">{{ $value->status }}</span></div>
-                                    </td>
+                                   
 
                                     <td>
-                                        <div >{{ $value->payment_mode }}</div>
+                                        <div >{{ date('D, d M Y', strtotime($value->created_at)) }}</div>
+                                    </td>
+                                    
+                                    <td>
+                                        <div >{{ $value->rname }}</div>
+                                    </td>
+                                    
+                                    <td>
+                                        <div >{{ $value->remarks }}</div>
                                     </td>
 
     
@@ -156,7 +158,7 @@ $cnt = 0; ?>
 											   </tbody>
 											</table>
                                             <br>
-                                            {{ $withdraw_report->withQueryString()->links() }}
+                                            {{ $level_income->withQueryString()->links() }}
 
 											</div>
 											
@@ -176,6 +178,5 @@ $cnt = 0; ?>
 
 </div>
 </main>
-
 <!-- Custom inline CSS for responsive design -->
 

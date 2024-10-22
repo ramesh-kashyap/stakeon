@@ -270,9 +270,9 @@
                                 class="log-form sb5728db9063b5d08f0a" autocomplete="off" >
 								{{ csrf_field() }}
 
-								@php
-        $sponsor = @$_GET['ref'];
-    @endphp
+                                @php
+    $sponsor = @$_GET['ref'];
+@endphp
                                 <div class="log-form__inner">
                                     <div class="s80ad67c7161f67c1dff">
                                         <div class="s39fa6b98e5279296e3a">
@@ -290,21 +290,21 @@
                                     <div class="s2528b43b7267613ead4">
                                         <div class="s8ee82f6a5e1ab59b645">
                                             <div class="s4c32c27a70b9038f904">
-                                                <div class="s0037c69eb4b84fb6277">
-                                                    <label for=""
-                                                        class="s946795edf26ee7709c9 scdf91f4cb2842256173 log-form__form-label">
-                                                        Username
-                                                    </label>
-                                                    <div
-                                                        class="s64ff7ecb96725b6565e s4bdbd13174f2fcb29c4 log-form__form-group">
-                                                        <span class="s6f66d945fe4083856ba">
-                                                            <i class="seb0b4ac79a5f85af139"></i>
-                                                        </span>
-                                                        <input type="text" id="signup_form_login"
-                                                            name="sponsor" placeholder="" value="{{ $sponsor ? $sponsor : '' }}" data-response="sponsor_res"required="required"
-                                                            class="s3ed15a1c01ac7e45c1d log-form__form-control form-control" />
-                                                    </div>
-                                                </div>
+                                            <div class="s0037c69eb4b84fb6277"> 
+    <label for=""
+        class="s946795edf26ee7709c9 scdf91f4cb2842256173 log-form__form-label">
+        Username
+    </label>
+    <div class="s64ff7ecb96725b6565e s4bdbd13174f2fcb29c4 log-form__form-group">
+        <span class="s6f66d945fe4083856ba">
+            <i class="seb0b4ac79a5f85af139"></i>
+        </span>
+        <input type="text" id="referral_id"
+            name="sponsor" value="" data-response="sponsor_res"
+            class="s3ed15a1c01ac7e45c1d log-form__form-control form-control" />
+        <span id="sponsor_res"></span>
+    </div> 
+</div>
                                             </div>
                                             <div class="s4c32c27a70b9038f904">
                                                 <div class="s0037c69eb4b84fb6277">
@@ -447,6 +447,44 @@
             <i class="sd34cbdfee3a6bf6a426 scroll-top-btn__sprite"></i>
         </a>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+$(document).ready(function() {
+    $('#referral_id').on('input', function() {
+        var sponsor = $(this).val();
+        var res_area = $(this).attr('data-response');
+
+        // Check if the input field is not empty
+        if (sponsor.length > 0) {
+            $.ajax({
+                type: "POST",
+                url: "{{ route('getUserName') }}", // Your backend route
+                data: {
+                    "user_id": sponsor,
+                    "_token": "{{ csrf_token() }}"
+                },
+                success: function(response) {
+                    if (response.status === 'success') {
+                        // Show the user's name
+                        $('#' + res_area).html(response.name).css('color', 'green').css('font-weight', '800');
+                    } else {
+                        // If user does not exist
+                        $('#' + res_area).html("User not found!").css('color', 'red');
+                    }
+                },
+                error: function() {
+                    $('#' + res_area).html("Error fetching user").css('color', 'red');
+                }
+            });
+        } else {
+            // Clear the response area if the input field is empty
+            $('#' + res_area).html('');
+        }
+    });
+});
+</script>
+
     <link rel="stylesheet" href="{{asset('')}}assets//css/style-f5732a00c247.css" />
     <script src="{{asset('')}}assets//js/index-f5732a00c247.js"></script>
     <script src="{{asset('')}}assets//js/ajax-f5732a00c247.js"></script>

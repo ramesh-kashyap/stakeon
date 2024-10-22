@@ -178,7 +178,7 @@ class Bonus extends Controller
           $limit = $request->limit ? $request->limit : paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-            $notes = Income::where('user_id',$user->id)->where('remarks','Leadership Bonus')->orderBy('id', 'DESC');
+            $notes = Income::where('user_id',$user->id)->where('remarks',' Bonus')->orderBy('id', 'DESC');
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
               $q->Where('rname', 'LIKE', '%' . $search . '%')
@@ -202,6 +202,73 @@ class Bonus extends Controller
     }
 
 
+    public function pool_income(Request $request)
+    {
+           $user=Auth::user();
+
+
+          $limit = $request->limit ? $request->limit : paginationLimit();
+            $status = $request->status ? $request->status : null;
+            $search = $request->search ? $request->search : null;
+            $notes = Income::where('user_id',$user->id)->where('remarks','Pool Bonus')->orderBy('id', 'DESC');
+
+           if($search <> null && $request->reset!="Reset"){
+            $notes = $notes->where(function($q) use($search){
+              $q->Where('ttime', 'LIKE', '%' . $search . '%')
+              ->orWhere('amt', 'LIKE', '%' . $search . '%')
+              ->orWhere('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+              ->orWhere('comm', 'LIKE', '%' . $search . '%');
+              
+            });
+
+      }
+
+            $notes = $notes->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+    $this->data['level_income'] =$notes;
+    $this->data['search'] =$search;
+    $this->data['page'] = 'user.bonus.pool-income';
+    return $this->dashboard_layout();
+
+    }
+
+    public function package_auto_income(Request $request)
+    {
+           $user=Auth::user();
+
+
+          $limit = $request->limit ? $request->limit : paginationLimit();
+            $status = $request->status ? $request->status : null;
+            $search = $request->search ? $request->search : null;
+            $notes = Income::where('user_id',$user->id)->where('remarks','Package Auto Upgrade Bonus')->orderBy('id', 'DESC');
+
+           if($search <> null && $request->reset!="Reset"){
+            $notes = $notes->where(function($q) use($search){
+              $q->Where('ttime', 'LIKE', '%' . $search . '%')
+              ->orWhere('amt', 'LIKE', '%' . $search . '%')
+              ->orWhere('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+
+              ->orWhere('comm', 'LIKE', '%' . $search . '%');
+            });
+
+      }
+
+            $notes = $notes->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+    $this->data['level_income'] =$notes;
+    $this->data['search'] =$search;
+    $this->data['page'] = 'user.bonus.package-auto-upgrade-income';
+    return $this->dashboard_layout();
+
+    }
 
     public function reward_income(Request $request)
     {
@@ -211,13 +278,15 @@ class Bonus extends Controller
           $limit = $request->limit ? $request->limit : paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-            $notes = Income::where('user_id',$user->id)->where('remarks','Royalty Bonus')->orderBy('id', 'DESC');
+            $notes = Income::where('user_id',$user->id)->where('remarks','Reward Bonus')->orderBy('id', 'DESC');
 
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
               $q->Where('ttime', 'LIKE', '%' . $search . '%')
               ->orWhere('amt', 'LIKE', '%' . $search . '%')
               ->orWhere('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+
               ->orWhere('comm', 'LIKE', '%' . $search . '%');
             });
 
@@ -234,10 +303,9 @@ class Bonus extends Controller
     return $this->dashboard_layout();
 
     }
-
+    
  
-
-    public function roi_income(Request $request)
+    public function leadership_income(Request $request)
     {
            $user=Auth::user();
 
@@ -245,12 +313,14 @@ class Bonus extends Controller
           $limit = $request->limit ? $request->limit :  paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-            $notes = Income::where('user_id',$user->id)->where('remarks','Roi Income')->orderBy('id', 'DESC');
+            $notes = Income::where('user_id',$user->id)->where('remarks','Leadership Income')->orderBy('id', 'DESC');
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
               $q->Where('ttime', 'LIKE', '%' . $search . '%')
               ->orWhere('amt', 'LIKE', '%' . $search . '%')
               ->orWhere('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+
               ->orWhere('comm', 'LIKE', '%' . $search . '%');
 
             });
@@ -264,7 +334,110 @@ class Bonus extends Controller
 
     $this->data['level_income'] =$notes;
     $this->data['search'] =$search;
-    $this->data['page'] = 'user.bonus.roi-bonus';
+    $this->data['page'] = 'user.bonus.leadership-income';
+    return $this->dashboard_layout();
+
+    }
+
+
+    public function royalty_income(Request $request)
+    {
+           $user=Auth::user();
+
+
+          $limit = $request->limit ? $request->limit :  paginationLimit();
+            $status = $request->status ? $request->status : null;
+            $search = $request->search ? $request->search : null;
+            $notes = Income::where('user_id',$user->id)->where('remarks','Royalty Income')->orderBy('id', 'DESC');
+           if($search <> null && $request->reset!="Reset"){
+            $notes = $notes->where(function($q) use($search){
+              $q->Where('ttime', 'LIKE', '%' . $search . '%')
+              ->orWhere('amt', 'LIKE', '%' . $search . '%')
+              ->orWhere('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+
+              ->orWhere('comm', 'LIKE', '%' . $search . '%');
+
+            });
+
+      }
+
+            $notes = $notes->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+    $this->data['level_income'] =$notes;
+    $this->data['search'] =$search;
+    $this->data['page'] = 'user.bonus.royalty-bonus';
+    return $this->dashboard_layout();
+
+    }
+
+
+    public function re_birth_bonus(Request $request)
+    {
+           $user=Auth::user();
+
+
+          $limit = $request->limit ? $request->limit :  paginationLimit();
+            $status = $request->status ? $request->status : null;
+            $search = $request->search ? $request->search : null;
+            $notes = Income::where('user_id',$user->id)->where('remarks','Re Birth Income')->orderBy('id', 'DESC');
+           if($search <> null && $request->reset!="Reset"){
+            $notes = $notes->where(function($q) use($search){
+              $q->Where('ttime', 'LIKE', '%' . $search . '%')
+              ->orWhere('amt', 'LIKE', '%' . $search . '%')
+              ->orWhere('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+
+              ->orWhere('comm', 'LIKE', '%' . $search . '%');
+
+            });
+
+      }
+
+            $notes = $notes->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+    $this->data['level_income'] =$notes;
+    $this->data['search'] =$search;
+    $this->data['page'] = 'user.bonus.re-birth-bonus';
+    return $this->dashboard_layout();
+
+    }
+    public function auto_upgrade_bonus(Request $request)
+    {
+           $user=Auth::user();
+
+
+          $limit = $request->limit ? $request->limit :  paginationLimit();
+            $status = $request->status ? $request->status : null;
+            $search = $request->search ? $request->search : null;
+            $notes = Income::where('user_id',$user->id)->where('remarks','Auto Upgrade Income')->orderBy('id', 'DESC');
+           if($search <> null && $request->reset!="Reset"){
+            $notes = $notes->where(function($q) use($search){
+              $q->Where('ttime', 'LIKE', '%' . $search . '%')
+              ->orWhere('amt', 'LIKE', '%' . $search . '%')
+              ->orWhere('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+
+              ->orWhere('comm', 'LIKE', '%' . $search . '%');
+
+            });
+
+      }
+
+            $notes = $notes->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+    $this->data['level_income'] =$notes;
+    $this->data['search'] =$search;
+    $this->data['page'] = 'user.bonus.auto-upgrade-income';
     return $this->dashboard_layout();
 
     }
