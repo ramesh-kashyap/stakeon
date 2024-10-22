@@ -1,5 +1,9 @@
 <svg width="22" height="51" viewBox="0 0 22 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+<<<<<<< HEAD
 <line y1="25.5" x2="22" y2="25.5" stroke="#525B73"/>
+=======
+<line y1="25.5" x2="22" y2="25.5" stroke="#594B3E"/>
+>>>>>>> 4fe13f9 (done)
 <line y1="30.5" x2="6" y2="30.5" stroke="#E7E9EB"/>
 <line y1="5.5" x2="6" y2="5.5" stroke="#E7E9EB"/>
 <line y1="40.5" x2="6" y2="40.5" stroke="#E7E9EB"/>
