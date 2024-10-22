@@ -35,6 +35,8 @@
                             <button class="uk-button uk-button-primary uk-button-large" type="submit">Save Changes</button>
                         </form>
                     </div>
+                    @include('partials.notify')
+
                 </div>
             </section>
 

@@ -380,7 +380,6 @@ public function cancel_payment($id)
 try{
     $validation =  Validator::make($request->all(), [
         'amount' => 'required|numeric|min:5',
-        'walletType' => 'required|in:1,2',
         'user_id' => 'required|exists:users,username',
         'transaction_password' => 'required',
 
@@ -410,7 +409,7 @@ try{
             $last_package=($invest_check)?$invest_check->amount:0;
 
          $balance=0;
-          $walletType = $request->walletType;
+          // $walletType = $request->walletType;
       
           $balance=round(Auth::user()->FundBalance(),2);
        
@@ -438,11 +437,12 @@ try{
                 'status' => 'Active',
                 'sdate' => Date("Y-m-d"),
                 'active_from' => $user->username,
-                'walletType' =>$request->walletType,
+                'walletType' =>1,
                 'created_at' =>Date('Y-m-d H:i:s'),
 
             ];
             $payment = Investment::insert($data);
+
             if ($user_detail->active_status=="Pending")
             {
              $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
@@ -454,8 +454,10 @@ try{
               $user_update=array('active_status'=>'Active','package'=>$request->amount);
               User::where('id',$user_detail->id)->update($user_update);
             }
- 
-            // add_level_income($user_detail->id,$request->amount);
+            
+            add_level_income($user_detail->id,$request->amount);
+            add_direct_income($user_detail->id,$request->amount);
+
 
             // // add pickup bonus
             //   sendEmail($user_detail->email, 'Invoice at '.siteName(), [

@@ -51,19 +51,11 @@
 				</a>
 			</li>
 
-            <li class="uk-nav-divider"></li>
         </ul>
 
         <ul class="uk-nav uk-nav-default">
             
-                            <li>
-                    <a href="https://t.me/stakeonpro" target="_blank">
-                        <img src="{{asset('')}}massets/img/another/telegram-yellow-icon.svg" width="29" height="29" loading="lazy" alt="" uk-svg>
-                        Telegram
-                    </a>
-                </li>
-            
-            <li class="uk-nav-divider"></li>
+                     
 
             <li>
                 <a href="?a=logout">

@@ -200,6 +200,8 @@ table#example {
 
                         </ul>
                     </li>
+                   <!-- team dropdown -->
+                   <li class=""><a class="has-arrow team-icon"  href="javascript:void()" aria-expanded="false">
                    
                 <!--<li><a href="{{route('admin.add-address')}}" class="ai-icon" aria-expanded="false">-->
                 <!--               <i class="flaticon-022-copy"></i>-->
@@ -274,13 +276,15 @@ table#example {
 							<span class="nav-text">Profit Summary</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('admin.roi-bonus') }}">Trading  Income</a></li>
+                            <li><a href="{{ route('admin.roi-bonus') }}">Roi  Income</a></li>
                           
-                            <li><a href="{{ route('admin.level-bonus') }}">Leadership Income</a></li>
+                            <li><a href="{{ route('admin.level-bonus') }}">Level Income</a></li>
                             <!--<li><a href="{{route('admin.reward-bonus')}}">Royalty Bonus</a></li>-->
                             <!--<li><a href="{{route('admin.booster-bonus')}}">Daily Incentive</a></li>-->
                             <li><a href="{{route('admin.club-bonus')}}">Direct  Income</a></li>
                             <!--<li><a href="{{route('admin.activities-bonus')}}">Activities Bonus</a></li>-->
+                            <li><a href="{{route('admin.royalty')}}">Royalty</a></li>
+
 
                         </ul>
                     </li>

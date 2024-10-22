@@ -10,7 +10,7 @@ class BuyFund extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id_fk', 'user_id','amount','bdate','status','txn_no','type','slip',	
+        'user_id_fk', 'user_id','amount','bdate','status','txn_no','type','slip','orderId',	
     ];
 
 

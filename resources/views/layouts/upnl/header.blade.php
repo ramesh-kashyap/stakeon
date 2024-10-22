@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>StakeOn</title>
+    <title>{{siteName()}}</title>
 	
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,11 @@
      <!-- User info (Image and Username) -->
      <div class="profile-container">
         <img src="{{asset('')}}massets\img\another\team-4.jpg" width="50" height="50" class="uk-border-circle" alt="User Image">
-        <div class="username">{{ Auth::user()->username }}</div>
-    </div>
+        <div style=" margin-top:3px;"class="username">{{ Auth::user()->username }}</div>
+        <div style=" margin-top:3px;" class="username">{{ Auth::user()->name }}</div>
+
+        
+       </div>
     <ul class="uk-iconnav uk-iconnav-vertical uk-animation-fade uk-animation-fast">
         
         <li class="">
@@ -53,7 +56,7 @@
         <li class="">
             <a href="{{ route('user.AddFund') }}">
                 <span class="uk-background-icon">
-                    <img src="{{asset('')}}massets/img/icon/account/withdrawal.svg" width="28" height="28" loading="lazy" alt="" uk-svg>
+                <img src="{{asset('')}}massets/img/icon/account/new-deposit.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
                 </span>
                 Add Fund
             </a>
@@ -107,7 +110,7 @@
 
                 <aside id="asNavbar-user" class="uk-navbar-item uk-visible@l">
                     <span class="uk-text-muted uk-margin-small-right">/</span>
-                    <span class="uk-text-lead">Welcome, Rameshk!</span>
+                    <span class="uk-text-lead">Welcome, {{Auth::user()->name}}!</span>
                 </aside>
 
             </div>

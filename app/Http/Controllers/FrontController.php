@@ -9,6 +9,8 @@ class FrontController extends Controller
 
     public function index()
     {
+
+        dd("hii ");
         return view('main.home');
     }
 
@@ -38,7 +40,7 @@ class FrontController extends Controller
 
     public function team()
     {
-        return view('main.team');
+        return view('main.investor');
     }
     public function termcandition()
     {

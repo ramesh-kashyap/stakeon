@@ -129,10 +129,10 @@ public function BankDetail()
         //     $update_data['usdtTrc20']=$post_array['usdtTrc20'];    
            
         //   }
-          if(empty($user->usdtBep20) )
-          {  
-            $update_data['usdtBep20']=$post_array['usdtBep20'];    
-          }
+        //   if(empty($user->usdtBep20) )
+        //   {  
+        //     $update_data['usdtBep20']=$post_array['usdtBep20'];    
+        //   }
         
           
           $user =  User::where('id',$id)->update($update_data);

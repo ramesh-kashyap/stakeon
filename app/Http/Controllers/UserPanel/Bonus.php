@@ -25,7 +25,7 @@ class Bonus extends Controller
           $limit = $request->limit ? $request->limit : paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-            $notes = Income::where('user_id',$user->id)->where('remarks','Referral Bonus')->orderBy('id', 'DESC');
+            $notes = Income::where('user_id',$user->id)->where('remarks','Level Bonus')->orderBy('id', 'DESC');
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
               $q->Where('rname', 'LIKE', '%' . $search . '%')
@@ -48,6 +48,36 @@ class Bonus extends Controller
 
     }
 
+
+    public function direct_income(Request $request)
+    {
+       $user=Auth::user();
+
+          $limit = $request->limit ? $request->limit : paginationLimit();
+            $status = $request->status ? $request->status : null;
+            $search = $request->search ? $request->search : null;
+            $notes = Income::where('user_id',$user->id)->where('remarks','Direct Income')->orderBy('id', 'DESC');
+           if($search <> null && $request->reset!="Reset"){
+            $notes = $notes->where(function($q) use($search){
+              $q->Where('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('ttime', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+              ->orWhere('amt', 'LIKE', '%' . $search . '%')
+              ->orWhere('comm', 'LIKE', '%' . $search . '%');
+            });
+
+      }
+            $notes = $notes->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+        $this->data['Direct_income'] =$notes;
+        $this->data['search'] =$search;
+        $this->data['page'] = 'user.bonus.direct-bonus';
+        return $this->dashboard_layout();
+
+
+    }
     public function cashback_income(Request $request)
     {
        $user=Auth::user();
@@ -215,13 +245,14 @@ class Bonus extends Controller
           $limit = $request->limit ? $request->limit :  paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-            $notes = Income::where('user_id',$user->id)->orderBy('id', 'DESC');
+            $notes = Income::where('user_id',$user->id)->where('remarks','Roi Income')->orderBy('id', 'DESC');
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
               $q->Where('ttime', 'LIKE', '%' . $search . '%')
               ->orWhere('amt', 'LIKE', '%' . $search . '%')
               ->orWhere('rname', 'LIKE', '%' . $search . '%')
               ->orWhere('comm', 'LIKE', '%' . $search . '%');
+
             });
 
       }

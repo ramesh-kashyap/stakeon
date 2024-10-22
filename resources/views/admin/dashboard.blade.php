@@ -152,8 +152,8 @@
 								<div class="card">
 									<div class="card-body d-flex align-items-center justify-content-between">
 										<div class="menu">
-											<span class="font-w500 fs-16 d-block mb-2">Trading Income</span>
-											<h2>{{currency()}}  {{  number_format((\App\Models\Income::where('remarks','Trading Income')->sum('comm')),2)   }}  </h2>
+											<span class="font-w500 fs-16 d-block mb-2">Level Income</span>
+											<h2>{{currency()}}  {{  number_format((\App\Models\Income::where('remarks','Level Bonus')->sum('comm')),2)   }}  </h2>
 										</div>	
 										<div class="d-inline-block position-relative donut-chart-sale">
 											
@@ -167,12 +167,27 @@
 								<div class="card">
 									<div class="card-body d-flex align-items-center justify-content-between">
 										<div class="menu">
-											<span class="font-w500 fs-16 d-block mb-2">Leadership Income</span>
-											<h2>{{currency()}} {{  number_format((\App\Models\Income::where('remarks','Leadership Income')->sum('comm')),2)   }} </h2>
+											<span class="font-w500 fs-16 d-block mb-2">Roi Income</span>
+											<h2>{{currency()}}  {{  number_format((\App\Models\Income::where('remarks','Roi Bonus')->sum('comm')),2)   }}  </h2>
+										</div>	
+										<div class="d-inline-block position-relative donut-chart-sale">
+											
+                                                <img src="{{asset('admin/images/pool_comission.png')}}" style="    width: 61px;" alt="">
+									
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-sm-3">
+								<div class="card">
+									<div class="card-body d-flex align-items-center justify-content-between">
+										<div class="menu">
+											<span class="font-w500 fs-16 d-block mb-2">Royality Income</span>
+											<h2>{{currency()}} {{  number_format((\App\Models\Income::where('remarks','royal Income')->sum('comm')),2)   }} </h2>
 										</div>	
 										<div class="d-inline-block position-relative donut-chart-sale">
 										
-                                                <img src="{{asset('admin/images/medal.png')}}" style="    width: 61px;" alt="">
+										<img src="{{asset('admin/images/pool_comission.png')}}" style="    width: 61px;" alt="">
 									
 										</div>
 									</div>
@@ -187,7 +202,97 @@
 										</div>	
 										<div class="d-inline-block position-relative donut-chart-sale">
 										
-                                                <img src="{{asset('admin/images/medal.png')}}" style="    width: 61px;" alt="">
+										<img src="{{asset('admin/images/pool_comission.png')}}" style="    width: 61px;" alt="">
+									
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-sm-3">
+								<div class="card">
+									<div class="card-body d-flex align-items-center justify-content-between">
+										<div class="menu">
+											<span class="font-w500 fs-16 d-block mb-2">Reward Income</span>
+											<h2>{{currency()}} {{  number_format((\App\Models\Income::where('remarks','Reward Income')->sum('comm')),2)   }} </h2>
+										</div>	
+										<div class="d-inline-block position-relative donut-chart-sale">
+										
+										<img src="{{asset('admin/images/pool_comission.png')}}" style="    width: 61px;" alt="">
+									
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-sm-3">
+								<div class="card">
+									<div class="card-body d-flex align-items-center justify-content-between">
+										<div class="menu">
+											<span class="font-w500 fs-16 d-block mb-2">Re-Birth Income</span>
+											<h2>{{currency()}} {{  number_format((\App\Models\Income::where('remarks','Rebirth Income')->sum('comm')),2)   }} </h2>
+										</div>	
+										<div class="d-inline-block position-relative donut-chart-sale">
+										
+										<img src="{{asset('admin/images/pool_comission.png')}}" style="    width: 61px;" alt="">
+									
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-sm-3">
+								<div class="card">
+									<div class="card-body d-flex align-items-center justify-content-between">
+										<div class="menu">
+											<span class="font-w500 fs-16 d-block mb-2">Pool Income</span>
+											<h2>{{currency()}} {{  number_format((\App\Models\Income::where('remarks','Pool Income')->sum('comm')),2)   }} </h2>
+										</div>	
+										<div class="d-inline-block position-relative donut-chart-sale">
+										
+										<img src="{{asset('admin/images/pool_comission.png')}}" style="    width: 61px;" alt="">
+									
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-sm-3">
+								<div class="card">
+									<div class="card-body d-flex align-items-center justify-content-between">
+										<div class="menu">
+											<span class="font-w500 fs-16 d-block mb-2">Leadership Income</span>
+											<h2>{{currency()}} {{  number_format((\App\Models\Income::where('remarks','Leadership Income')->sum('comm')),2)   }} </h2>
+										</div>	
+										<div class="d-inline-block position-relative donut-chart-sale">
+										
+										<img src="{{asset('admin/images/pool_comission.png')}}" style="    width: 61px;" alt="">
+									
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-sm-3">
+								<div class="card">
+									<div class="card-body d-flex align-items-center justify-content-between">
+										<div class="menu">
+											<span class="font-w500 fs-16 d-block mb-2">Auto-Upgrade Income</span>
+											<h2>{{currency()}} {{  number_format((\App\Models\Income::where('remarks','AutoUpgrade Income')->sum('comm')),2)   }} </h2>
+										</div>	
+										<div class="d-inline-block position-relative donut-chart-sale">
+										
+										<img src="{{asset('admin/images/pool_comission.png')}}" style="    width: 61px;" alt="">
+									
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-3 col-sm-3">
+								<div class="card">
+									<div class="card-body d-flex align-items-center justify-content-between">
+										<div class="menu">
+											<span class="font-w500 fs-16 d-block mb-2">Package Auto Upgrade Income</span>
+											<h2>{{currency()}} {{  number_format((\App\Models\Income::where('remarks','Package Income')->sum('comm')),2)   }} </h2>
+										</div>	
+										<div class="d-inline-block position-relative donut-chart-sale">
+										
+										<img src="{{asset('admin/images/pool_comission.png')}}" style="    width: 61px;" alt="">
 									
 										</div>
 									</div>

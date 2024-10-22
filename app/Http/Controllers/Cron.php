@@ -694,4 +694,106 @@ public function dynamicupicallback()
 
     }
 
+
+
+
+
+
+
+
+    
+
+function add_royalty_income($id,$amt)
+{
+
+$data = User::where('id',$id)->orderBy('id','desc')->first();
+
+$user_id = $data->username;
+$fullname=$data->name;
+
+$rname = $data->username;
+$user_mid = $data->id;
+      $cnt = 1;
+
+              $Sposnor_id = User::where('id',$user_mid)->orderBy('id','desc')->first();
+              $sponsor=$Sposnor_id->sponsor;
+              if (!empty($sponsor))
+               {
+                $Sposnor_status = User::where('id',$sponsor)->orderBy('id','desc')->first();
+                $sp_status=$Sposnor_status->active_status;
+                $Sposnor_cnt = User::where('sponsor',$sponsor)->where('active_status','Active')->count("id");
+                $lastPackage = \DB::table('investments')->where('user_id',$Sposnor_status->id)->where('status','Active')->sum("amount");
+                $total_profit = \DB::table('incomes')->where('user_id',$Sposnor_status->id)->sum("comm");
+                $total_get = $lastPackage*200/100;
+              }
+              else
+              {
+                $Sposnor_status =array();
+                $sp_status="Pending";
+                $Sposnor_cnt =0;
+                $total_profit =0;
+                $total_get =0;
+              }
+    $percent = 0;
+    $award = '';
+
+    
+    if ($Sposnor_cnt >= 3) {
+        $percent = 3;  
+        $award = 'gold'; 
+    } elseif ($Sposnor_cnt >= 2) {
+        $percent = 2;  
+        $award = 'bronze';  
+    } elseif ($Sposnor_cnt >= 1) {
+        $percent = 1;  
+        $award = 'silver'; 
+    }
+
+    if ($sp_status == "Active" && $percent > 0) {
+        $pp = ($amt * $percent) / 100;  
+    } else {
+        $pp = 0; 
+    }
+
+
+              $user_mid = @$Sposnor_status->id;
+             
+              $idate = date("Y-m-d");
+
+              $spid = @$Sposnor_status->id;
+        
+                 $max_income=$total_get;
+             $n_m_t = $max_income - $total_profit;
+             if($pp >= $n_m_t)
+             {
+                 $pp = $n_m_t;
+             }  
+             
+
+              $user_id_fk=$sponsor;
+              
+              if($spid>0 && $pp>0){
+                 $data = [
+                'user_id' => $user_mid,
+                'user_id_fk' =>$Sposnor_status->username,
+                'amt' => $amt,
+                'comm' => $pp,
+                'remarks' => 'royal Income',
+                'level' => $cnt,
+                'rname' => $rname,
+                'fullname' => $fullname,
+                'ttime' => Date("Y-m-d"),
+                'award' => $award 
+
+
+            ];
+            $user_data =  Income::Create($data);
+
+
+       }
+
+
+}
+
+
 }
