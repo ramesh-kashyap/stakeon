@@ -16,7 +16,7 @@ class BonusController extends Controller
            $limit = $request->limit ? $request->limit :  paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-             $notes = Income::where('remarks','Trading Income')->orderBy('id', 'DESC');
+             $notes = Income::where('remarks','Roi Income')->orderBy('id', 'DESC');
 
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
@@ -49,7 +49,7 @@ class BonusController extends Controller
            $limit = $request->limit ? $request->limit :  paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-            $notes = Income::where('remarks','Leadership Income')->orderBy('id', 'DESC');
+            $notes = Income::where('remarks','Level Income')->orderBy('id', 'DESC');
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
               $q->Where('rname', 'LIKE', '%' . $search . '%')
@@ -170,7 +170,38 @@ class BonusController extends Controller
                 $this->data['page'] = 'admin.bonus.club-bonus';
                 return $this->admin_dashboard();
     }
+    // royalty
 
+    public function royalty(Request $request)
+    {
+
+
+           $limit = $request->limit ? $request->limit :  paginationLimit();
+            $status = $request->status ? $request->status : null;
+            $search = $request->search ? $request->search : null;
+            $notes = Income::where('remarks','royal Income')->orderBy('id', 'DESC');
+           if($search <> null && $request->reset!="Reset"){
+            $notes = $notes->where(function($q) use($search){
+              $q->Where('rname', 'LIKE', '%' . $search . '%')
+              ->orWhere('ttime', 'LIKE', '%' . $search . '%')
+              ->orWhere('user_id_fk', 'LIKE', '%' . $search . '%')
+              ->orWhere('level', 'LIKE', '%' . $search . '%')
+              ->orWhere('amt', 'LIKE', '%' . $search . '%')
+              ->orWhere('comm', 'LIKE', '%' . $search . '%');
+            });
+
+      }
+
+            $notes = $notes->paginate($limit)
+                ->appends([
+                    'limit' => $limit
+                ]);
+
+                $this->data['level_incomes'] =  $notes;
+                $this->data['search'] = $search;
+                $this->data['page'] = 'admin.bonus.royalty';
+                return $this->admin_dashboard();
+    }
 
 
     public function reward_bonus(Request $request)

@@ -1,548 +1,200 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <!-- Google Tag Manager -->
+				@include('layouts.mainsite.header')
+
+                    <div class="sf4f625148df40a9b356">
+                        <div class="s8ee82f6a5e1ab59b645">
+                            <div class="s810ab62c54740cd9705">
+                                <div class="sf36b0f22b8bacf2a05f">
+                                    <div class="scfa8aaf4ebc314448ce">
+                                        <div class="s3d62b6f55095168c8f5 s719ef06b609ae7c79d4">
+                                            <i class="sa76ec4b0569a5e84da0 s326797854cf1aa2d2e9"></i>
+                                        </div>
+                                        <div class="sf09790a9d81a6bd8730 s209d518682b6d12c812">
+                                            Partners <br> <b>Program</b>
+                                        </div>
+                                    </div>
+                                    <div class="s4c0f3ed22553232a268">
+
+                                        <div class="s1dab33613abadb0cc48 s0884db281ce7aca76ef">
+                                            <div class="se6064b19f8f79ce6a25">
+                                                <div class="s33c3761b3091ae8112d sb776cf8ce854af55dc8">
+                                                    <a href="{{route('tutorial')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+                                                        <span class="s06c98fe1938eb74d270">
+                                                            <span class="s30c7c55921a92c292cf">
+                                                                <span class="s2dc3968485132430838">
+                                                                    <i class="saa3132e9667e1e0db2b s8678425de6e020307ae"></i>
+                                                                </span>
+                                                            </span>
+                                                            <span class="s481147518fd44c61fea">
+                                                                Group
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="s33c3761b3091ae8112d s0a5597b8746d7600762">
+                                                    <a href="{{route('tutorial')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+                                                        <span class="s06c98fe1938eb74d270">
+                                                            <span class="s30c7c55921a92c292cf">
+                                                                <span class="s2dc3968485132430838">
+                                                                    <i class="saa3132e9667e1e0db2b s8678425de6e020307ae"></i>
+                                                                </span>
+                                                            </span>
+                                                            <span class="s481147518fd44c61fea">
+                                                                News
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="s33c3761b3091ae8112d socials-gutter__cell--3">
+                                                    <a href="{{route('tutorial')}}"class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+                                                        <span class="s06c98fe1938eb74d270">
+                                                            <span class="s30c7c55921a92c292cf">
+                                                                <span class="s2dc3968485132430838">
+                                                                    <i class="saa3132e9667e1e0db2b s8678425de6e020307ae"></i>
+                                                                </span>
+                                                            </span>
+                                                            <span class="s481147518fd44c61fea">
+                                                                Support
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="s86b2fd219e61fe0f9c5 section-affiliate page-other__first page-partners__section-affiliate" id="js-section-affiliate">
+                    <div class="sf4f625148df40a9b356">
+                        <div class="s8ee82f6a5e1ab59b645">
+                            <div class="s810ab62c54740cd9705">
+                                <div class="affiliate-block section-affiliate__affiliate-block">
+                                    <div class="sa109ca17776132e8f44">
+                                    <div class="sdb9e2d97d2518c23086 s84818dcf5041c269959">
+    Affiliate <b>Program</b>
+</div>
+<div class="sb7488ce532086996310 s8e4cf634a2ccd369041">
+    Join our exclusive and highly rewarding affiliate program at Global Boss Coin! Our program is designed to empower you with lucrative earning opportunities while promoting a revolutionary cryptocurrency.
+</div>
+<div class="sb7488ce532086996310 s8e4cf634a2ccd369041">
+    Our unique affiliate program offers flexible commission structures and the ability to upgrade your earnings with tokens, allowing you to maximize your income potential effortlessly.
+</div>
 
 
-    <!-- End Google Tag Manager -->
-    <meta charset="utf-8">
-    <title>{{siteName()}}</title>
-    <base href="{{asset('')}}" />
-      <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-iconf9e3.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32f9e3.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16f9e3.png?v=1.1">
-    <link rel="manifest" href="/favicons/site.webmanifest?v=1.1">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=1.0" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="theme-color" content="#ffffff">
-
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="ie=edge" http-equiv="x-ua-compatible">
-
-
-    <link rel="stylesheet" href="{{asset('')}}assets/css/libs.css">
-    <link rel="stylesheet" href="{{asset('')}}assets/css/app54f9.css?v=1.009995">
-    <link rel="stylesheet" href="{{asset('')}}assets/css/customb361.css?v=1.000099999">
-    <!--[if lt IE 9]>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
-
-</head>
-
-<body>
-
-    <div class="copy-success">
-        <svg>
-            <use xlink:href="/assets/img/sprite.svg#check"></use>
-        </svg>
+                                        <div class="ref-lvl-gutter sdecaf80b581ad31fb08">
+                                            <div class="s100c65fe113b4618778">
+                                                <div class="sdc4078b9b81d80da891 se7cb1580cef28edf652">
+                                                    <div class="ref-lvl-widget">
+                                                        <div class="scfe1e29c928a5f9bc46">
+                                                            <div class="s6c22de38dba68663fe1">
+                                                                1 Level
+                                                            </div>
+                                                            <div class="se2fc56e3b6b9da0bf71">
+                                                                5%
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sdc4078b9b81d80da891 s8f0c68b2b5028254adf">
+                                                    <div class="ref-lvl-widget">
+                                                        <div class="scfe1e29c928a5f9bc46">
+                                                            <div class="s6c22de38dba68663fe1">
+                                                                2 Level
+                                                            </div>
+                                                            <div class="se2fc56e3b6b9da0bf71">
+                                                                2%
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sdc4078b9b81d80da891 s93f82f382c10f7a70cd">
+                                                    <div class="ref-lvl-widget">
+                                                        <div class="scfe1e29c928a5f9bc46">
+                                                            <div class="s6c22de38dba68663fe1">
+                                                                3 Level
+                                                            </div>
+                                                            <div class="se2fc56e3b6b9da0bf71">
+                                                                1%
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sdc4078b9b81d80da891 s902d0a2918165a07ce0">
+                                                    <a href="auth/signup.html" class="sae4bbca85f4f79da8f0" data-ajax>
+                                                        <span class="s89dc0f05a021b50b2d2">
+                                                            <span class="sc58d55a52a2f8ff7af4">Signup</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="token-price-short-widget sdb72a12430ef8f3d9e2">
+                                            <div class="sb9f43806fdca4bc5a4d">
+                                                Token price
+                                            </div>
+                                            <div class="s8f40abb6b1331465531">
+                                                1.00 USD
+                                            </div>
+                                        </div>
+                                        <a href="javascript::void(0);" class="s950a52b3fa1dc7dd762 s8cf0f309122134d9031">
+                                            <span class="sec0e3833ffbbb3baa36">
+                                                <span class="sab746bf4a48665bf36c">
+                                                    Buy token now
+                                                </span>
+                                                <span class="sbb18096c6c18f201fca">
+                                                    Coming soon
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="s86b2fd219e61fe0f9c5 section-income s0e221cea1c697d8fc28 page-partners__section-income">
+                    <div class="sf4f625148df40a9b356">
+                        <div class="s8ee82f6a5e1ab59b645">
+                            <div class="s810ab62c54740cd9705">
+                                <div class="income-block">
+                                    <div class="s9559a5db39da4bb3fc5">
+                                        <div class="sf712a42893e13243788">
+                                        </div>
+                                        <div class="s616770b3d80d70f9d6d">
+                                            <div class="section-text-group income-block__section-text-group">
+                                            <div class="sdb9e2d97d2518c23086 s22f65b880151d773a74"> 
+    Affiliate System <b>Features</b>
+</div>
+<div class="triangle-list s3281728a6801a7beb12">
+    <div class="sb0ca04578cd6245993d">
+        Join the Global Boss Coin affiliate program and start earning today! Our program offers an easy way to make money by sharing the power of cryptocurrency with your network.
     </div>
-    <div class="wrapper">
-        <div class="page-wrap page-wrap_team page-wrap_guide">
-            <header class="header header_page">
-                <div class="header-top">
-                    <div class="container">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-lg-3 col-md-5 col-7"><a class="header-logo" href="/"><img style="width: 168px;
-                                height: 94px; margin-top: -14px;" src="/assets/img/Clogo.png?v=1.0" alt="logo" /></a></div>
-                            <div class="col-lg-9 col-md-7 col-5">
-                                <div class="header-nav">
-                                    <style>
-                                        .header-lang__hide table td div {
-                                            background: rgb(194 149 109);
-                                            margin: 0 5px;
-                                        }
+    <div class="sb0ca04578cd6245993d">
+        Our affiliate program instantly transfers the referral commission from each deposit of your referral to your withdrawal balance, ensuring that your earnings are always accessible.
+    </div>
+    <div class="sb0ca04578cd6245993d">
+        The depth of the affiliate program is 3 levels (lines), allowing you to earn not just from your direct referrals, but also from their referrals, amplifying your income potential.
+    </div>
+    <div class="sb0ca04578cd6245993d">
+        Each level comes with customizable percentage rates, which can be upgraded for tokens at any time, giving you the flexibility to increase your earnings as you grow your network.
+    </div>
+  
+</div>
 
-                                        .header-lang__hide table td.inactive div {
-                                            padding: 2px 10px;
-                                        }
-
-                                        .header-lang__hide table td.empty {
-                                            background: none;
-                                        }
-
-                                        .header-lang__hide table a {
-                                            color: #ffffff;
-                                            text-decoration: none;
-                                            transition: none;
-                                            padding: 2px 10px;
-                                        }
-
-                                        .header-lang__hide table td div.active,
-                                        .header-lang__hide table td div:hover {
-                                            background: #ffffff;
-                                            color: #000;
-                                        }
-
-                                        .header-lang__hide table td div.active a,
-                                        .header-lang__hide table td div:hover a {
-                                            color: #000;
-                                            opacity: 1;
-                                        }
-
-                                        .header-lang:hover .header-lang__hide table td.inactive {
-                                            opacity: 0.4;
-                                            pointer-events: none !important;
-                                            cursor: default;
-                                        }
-
-                                        .header-lang__hide table td.inactive div:hover {
-                                            background: rgb(194 149 109);
-                                            color: #ffffff;
-                                        }
-                                    </style>
-                                    <div class="header-lang">
-                                        <div class="header-lang__arrow">
-                                            <svg>
-                                                <use xlink:href="/assets/img/sprite.svg#arrow"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="header-lang__text">
-                                            English
-                                        </div>
-                                        <div class="header-lang__hide">
-                                          
+                                                <a href="{{route('register')}}" class="s33127ef4acbf82b3964 sb2f023228505bea984c s74f63b5ee420d3b520f s64c34f60fa6a939403c" data-ajax>
+                                                    <i class="se2867154d2526f59cc9"></i>
+                                                    <span>Sign up</span>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-
-
-                                    <div class="header-btns">
-                                        <a class="main-btn main-btn_line" href="{{route('login')}}">
-                                            <img src="{{asset('')}}assets/img/btn-loginc619.svg?v=1.0" alt="btn-login" />login
-                                        </a>
-                                        <a class="main-btn" href="{{route('register')}}">
-                                            <img src="{{asset('')}}assets/img/btn-signc619.svg?v=1.0" alt="btn-sign" />register
-                                        </a>
-                                    </div>
-                                    <div class="header-burger"> <span></span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3">
-                      @include('layouts.mainsite.header')
-                        </div>
-
-                        <div class="col-lg-9">
-                            <div class="page-head">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-md-4">
-                                        <div class="page-bread"> <a href="/">
-                                                <svg>
-                                                    <use xlink:href="/assets/img/sprite.svg#arrow"></use>
-                                                </svg>home</a>
-                                            <a href="#">
-                                                <svg>
-                                                    <use xlink:href="/assets/img/sprite.svg#arrow"></use>
-                                                </svg>Tutorial
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
-
-
-                                        <div class="page-soc">
-                                            <p>follow us</p>
-                                            <!--<a href="#" target="_blank">-->
-                                            <!--    <img src="/assets/img/inst.svg" alt="inst"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <a href="https://www.facebook.com/EtritonAi"
-                                                target="_blank">
-                                                <img src="/assets/img/fb.svg" alt="fb"
-                                                    style="max-width:15px" />
-                                            </a>
-                                            <a href="https://twitter.com/EtritonAi" target="_blank">
-                                                <img src="/assets/img/tw.svg" alt="tw"
-                                                    style="max-width:15px" />
-                                            </a>
-                                            <!--<a href="#" target="_blank">-->
-                                            <!--    <img src="/assets/img/medium.svg" alt="medium"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <!--<a href="#"-->
-                                            <!--    target="_blank">-->
-                                            <!--    <img src="/assets/img/yt.svg" alt="yt"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <!--<a href="#" target="_blank">-->
-                                            <!--    <img src="/assets/img/ad.svg" alt="ad"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <!--<a href="#" target="_blank">-->
-                                            <!--    <img src="/assets/img/dis.svg" alt="dis"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <a href="https://t.me/EtritonAI" target="_blank">
-                                                <img src="/assets/img/tg.svg" alt="tg" />
-                                                <span>channel</span>
-                                            </a>
-                                             <a href="https://t.me/+52BJTYpOc5VjOTYx" target="_blank">
-                                                <img src="/assets/img/tg.svg" alt="tg" />
-                                                <span>Telegram Chat Group</span>
-                                            </a>
-                                            <a href="https://t.me/Jackjo_AI" target="_blank">
-                                                <img src="/assets/img/tg.svg" alt="tg" />
-                                                <span>support Team</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main-title main-title_page main-title_center">
-                                <div class="main-title__top"><span>Guide</span></div>
-                                <div class="main-title__text">How it
-                                    <p>works<span>?</span></p>
-                                </div>
-                            </div>
-                            <div class="main-text">
-                                <p>You are now reading the text that will help you to get acquainted with the order of
-                                    primary actions: without them, investing and cooperation with the Henbbo company
-                                    will not be full-fledged.</p>
-                                <p>Here are the step-by-step instructions. Thanks to our experts, the educational
-                                    material is simple and understandable even to those users who have never been
-                                    acquainted to investment online platforms before.</p>
-                                <p>The information is introduced in the form of visual images and thought-out content.
-                                    Everybody will understand that easily.</p>
-                                <p>We hope we managed to answer all your questions.</p>
-                            </div>
-                            <div class="invest-tabs invest-tabs_guide" data-tabs-btns="guide">
-                                <div class="invest-tabs__item" data-tabs-btn="1">
-                                    <p>01</p><span>Registration</span>
-                                    <svg>
-                                        <use xlink:href="assets/img/sprite.svg#arrow-left"></use>
-                                    </svg>
-                                </div>
-                                <div class="invest-tabs__item" data-tabs-btn="2">
-                                    <p>02</p><span>Make a deposit</span>
-                                    <svg>
-                                        <use xlink:href="assets/img/sprite.svg#arrow-left"></use>
-                                    </svg>
-                                </div>
-                                <div class="invest-tabs__item" data-tabs-btn="3">
-                                    <p>03</p><span>Withdraw funds</span>
-                                    <svg>
-                                        <use xlink:href="assets/img/sprite.svg#arrow-left"></use>
-                                    </svg>
-                                </div>
-                                <div class="invest-tabs__item" data-tabs-btn="4">
-                                    <p>04</p><span>Referral and other</span>
-                                    <svg>
-                                        <use xlink:href="assets/img/sprite.svg#arrow-left"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="guide-wrap gallery" data-tabs-wrapper="guide">
-                        <div class="guide-list" data-tabs-item="1">
-                            <div class="guide-item row d-flex align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>01</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>Go to the main page of the website to register on the Henbbo
-                                                    platform. Then you need to find the "Register" button in the top
-                                                    right corner and click it. The registration window will pop up.</b>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class='col-lg-6'>
-                                    <a class='news-item news-item_guide' href='/assets/img/guide/pic_1f9e3.png?v=1.1'>
-                                        <div class='news-item__img'> <img src='/assets/img/guide/pic_1f9e3.png?v=1.1'
-                                                alt='pic_1' />
-                                            <div class='news-item__btn'>To open<img src='assets/img/news-arrow.svg'
-                                                    alt='news-arrow' />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="guide-item row d-flex align-items-center">
-
-                                <div class='col-lg-6'>
-                                    <a class='news-item news-item_guide' href='/assets/img/guide/pic_2f9e3.png?v=1.1'>
-                                        <div class='news-item__img'> <img src='/assets/img/guide/pic_2f9e3.png?v=1.1'
-                                                alt='pic_2' />
-                                            <div class='news-item__btn'>To open<img src='assets/img/news-arrow.svg'
-                                                    alt='news-arrow' />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>02</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>You need to fill in each line on this webpage. The username should
-                                                    contain only letters and digits. Be careful when you enter the data
-                                                    since you will need it in the future to work with our company. Enter
-                                                    only that e-mail that you have access to.</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="guide-list" data-tabs-item="2">
-                            <div class="guide-item row d-flex align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>01</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>To create a deposit, you need to log into your account. After that,
-                                                    click the "Open Staking" button in your account to make a deposit
-                                                    from the payment system. Or you may go to the "Open Staking +1.5"
-                                                    section and make an investment from the personal account's balance.
-                                                    Also, the \“Staking" button can be found in the main menu as
-                                                    well.<br><br>Here a page to open the deposit will appear in front of
-                                                    you.</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class='col-lg-6'>
-                                    <a class='news-item news-item_guide' href='/assets/img/guide/pic_3f9e3.png?v=1.1'>
-                                        <div class='news-item__img'> <img src='/assets/img/guide/pic_3f9e3.png?v=1.1'
-                                                alt='pic_3' />
-                                            <div class='news-item__btn'>To open<img src='assets/img/news-arrow.svg'
-                                                    alt='news-arrow' />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="guide-item row d-flex align-items-center">
-
-                                <div class='col-lg-6'>
-                                    <a class='news-item news-item_guide' href='/assets/img/guide/pic_4f9e3.png?v=1.1'>
-                                        <div class='news-item__img'> <img src='/assets/img/guide/pic_4f9e3.png?v=1.1'
-                                                alt='pic_4' />
-                                            <div class='news-item__btn'>To open<img src='assets/img/news-arrow.svg'
-                                                    alt='news-arrow' />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>02</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>First, you can see the balance of your account. Then you can choose
-                                                    the payment system. A bit below are the investment plans, each of
-                                                    them having information about the limits of minimal and maximal
-                                                    deposits. Once you have chosen the desired plan, enter the sum of
-                                                    the investment in the line below. And the next step of yours is to
-                                                    click the button "Create Staking".</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="guide-item row d-flex align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>03</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>If you make a deposit in cryptocurrency, then after clicking the
-                                                    button, you will see the window with all the data specified.
-                                                    Including the electronic wallet, too. Check all the entered data
-                                                    carefully. Copy the address of the wallet if everything is correct.
-                                                    Then go to your wallet and transfer the sum specified in the
-                                                    application. After successful payment, return to the Henbbo page.
-                                                    The status “Prepared” will change, and the deposit will appear on
-                                                    your balance.</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class='col-lg-6'>
-                                    <a class='news-item news-item_guide' href='/assets/img/guide/pic_5f9e3.png?v=1.1'>
-                                        <div class='news-item__img'> <img src='/assets/img/guide/pic_5f9e3.png?v=1.1'
-                                                alt='pic_5' />
-                                            <div class='news-item__btn'>To open<img src='assets/img/news-arrow.svg'
-                                                    alt='news-arrow' />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="guide-item row d-flex align-items-center">
-
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>04</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>Your deposit will be opened automatically after the Henbbo platform
-                                                    receives your funds. The speed of the cryptocurrency transaction
-                                                    depends on the blockchain workload. The average ETA is one minute to
-                                                    several hours.<br><br>You can check your deposit in the account, in
-                                                    the “Deposits” tab.</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="guide-list" data-tabs-item="3">
-                            <div class="guide-item row d-flex align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>01</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>To withdraw money to your cryptocurrency wallet, click the
-                                                    "Withdrawal" button in the menu of your account. This button is
-                                                    located near the "Staking" button.<br><br>Also, a big “Withdrawal”
-                                                    button can be found under the balance of the account.</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class='col-lg-6'>
-                                    <a class='news-item news-item_guide' href='/assets/img/guide/pic_6f9e3.png?v=1.1'>
-                                        <div class='news-item__img'> <img src='/assets/img/guide/pic_6f9e3.png?v=1.1'
-                                                alt='pic_6' />
-                                            <div class='news-item__btn'>To open<img src='assets/img/news-arrow.svg'
-                                                    alt='news-arrow' />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="guide-item row d-flex align-items-center">
-
-                                <div class='col-lg-6'>
-                                    <a class='news-item news-item_guide' href='/assets/img/guide/pic_7f9e3.png?v=1.1'>
-                                        <div class='news-item__img'> <img src='/assets/img/guide/pic_7f9e3.png?v=1.1'
-                                                alt='pic_7' />
-                                            <div class='news-item__btn'>To open<img src='assets/img/news-arrow.svg'
-                                                    alt='news-arrow' />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>02</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>Check the available balance for the chosen payment system. Then you
-                                                    need to pick the EPS, enter the sum that you want to withdraw and
-                                                    click the "Withdrawal" button.<br><br>The funds' withdrawal is
-                                                    executed manually, up to 72 hours.</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="guide-list" data-tabs-item="4">
-                            <div class="guide-item row d-flex align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>01</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>Each investor of the company can participate in the Referral program.
-                                                    To do that, you need to go to the "Referral" tab, which is located in
-                                                    the top right corner of the main page.</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class='col-lg-6'>
-                                    <a class='news-item news-item_guide' href='/assets/img/guide/pic_8f9e3.png?v=1.1'>
-                                        <div class='news-item__img'> <img src='/assets/img/guide/pic_8f9e3.png?v=1.1'
-                                                alt='pic_8' />
-                                            <div class='news-item__btn'>To open<img src='assets/img/news-arrow.svg'
-                                                    alt='news-arrow' />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="guide-item row d-flex align-items-center">
-
-                                <div class='col-lg-6'>
-                                    <a class='news-item news-item_guide' href='/assets/img/guide/pic_9f9e3.png?v=1.1'>
-                                        <div class='news-item__img'> <img src='/assets/img/guide/pic_9f9e3.png?v=1.1'
-                                                alt='pic_9' />
-                                            <div class='news-item__btn'>To open<img src='assets/img/news-arrow.svg'
-                                                    alt='news-arrow' />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>02</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>Choose the required social media to receive the bonus from Henbbo.
-                                                    The company pays every investor who accomplished all the rules. You
-                                                    will not receive the bonus if at least one condition has not been
-                                                    met.</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="guide-item row d-flex align-items-center">
-                                <div class="col-lg-6">
-                                    <div class="main-title main-title_page">
-                                        <div class="main-title__text">
-                                            <p>Step <span>03</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="office-text-line">
-                                        <div class="main-text">
-                                            <p> <b>Once the task is completed, click the “Send request”
-                                                    button.<br><br>Here, you will need to fill in the form: login,
-                                                    e-mail and a link to the completed task. Click the "Send" button.
-                                                    The bounty bonus will be credited to your account balance.</b></p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            @include('layouts.mainsite.footer')
+                @include('layouts.mainsite.footer')

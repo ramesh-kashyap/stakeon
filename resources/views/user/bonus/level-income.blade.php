@@ -43,7 +43,7 @@
             <option value="{{ route('user.Withdraw-History') }}">Withdraw History</option>
             <option value="{{ route('user.fundHistory') }}">Fund History</option>
 
-            <option value="{{ route('user.level-income') }}">Direct Income</option>
+            <option value="{{ route('user.direct-income') }}">Direct Income</option>
             <option value="{{ route('user.level-income') }}">Level Income</option>
             <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
         </select>

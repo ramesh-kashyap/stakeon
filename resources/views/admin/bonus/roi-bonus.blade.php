@@ -87,7 +87,7 @@
                                                       <td>  {{currency()}}   {{$value->comm}} </td>
                                                       <td>{{$value->created_at}}</td>
                 
-                                                      <td><?php echo "Trading Profit";?></td>
+                                                      <td>{{$value->remarks}}</td>
                 
                 
                 

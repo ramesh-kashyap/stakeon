@@ -15,15 +15,19 @@ class Register extends Controller
 
     public function getUserNameAjax(Request $request)
     {
-
-      $user =User::where('username',$request->user_id)->first();
-            if($user)
-            {
-                return $user->name;
-            } 
-            else{
-                return 1;
-            }       
+        $user = User::where('username', $request->user_id)->first();
+    
+        if ($user) {
+            return response()->json([
+                'status' => 'success',
+                'name' => $user->name
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Sponsor ID Not exists!'
+            ]);
+        }
     }
 
     public function index()
@@ -92,7 +96,6 @@ class Register extends Controller
                 //  
           
             $data['name'] = $post_array['name'];
-            $data['phone'] = $post_array['phone'];
             $data['username'] = $username;
             $data['email'] = $post_array['email'];
             $data['password'] =   Hash::make($post_array['password']);
@@ -126,8 +129,7 @@ class Register extends Controller
             
             
 
-            return redirect()->route('home');
-            //  return redirect()->route('register_sucess')->with('messages', $user);
+             return redirect()->route('register_sucess')->with('messages', $user);
 
         }
         catch(\Exception $e){

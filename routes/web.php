@@ -57,8 +57,8 @@ Route::get('/about-us', [App\Http\Controllers\FrontController::class, 'about'])-
 Route::get('/services', [App\Http\Controllers\FrontController::class, 'services'])->name('services');
 Route::get('/contact-us', [App\Http\Controllers\FrontController::class, 'contact'])->name('contact-us');
 Route::get('/faq', [App\Http\Controllers\FrontController::class, 'faq'])->name('faq');
-Route::get('/tutorial', [App\Http\Controllers\FrontController::class, 'tutorial'])->name('tutorial');
-Route::get('/team', [App\Http\Controllers\FrontController::class, 'team'])->name('team');
+Route::get('/team', [App\Http\Controllers\FrontController::class, 'tutorial'])->name('tutorial');
+Route::get('/Investor', [App\Http\Controllers\FrontController::class, 'team'])->name('team');
 Route::get('/term-candition', [App\Http\Controllers\FrontController::class, 'termcandition'])->name('term-candition');
 Route::get('/news', [App\Http\Controllers\FrontController::class, 'news'])->name('news');
 
@@ -99,10 +99,11 @@ Route::post('/change-trxpasswword', [App\Http\Controllers\UserPanel\Profile::cla
 
 
 // add fund
+Route::get('/confirm-fund', [App\Http\Controllers\UserPanel\AddFund::class, 'confirmfund'])->name('user.confirmfund');
 
 Route::get('/AddFund', [App\Http\Controllers\UserPanel\AddFund::class, 'index'])->name('user.AddFund');
 Route::get('/fundHistory', [App\Http\Controllers\UserPanel\AddFund::class, 'fundHistory'])->name('user.fundHistory');
-Route::any('/SubmitBuyFund', [App\Http\Controllers\UserPanel\AddFund::class, 'SubmitBuyFund'])->name('user.SubmitBuyFund');
+Route::post('/SubmitBuyFund', [App\Http\Controllers\UserPanel\AddFund::class, 'SubmitBuyFund'])->name('user.SubmitBuyFund');
 // end add fund
 
 // invest
@@ -137,6 +138,8 @@ Route::any('/UsrBinaryReport',[App\Http\Controllers\UserPanel\BinaryReport::clas
 //end team
 
 //bonus
+Route::get('/Direct-income', [App\Http\Controllers\UserPanel\Bonus::class, 'direct_income'])->name('user.direct-income');
+
 Route::get('/level-income', [App\Http\Controllers\UserPanel\Bonus::class, 'index'])->name('user.level-income');
 Route::get('/matching-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'cashback_income'])->name('user.matching-bonus');
 Route::get('/reward-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'reward_income'])->name('user.reward-bonus');
@@ -206,7 +209,8 @@ Route::get('user-activation', [App\Http\Controllers\Admin\UserController::class,
  Route::get('deposit-activities', [App\Http\Controllers\Admin\UserController::class, 'pendingActivities'])->name('admin.deposit-activities');
  Route::get('activities-list', [App\Http\Controllers\Admin\UserController::class, 'activities_list'])->name('admin.activities-list');
  Route::get('activities_submit', [App\Http\Controllers\Admin\UserController::class, 'activities_submit'])->name('admin.activities_submit');
- 
+ Route::get('/level_team', [App\Http\Controllers\Admin\UserController::class, 'level_team'])->name('admin.level_team');
+Route::get('/direct_level', [App\Http\Controllers\Admin\UserController::class, 'direct_level'])->name('admin.direct_level');
  //end userController
 
 //DepositManagmentController
@@ -226,7 +230,7 @@ Route::get('booster-bonus', [App\Http\Controllers\Admin\BonusController::class, 
 Route::get('club-bonus', [App\Http\Controllers\Admin\BonusController::class, 'club_bonus'])->name('admin.club-bonus');
 Route::get('reward-bonus', [App\Http\Controllers\Admin\BonusController::class, 'reward_bonus'])->name('admin.reward-bonus');
 Route::get('activities-bonus', [App\Http\Controllers\Admin\BonusController::class, 'activities_bonus'])->name('admin.activities-bonus');
-
+Route::get('royalty', [App\Http\Controllers\Admin\BonusController::class, 'royalty'])->name('admin.royalty');
 
 // withdraw
 Route::get('pendingWithdrawal', [App\Http\Controllers\Admin\WithdrawController::class, 'pendingWithdrawal'])->name('admin.pendingWithdrawal');
@@ -243,6 +247,8 @@ Route::get('get_support_msg', [App\Http\Controllers\Admin\SupportController::cla
 Route::get('close_ticket_', [App\Http\Controllers\Admin\SupportController::class, 'close_ticket_'])->name('admin.close_ticket_');
 Route::get('reply_support_msg', [App\Http\Controllers\Admin\SupportController::class, 'reply_support_msg'])->name('admin.reply_support_msg');
 Route::post('admin_ticket_submit', [App\Http\Controllers\Admin\SupportController::class, 'admin_ticket_submit'])->name('admin.admin_ticket_submit');
+
+
 
 });
 

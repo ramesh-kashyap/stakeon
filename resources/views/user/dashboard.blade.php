@@ -151,9 +151,9 @@
                             <img src="{{asset('')}}massets/img/another/balance-stats-4.svg">
                         </div>
                         <div class="uk-panel">
-                            <div class="as-exit-name">Leadership Income</div>
+                            <div class="as-exit-name">Royalty Income</div>
                             <ins class="js-stats-withdrawn-amount">
-                            {{ currency() }}{{ number_format(Auth::user()->level_bonus->sum('comm'), 2) }}                            </ins>
+                            {{ currency() }}{{ number_format(Auth::user()->reward_bonus->sum('comm'), 2) }}                            </ins>
                         </div>
                     </li>
                 </ul>
@@ -193,7 +193,7 @@
                         <div class="uk-panel">
                             <div class="as-exit-name">E Wallet</div>
                             <ins class="js-stats-deposits-amount">
-                            {{ currency() }}{{ number_format(Auth::user()->withdraw(), 2) }}                            </ins>
+                            {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
                         </div>
                     </li>
                     <li class="uk-grid-margin">
@@ -211,8 +211,128 @@
         </div>
     </div>
 
+    
+    
     <!-- Move the referral link section below the statistics -->
     
+
+</section>
+
+
+
+
+
+<section id="as-dashboard-bottom" class="uk-flex-center uk-margin uk-grid" uk-grid="">
+
+<div id="as-dashboard-bottom_statistic" class="as-statistic-buttons uk-first-column">
+    <div id="as-dashboard-statistic-panel" class="uk-position-relative">
+        <div id="as-dashboard-statistic-exit">
+            <ul class="uk-grid-small uk-child-width-1-2@m js-stats-item js-stats-all uk-grid" uk-grid="">
+                <li class="uk-first-column">
+                    <div class="balance-stats-block-icon">
+                        <img src="{{asset('')}}massets/img/another/balance-stats-1.svg">
+                    </div>
+                    <div class="uk-panel">
+                        <div class="as-exit-name">Direct Income</div>
+                        <ins class="js-stats-accrued-amount">
+                        {{ currency() }}{{ number_format(Auth::user()->sponsorship_bonus->sum('amount'), 2) }}                            </ins>
+
+                        </ins>
+                    </div>
+                </li>
+                <li>
+                    <div class="balance-stats-block-icon">
+                        <img src="{{asset('')}}massets/img/another/balance-stats-2.svg">
+                    </div>
+                    <div class="uk-panel">
+                        <div class="as-exit-name">Roi Income</div>
+                        <ins class="js-stats-invested-amount">
+                        {{ currency() }}{{ number_format(Auth::user()->roi_bonus->sum('amount'), 2) }}                            </ins>
+                    </div>
+                </li>
+                <li class="uk-grid-margin uk-first-column">
+                    <div class="balance-stats-block-icon">
+                        <img src="{{asset('')}}massets/img/another/balance-stats-3.svg">
+                    </div>
+                    <div class="uk-panel">
+                        <div class="as-exit-name">Pool Income</div>
+                        <ins class="js-stats-deposits-amount">
+                        {{ currency() }}0.00</ins>
+                    </div>
+                </li>
+                <li class="uk-grid-margin">
+                    <div class="balance-stats-block-icon">
+                        <img src="{{asset('')}}massets/img/another/balance-stats-4.svg">
+                    </div>
+                    <div class="uk-panel">
+                        <div class="as-exit-name">Leadership Income</div>
+                        <ins class="js-stats-withdrawn-amount">
+                        {{ currency() }}0.00</ins>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="as-dashboard-bottom_statistic" class="as-statistic-buttons uk-first-column">
+    <div id="as-dashboard-statistic-panel" class="uk-position-relative">
+        <div id="as-dashboard-statistic-exit">
+            <ul class="uk-grid-small uk-child-width-1-2@m js-stats-item js-stats-all uk-grid" uk-grid="">
+                <li class="uk-first-column">
+                    <div class="balance-stats-block-icon">
+                        <img src="{{asset('')}}massets/img/another/balance-stats-1.svg">
+                    </div>
+                    <div class="uk-panel">
+                        <div class="as-exit-name">Reward Income</div>
+                        <ins class="js-stats-accrued-amount">
+                        {{ currency() }}0.00
+                                                 </ins>
+                    </div>
+                </li>
+                <li>
+                    <div class="balance-stats-block-icon">
+                        <img src="{{asset('')}}massets/img/another/balance-stats-2.svg">
+                    </div>
+                    <div class="uk-panel">
+                        <div class="as-exit-name">Re-Birth Income</div>
+                        <ins class="js-stats-invested-amount">
+                        {{ currency() }}0.00
+                        </ins>
+                    </div>
+                </li>
+                <li class="uk-grid-margin uk-first-column">
+                    <div class="balance-stats-block-icon">
+                        <img src="{{asset('')}}massets/img/another/balance-stats-3.svg">
+                    </div>
+                    <div class="uk-panel">
+                        <div class="as-exit-name">Auto-Upgrade Income</div>
+                        <ins class="js-stats-deposits-amount">
+                        {{ currency() }}0.00
+                        </ins>
+
+                    </div>
+                </li>
+                <li class="uk-grid-margin">
+                    <div class="balance-stats-block-icon">
+                        <img src="{{asset('')}}massets/img/another/balance-stats-4.svg">
+                    </div>
+                    <div class="uk-panel">
+                        <div class="as-exit-name">Package Auto Upgrade Income </div>
+                        <ins class="js-stats-withdrawn-amount">
+                        {{ currency() }}0.00
+                        </ins>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Move the referral link section below the statistics -->
+
 
 </section>
 <div id="as-dashboard-bottom_inputs" class="uk-form-controls-label-figure uk-grid-margin uk-first-column">

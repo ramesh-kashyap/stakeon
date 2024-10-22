@@ -40,7 +40,7 @@ class WithdrawRequest extends Controller
     }
 
 
-    public function WithdrawRequest(Request $request)
+    public function WithdrawRequestPrinciple(Request $request)
     {
 
         try{
@@ -188,7 +188,7 @@ class WithdrawRequest extends Controller
 
 
 
-    public function WithdrawRequestPrinciple(Request $request)
+    public function WithdrawRequest(Request $request)
     {
 
         try{
@@ -208,25 +208,28 @@ class WithdrawRequest extends Controller
         $user=Auth::user();
         $password= $request->transaction_password;
         $balance=Auth::user()->principleBalance();
-        $account =  $user->trx_addres;
+        // $account =  $user->trx_addres;
         if ($balance>=$request->amount)
         {
             
-        $todayWitdrw=Withdraw::where('user_id',$user->id)->where('wdate',date('Y-m-d'))->first();
+        // $todayWitdrw=Withdraw::where('user_id',$user->id)->where('wdate',date('Y-m-d'))->first();
          
-         if($todayWitdrw)
-         {
-          return Redirect::back()->withErrors(array('Any Withdraw limit per Id once a day !'));    
-         }
+        //  if($todayWitdrw)
+        //  {
+        //   return Redirect::back()->withErrors(array('Any Withdraw limit per Id once a day !'));    
+        //  }
          
          
-          $todayWitdrwSUm=Withdraw::where('user_id',$user->id)->where('wdate',date('Y-m-d'))->first();
-         $todayWitdrwSUm=$todayWitdrwSUm+$request->amount;
-         if($todayWitdrwSUm>=500)
-         {
-          return Redirect::back()->withErrors(array('Any Withdraw limit per 500$ once a day !'));    
-         }
-         
+$todayWitdrwSum = Withdraw::where('user_id', $user->id)
+->where('wdate', date('Y-m-d'))
+->sum('amount');
+
+$todayWitdrwSUm = $todayWitdrwSum + $request->amount;
+
+if ($todayWitdrwSUm >= 500) {
+return Redirect::back()->withErrors(array('Withdraw limit exceeded: Maximum 500$ per day!'));
+}
+
          
          $user_detail=Withdraw::where('user_id',$user->id)->where('status','Pending')->first();
 
@@ -237,8 +240,8 @@ class WithdrawRequest extends Controller
          else
          {
          
-          if(!empty($account))
-              {
+          // if(!empty($account))
+          //     {
               if (Hash::check($password, $user->tpassword))
                {
              
@@ -247,7 +250,7 @@ class WithdrawRequest extends Controller
                         'user_id' => $user->id,
                         'user_id_fk' => $user->username,
                         'amount' => $request->amount,
-                        'account' => $account,
+                        // 'account' => $account,
                         'payment_mode' =>$request->paymentMode,
                         'status' => 'Pending',
                         'walletType' => 2,
@@ -272,11 +275,11 @@ class WithdrawRequest extends Controller
                 return Redirect::back()->withErrors(array('Invalid Transaction Password'));
                 }     
                 
-              }
-              else
-                {
-                return Redirect::back()->withErrors(array('Please Update Your USDT Payment Address Or Bank Details'));
-                }  
+              // }
+              // else
+              //   {
+              //   return Redirect::back()->withErrors(array('Please Update Your USDT Payment Address Or Bank Details'));
+              //   }  
          }
 
         }

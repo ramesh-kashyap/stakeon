@@ -1,559 +1,263 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <!-- Google Tag Manager -->
+                    		@include('layouts.mainsite.header')
 
-    <!-- End Google Tag Manager -->
-    <meta charset="utf-8">
-    <title>{{siteName()}}</title>
-    <base />
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-iconf9e3.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32f9e3.png?v=1.1">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16f9e3.png?v=1.1">
-    <link rel="manifest" href="/favicons/site.webmanifest?v=1.1">
-    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=1.0" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#603cba">
-    <meta name="theme-color" content="#ffffff">
+                    <div class="sf4f625148df40a9b356">
+                        <div class="s8ee82f6a5e1ab59b645">
+                            <div class="s810ab62c54740cd9705">
+                                <div class="sf36b0f22b8bacf2a05f">
+                                    <div class="scfa8aaf4ebc314448ce">
+                                        <div class="s3d62b6f55095168c8f5 s719ef06b609ae7c79d4">
+                                            <i class="s10c70c3412b1a2b18d7 s326797854cf1aa2d2e9"></i>
+                                        </div>
+                                        <div class="sf09790a9d81a6bd8730 s209d518682b6d12c812">
+                                            About <br> <b>Company</b>
+                                        </div>
+                                    </div>
+                                    <div class="s4c0f3ed22553232a268">
 
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="{{ asset('') }}assets/css/libs.css">
-    <link rel="stylesheet" href="{{ asset('') }}assets/css/app54f9.css?v=1.009995">
-    <link rel="stylesheet" href="{{ asset('') }}assets/css/customb361.css?v=1.000099999">
-
-</head>
-
-<body>
-
-
-    <div class="copy-success">
-        <svg>
-            <use xlink:href="/assets/img/sprite.svg#check"></use>
-        </svg>
+                                        <div class="s1dab33613abadb0cc48 s0884db281ce7aca76ef">
+                                            <div class="se6064b19f8f79ce6a25">
+                                                <div class="s33c3761b3091ae8112d sb776cf8ce854af55dc8">
+                                                    <a href="{{route('about-us')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+                                                        <span class="s06c98fe1938eb74d270">
+                                                            <span class="s30c7c55921a92c292cf">
+                                                                <span class="s2dc3968485132430838">
+                                                                    <i class="saa3132e9667e1e0db2b s8678425de6e020307ae"></i>
+                                                                </span>
+                                                            </span>
+                                                            <span class="s481147518fd44c61fea">
+                                                                Group
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="s33c3761b3091ae8112d s0a5597b8746d7600762">
+                                                    <a href="{{route('about-us')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+                                                        <span class="s06c98fe1938eb74d270">
+                                                            <span class="s30c7c55921a92c292cf">
+                                                                <span class="s2dc3968485132430838">
+                                                                    <i class="saa3132e9667e1e0db2b s8678425de6e020307ae"></i>
+                                                                </span>
+                                                            </span>
+                                                            <span class="s481147518fd44c61fea">
+                                                                News
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                                <div class="s33c3761b3091ae8112d socials-gutter__cell--3">
+                                                    <a href="{{route('about-us')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+                                                        <span class="s06c98fe1938eb74d270">
+                                                            <span class="s30c7c55921a92c292cf">
+                                                                <span class="s2dc3968485132430838">
+                                                                    <i class="saa3132e9667e1e0db2b s8678425de6e020307ae"></i>
+                                                                </span>
+                                                            </span>
+                                                            <span class="s481147518fd44c61fea">
+                                                                Support
+                                                            </span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="s86b2fd219e61fe0f9c5 section-about page-other__section-about" id="js-section-about">
+                    <div class="sf4f625148df40a9b356">
+                        <div class="s8ee82f6a5e1ab59b645">
+                            <div class="s066aa868a49bdbee19a sa15973c4c62eba2574b s27fc8d1deb736e45cf1">
+                            <div class="section-text-group sa62ceae8836e3156222">
+    <div class="sdb9e2d97d2518c23086 s22f65b880151d773a74">
+        Who <b>We Are</b>
     </div>
-    <div class="wrapper">
-        <div class="page-wrap page-wrap_about">
-            <header class="header header_page">
-                <div class="header-top">
-                    <div class="container">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-lg-3 col-md-5 col-7"><a class="header-logo" href="/"><img style="width: 168px;
-                                height: 94px; margin-top: -14px;" src="/assets/img/Clogo.png?v=1.0" alt="logo" /></a></div>
-                            <div class="col-lg-9 col-md-7 col-5">
-                                <div class="header-nav">
-                                    <style>
-                                        .header-lang__hide table td div {
-                                            background: rgb(194 149 109);
-                                            margin: 0 5px;
-                                        }
+    <div class="sb7488ce532086996310 s940d16aab02a35ad8a8">
+        Global Boss Coin (GBC) is a revolutionary digital asset platform focused on empowering users in the rapidly growing world of cryptocurrency. With a focus on transparency, security, and innovation, we provide cutting-edge solutions that allow users to participate in the global financial revolution.
+        <br><br>
+        At GBC, we offer investment opportunities backed by blockchain technology, providing users with a chance to grow their wealth through our secure and decentralized system. Our platform is designed to cater to both beginners and experienced investors, ensuring a seamless experience for all.
+        
+    </div>
+    <a href="{{route('login')}}" class="s33127ef4acbf82b3964 sb2f023228505bea984c s74f63b5ee420d3b520f s64c34f60fa6a939403c">
+        <i class="s1844a59843fdb259200"></i>
+        <span>Check Registration</span>
+    </a>
+</div>
 
-                                        .header-lang__hide table td.inactive div {
-                                            padding: 2px 10px;
-                                        }
-
-                                        .header-lang__hide table td.empty {
-                                            background: none;
-                                        }
-
-                                        .header-lang__hide table a {
-                                            color: #ffffff;
-                                            text-decoration: none;
-                                            transition: none;
-                                            padding: 2px 10px;
-                                        }
-
-                                        .header-lang__hide table td div.active,
-                                        .header-lang__hide table td div:hover {
-                                            background: #ffffff;
-                                            color: #000;
-                                        }
-
-                                        .header-lang__hide table td div.active a,
-                                        .header-lang__hide table td div:hover a {
-                                            color: #000;
-                                            opacity: 1;
-                                        }
-
-                                        .header-lang:hover .header-lang__hide table td.inactive {
-                                            opacity: 0.4;
-                                            pointer-events: none !important;
-                                            cursor: default;
-                                        }
-
-                                        .header-lang__hide table td.inactive div:hover {
-                                            background: rgb(194 149 109);
-                                            color: #ffffff;
-                                        }
-                                    </style>
-                                    <div class="header-lang">
-                                        <div class="header-lang__arrow">
-                                            <svg>
-                                                <use xlink:href="/assets/img/sprite.svg#arrow"></use>
-                                            </svg>
-                                        </div>
-                                        <div class="header-lang__text">
-                                            English
-                                        </div>
-                                        <div class="header-lang__hide">
-                                          
+                            </div>
+                            <div class="s066aa868a49bdbee19a sc86843aded1cfe31ca0 sace15b151f63dba1f99">
+                                <div class="s45957be5abe63b23397 s22e23b15054cf5b5f95">
+                                    <div class="sb44af6872ee6b417670">
+                                        <div class="company-number-widget cert-block__company-number-widget">
+                                            <div class="sd6e91309d8ba87b46a9">
+                                                <div class="s8a5bcb3110d12cb6d51">
+                                                    <i class="saec0d9c9da4c15c71b9"></i>
+                                                </div>
+                                                <div class="s7b72707eea9f2f43042">
+                                                    <div class="s3439351c9d4333bc3cc">
+                                                        Company number
+                                                    </div>
+                                                    <div class="sb8974693ac08ca3a60c">
+                                                        15722838
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <div class="header-btns">
-                                        <a class="main-btn main-btn_line" href="{{route('login')}}">
-                                            <img src="{{asset('')}}assets/img/btn-loginc619.svg?v=1.0" alt="btn-login" />login
-                                        </a>
-                                        <a class="main-btn" href="{{route('register')}}">
-                                            <img src="{{asset('')}}assets/img/btn-signc619.svg?v=1.0" alt="btn-sign" />register
-                                        </a>
+                                    <div class="s0c4d4cd5763b22b0b40">
+                                        <div class="s0f87e6bc083913d69d9">
+                                            <div class="sa2b641d482c5a83fc42 s4c5da1bf14aee97b005"></div>
+                                            <div class="sa2b641d482c5a83fc42 s5f820bb7d1e8b8741bd"></div>
+                                        </div>
+                                        <div class="s8bb424363bc570de81b">
+                                            <div class="sa2b641d482c5a83fc42 sa59e341f6336718e09a"></div>
+                                            <div class="sa2b641d482c5a83fc42 s8b4132c937bcb44461b"></div>
+                                        </div>
                                     </div>
-                                    <div class="header-burger"> <span></span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3">
-                           @include('layouts.mainsite.header')
-                        </div>
-                        <div class="col-lg-9">
-                            <div class="page-head">
-                                <div class="row d-flex align-items-center">
-                                    <div class="col-md-4">
-                                        <div class="page-bread"> <a href="/">
-                                                <svg>
-                                                    <use xlink:href="/assets/img/sprite.svg#arrow"></use>
-                                                </svg>home</a>
-                                            <a href="#">
-                                                <svg>
-                                                    <use xlink:href="/assets/img/sprite.svg#arrow"></use>
-                                                </svg>about
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8">
+                <div class="s86b2fd219e61fe0f9c5 s3b9948baaf39a43e2f1 page-other__section-project" id="js-section-project">
+                    <div class="sf4f625148df40a9b356">
+                        <div class="s8ee82f6a5e1ab59b645">
+                            <div class="s810ab62c54740cd9705">
+                                <div class="s0007e563d3faa1351ea">
+                                    <div class="s8ee82f6a5e1ab59b645">
+                                        <div class="s245c4ec9505d0a1c0d1 s0d1fe773830c3551060 sf6edc5e507df864e46c">
+                                        <div class="section-text-group s54bb387fffd82094061">
+    <div class="sdb9e2d97d2518c23086 s22f65b880151d773a74">
+        About <b>Our Project</b>
+    </div>
+    <div class="sb7488ce532086996310 s940d16aab02a35ad8a8">
+        Global Boss Coin (GBC) is a visionary cryptocurrency platform designed to revolutionize the financial landscape. Our project combines the power of blockchain technology with a user-friendly ecosystem that empowers individuals to take control of their financial futures.
+        <br><br>
+        Our innovative approach leverages the latest advancements in digital currency, offering secure, fast, and decentralized transactions. By embracing a forward-thinking strategy, we are continually enhancing our platform to meet the needs of an ever-evolving market.
+    </div>
+    <a href="{{route('register')}}" class="s33127ef4acbf82b3964 sb2f023228505bea984c s74f63b5ee420d3b520f s64c34f60fa6a939403c" data-ajax>
+        <i class="se2867154d2526f59cc9"></i>
+        <span>Sign Up</span>
+    </a>
+</div>
 
-
-                                        <div class="page-soc">
-                                            <p>follow us</p>
-                                            <!--<a href="#" target="_blank">-->
-                                            <!--    <img src="/assets/img/inst.svg" alt="inst"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <!--<a href="#"-->
-                                            <!--    target="_blank">-->
-                                            <!--    <img src="/assets/img/fb.svg" alt="fb"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <!--<a href="#" target="_blank">-->
-                                            <!--    <img src="/assets/img/tw.svg" alt="tw"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <!--<a href="#" target="_blank">-->
-                                            <!--    <img src="/assets/img/medium.svg" alt="medium"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <!--<a href="#"-->
-                                            <!--    target="_blank">-->
-                                            <!--    <img src="/assets/img/yt.svg" alt="yt"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <!--<a href="#" target="_blank">-->
-                                            <!--    <img src="/assets/img/ad.svg" alt="ad"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <!--<a href="#" target="_blank">-->
-                                            <!--    <img src="/assets/img/dis.svg" alt="dis"-->
-                                            <!--        style="max-width:15px" />-->
-                                            <!--</a>-->
-                                            <a href="https://t.me/EtritonAI" target="_blank">
-                                                <img src="/assets/img/tg.svg" alt="tg" />
-                                                <span>channel</span>
-                                            </a>
-                                            <a href="https://t.me/+52BJTYpOc5VjOTYx" target="_blank">
-                                                <img src="/assets/img/tg.svg" alt="tg" />
-                                                <span>Telegram Chat Group</span>
-                                            </a>
-                                            <a href="https://t.me/Jackjo_AI" target="_blank">
-                                                <img src="/assets/img/tg.svg" alt="tg" />
-                                                <span>support</span>
-                                            </a>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="main-title main-title_page main-title_center">
-                                <div class="main-title__top"><img style="    width: 64px;" src="/assets/img/Clogo.png"
-                                        alt="logo-icon" /><span></span>
-                                </div>
-                                <div class="main-title__text">About our
-                                    <p>company<span>:</span></p>
-                                </div>
-                            </div>
-                            <div class="main-text">
-                                <p> <b> Founded in 2023, we are a {{siteName()}} company aimed at revolutionizing the world through decentralizing financial technology and providing access to the best market tools for everyone across the globe. Our team works tirelessly to provide the technology, resources, and support for every trader that needs to make confident trading decisions.
-
-</b>
-                                </p>
-                                <p>Our interaction with investors is based on the use of popular payment systems, ensuring the execution of any payment transactions. Earning passive income is very simple: create a personal account on the Trustees platform, choose a suitable tariff plan, and start your deposit, which will generate profit every day.</p>
-                                
-                                <p>Our team comprises experienced traders and developers who work tirelessly to ensure that our platform is always up-to-date with the latest market trends and technology. We believe in transparency and strive to maintain a high level of customer support, ensuring that our users have access to the information they need to make informed decisions. Join our platform today and start profiting from the ever-changing market!.</p>
-                                <p> <span>In addition, these types of business activity are as much protected from
-                                        possible risks as possible, since using a smart contract, launchpad websites
-                                        initiate an airdrop option, the main feature of which is the fact that this
-                                        guarantees the elimination of any fraud risks and, in addition, invested money
-                                        can be return if the startup for some reason did not realized itself to the
-                                        extent it declared.</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!--<div class="row">-->
-                    <!--    <div class="col-lg-3 col-md-6">-->
-                    <!--        <div class="about-page-box-1">-->
-                    <!--            <div class="main-text">-->
-                    <!--                <h4> <span>What do you know </span>about launchpad platforms?</h4>-->
-                    <!--                <p style="font-size: 14px;">We are talking about decentralized websites that-->
-                    <!--                    attract capital for novice cryptocurrency projects. This is crowdsale, which is-->
-                    <!--                    run by the exchange and its liquidity pool, trading pairs.</p>-->
-                    <!--                <p style="font-size: 14px;">Such platforms gives an opportunity to buy and sell-->
-                    <!--                    "young" cryptocurrencies.</p>-->
-                    <!--            </div>-->
-                    <!--            <a class="main-btn main-btn_orange main-btn_sm" href="/sign_up">Join us</a>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--    <div class="col-lg-3 col-md-6">-->
-                    <!--        <div class="about-page-info"-->
-                    <!--            style="margin-bottom: 20px;padding-left: 45px;padding-right: 40px;"> <img-->
-                    <!--                src="/assets/img/about-page-icon-1.svg" alt="about-page-icon-1" />-->
-                    <!--            <h3>The holding development</h3>-->
-                    <!--            <p>In 2022, in the UAE, the company took a decisive step towards the development of-->
-                    <!--                {{siteName()}}.</p>-->
-                    <!--        </div>-->
-                    <!--        <div class="about-page-info"-->
-                    <!--            style="margin-bottom: 20px;padding-left: 45px;padding-right: 40px;"> <img-->
-                    <!--                src="/assets/img/about-page-icon-2.svg" alt="about-page-icon-2" />-->
-                    <!--            <h3>New vector of cooperation</h3>-->
-                    <!--            <p>The holding decided to reorganize certain business directions. The idea of ​ ​-->
-                    <!--                working with ordinary investors around the world by using an online platform.</p>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--    <div class="col-lg-3 offset-lg-3 col-md-6">-->
-                    <!--        <div class="about-page-box-2">-->
-                    <!--            <div class="main-text">-->
-                    <!--                <p> <i>British holding {{siteName()}}, led by ideological mastermind and founder,-->
-                    <!--                        Mr. Simon Russel, has taken as its business the trading operations on the-->
-                    <!--                        world's largest launchpad platforms, such as:</i></p>-->
-                    <!--            </div>-->
-                    <!--            <div class="about-page-info-2">-->
-                    <!--                <p>CoinList</p>-->
-                    <!--                <p>Polkastarter</p>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--</div>-->
-                    <!--<div class="row">-->
-                    <!--    <div class="col-lg-9">-->
-                    <!--        <div class="about-page-stat">-->
-                    <!--            <div class="header-stat">-->
-                    <!--                <div class="header-stat__item"> <span>4.218<img-->
-                    <!--                            src="/assets/img/header-stat-arrow.svg"-->
-                    <!--                            alt="header-stat-arrow" /></span>-->
-                    <!--                    <p>Stakeholders<br>total</p>-->
-                    <!--                </div>-->
-                    <!--                <div class="header-stat__item"> <span>72<img-->
-                    <!--                            src="/assets/img/header-stat-arrow.svg"-->
-                    <!--                            alt="header-stat-arrow" /></span>-->
-                    <!--                    <p>Invested<br>startups</p>-->
-                    <!--                </div>-->
-                    <!--                <div class="header-stat__item"> <span>621.355.000<img-->
-                    <!--                            src="/assets/img/header-stat-arrow.svg"-->
-                    <!--                            alt="header-stat-arrow" /></span>-->
-                    <!--                    <p>Company's<br>investments amount</p>-->
-                    <!--                </div>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--        <div class="wallets wallets_about">-->
-                    <!--            <div class="wallets-slider">-->
-                    <!--                <div class="swiper-button-prev">-->
-                    <!--                    <svg>-->
-                    <!--                        <use xlink:href="/assets/img/sprite.svg#arrow"></use>-->
-                    <!--                    </svg>-->
-                    <!--                </div>-->
-                    <!--                <div class="swiper-button-next">-->
-                    <!--                    <svg>-->
-                    <!--                        <use xlink:href="/assets/img/sprite.svg#arrow"></use>-->
-                    <!--                    </svg>-->
-                    <!--                </div>-->
-                    <!--                <div class="swiper">-->
-                    <!--                    <div class="swiper-wrapper">-->
-
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/btc-logo.svg"-->
-                    <!--                                    alt="btc-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/bch-logo.svg"-->
-                    <!--                                    alt="bch-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/eth-logo.svg"-->
-                    <!--                                    alt="eth-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/xrp-logo.svg"-->
-                    <!--                                    alt="xrp-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/ltc-logo.svg"-->
-                    <!--                                    alt="ltc-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/dash-logo.svg"-->
-                    <!--                                    alt="dash-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/doge-logo.svg"-->
-                    <!--                                    alt="doge-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/trx-logo.svg"-->
-                    <!--                                    alt="trx-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/usdt-logo.svg"-->
-                    <!--                                    alt="usdt-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/bnb-logo.svg"-->
-                    <!--                                    alt="bnb-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/nix-logo.svg"-->
-                    <!--                                    alt="nix-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/advance-logo.svg"-->
-                    <!--                                    alt="advance-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/pa-logo.svg"-->
-                    <!--                                    alt="pa-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/epc-logo.svg"-->
-                    <!--                                    alt="epc-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/atom-logo.svg"-->
-                    <!--                                    alt="atom-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/coin98-logo.svg"-->
-                    <!--                                    alt="coin98-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/ada-logo.svg"-->
-                    <!--                                    alt="ada-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/matic-logo.svg"-->
-                    <!--                                    alt="matic-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/dot-logo.svg"-->
-                    <!--                                    alt="dot-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/dai-logo.svg"-->
-                    <!--                                    alt="dai-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/avax-logo.svg"-->
-                    <!--                                    alt="avax-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/link-logo.svg"-->
-                    <!--                                    alt="link-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/near-logo.svg"-->
-                    <!--                                    alt="near-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/trw-logo.svg"-->
-                    <!--                                    alt="trw-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/usdt-logo.svg"-->
-                    <!--                                    alt="usdt-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/busd-logo.svg"-->
-                    <!--                                    alt="busd-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/usdc-logo.svg"-->
-                    <!--                                    alt="usdc-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/btt-logo.svg"-->
-                    <!--                                    alt="btt-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/dao-logo.svg"-->
-                    <!--                                    alt="dao-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/sol-logo.svg"-->
-                    <!--                                    alt="sol-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                        <div class="swiper-slide">-->
-                    <!--                            <div class="wallets-item"> <img src="/assets/img/usdc-logo.svg"-->
-                    <!--                                    alt="usdc-logo" />-->
-                    <!--                            </div>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
-                    <!--                </div>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--</div>-->
-                    <div class="main-title main-title_right">
-                        <div class="main-title__num"> <span>02</span></div>
-                        <div class="main-title__top"><span>registration</span></div>
-                        <div class="main-title__text">certificate
-                            <p>Etriton<span>:</span></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-9">
-                            <div class="about-page-quote"> <img src="/assets/img/quote-1.svg" alt="quote-1" />
-                                <p style="font-size: 20px;">If you look at our last 15 solutions, you will see quite
-                                    mediocre achievements. There was no hyperactivity, but a sea of ​ ​ patience becomes
-                                    visible. You should stick to your principles and capabilities, and when there is a
-                                    chance, try to make it to the fullest.</p>
-                                <h3>Charlie Munger, <span>lawyer, economist and professional investor</span></h3>
-                                <i>Wealth over $1.3 billion.</i>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="about-page-title">Profit from cryptostaking</div>
-                                    <div class="main-text main-text_about">
-                                        <p> <b> <img src="/assets/img/about-text-icon.svg" alt="about-text-icon" />Our
-                                                business relies not only on the purchase of young cryptocurrencies and
-                                                tokens.</b></p>
-                                        <p>Also, we take into staking both the already proven main altcoins and young
-                                            cryptocurrencies.</p>
-                                        <p>This is necessary to diversify of the funds invested.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-7">
-                                    <div class="about-page-num"> <img style="    width: 130px;" src="/assets/img/Clogo.png?v=1.0"
-                                            alt="about-page-logo" />
-                                        <p>company number:</p><span>765767</span>
-                                    </div>
-                                    <div class="main-text">
-                                        <h4> <span>Business </span>legality</h4>
-                                        <p>The company's activities have always met the necessary legal requirements.
-
-                                            We are always open to loyal interaction and dialogue with our partners and
-                                            investors.
-                                            The legality of the company's activity is confirmed by a certificate: </p>
-                                    </div><a class="main-btn main-btn_m main-btn_gray"
-                                        href="#"
-                                        target="_blank">check </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="about-cert">
-                                <div class="about-cert__img"> 
-                                </div>
-                                <div class="about-cert__title">
-                                    <svg>
-                                        <use xlink:href="/assets/img/sprite.svg#planet"></use>
-                                    </svg>address
-                                </div>
-                                <p>Half Mile House, Little Chesterton, Bicester, England, OX25 3PD</p>
-                                <!--<a class="about-cert__view popup-img"-->
-                                <!--    href="/assets/img/henbbo_certificate.png"><span>view certificate</span>-->
-                                    <svg>
-                                        <use xlink:href="/assets/img/sprite.svg#zoom"></use>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="page-stat">
-                        <div class="main-title" data-text="statistics">
-                            <div class="main-title__num"><span>03</span></div>
-                            <div class="main-title__top"><span>Numbers</span></div>
-                            <div class="main-title__text">Statistics
-                                <p>Etriton<span>:</span></p>
-                            </div>
-                        </div>
-                        <div class="stat-total">
-                            <div class="stat-total__box"> <img src="/assets/img/stat-total.svg" alt="stat-total" />
-                                <h3>poll of staking:</h3>
-                                <p>{{number_format(generalDetail()->total_fund_invested,2)}}<sup>usd</sup></p>
-                            </div>
-                        </div>
-                        <div class="stat-list">
-                            <div class="stat-list__item"> <img src="/assets/img/stat-icon-1.svg"
-                                    alt="stat-icon-1" /><span>{{currency()}}{{number_format(generalDetail()->total_fund_invested,2)}}</span>
-                                <p>Total funds invested</p>
-                            </div>
-                            <div class="stat-list__item"> <img src="/assets/img/stat-icon-2.svg"
-                                    alt="stat-icon-2" /><span>{{currency()}}{{number_format(generalDetail()->paid_withdrawal,2)}}</span>
-                                <p>Paid</p>
-                                <div style="display: none;">16</div>
-                            </div>
-
-                            <div class="stat-list__item"> <img src="/assets/img/stat-icon-3.svg"
-                                    alt="stat-icon-3" /><span>{{generalDetail()->people_online}}</span>
-                                <p>People online</p>
-                            </div>
-                            <div class="stat-list__item"> <img src="/assets/img/stat-icon-4.svg"
-                                    alt="stat-icon-4" /><span>{{generalDetail()->our_investors}}</span>
-                                <p>our investors</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </header>
-          
+                <div class="s86b2fd219e61fe0f9c5 section-why s0e221cea1c697d8fc28 page-other__section-why">
+                    <div class="sf4f625148df40a9b356">
+                        <div class="s8ee82f6a5e1ab59b645">
+                            <div class="s810ab62c54740cd9705">
+                                <div class="why-title-group">
+                                    <div class="s987d4c4a4aae188830d">
+                                        <div class="s6b99af4c97de590361b">
+                                            <div class="sdb9e2d97d2518c23086 section-why__second-title">
+                                                Why choose us <br> <b>Santera</b>
+                                            </div>
+                                        </div>
+                                        <div class="s292c03d738c88a5b92d">
+                                            <div class="about-widget sef5178b9dc3b59c565d">
+                                                <div class="se338f9dce1b0921f19a">
+                                                    <div class="se96ef1711755bef19f9">
+                                                        <i class="s3afd14fafe2a0667bc2 s992781c18509824cf0e"></i>
+                                                    </div>
+                                                    <div class="s2444da481a4d8cb04a8">
+                                                        <div class="scf89aa1f1c1e94bec51">
+                                                            Santera Platform offers competitive advantages for investments
+                                                            that clearly win in comparison with other market platforms.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="s8ee82f6a5e1ab59b645 scd9fb6bd70d2dddc303">
+                            <div class="s810ab62c54740cd9705">
+                                <div class="sae98a9eb9ec933f2472 js-why-slider">
+                                    <div class="s2386ecc69f56f35a784">
+                                        <div class="s778db1cacbba86e8c6e">
+                                            <div class="s70c025e91cefe39c82d about-block__about-card about-block__about-card--1">
+                                                <div class="s155da3188b06c0d55f2">
+                                                    <div class="s1e4715234a4f2919c20">
+                                                        <i class="s7eaca4d08422a1bf133"></i>
+                                                    </div>
+                                                    <div class="s320557479c9081763b9">
+                                                        Investment autonomy
+                                                    </div>
+                                                    <div class="s9cc6398ada76904bb5a">
+                                                        Unique investment option - deposit return at any time instantly for fee. After the release request,
+                                                        the deposit will transfered to the balance with next income accrual for instant withdrawal.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sa5f7a31977f6424ff11"></div>
+                                        <div class="s70c8f86dae7c1105826">
+                                            <div class="s70c025e91cefe39c82d about-block__about-card s12ff57b889436083508">
+                                                <div class="s155da3188b06c0d55f2">
+                                                    <div class="s1e4715234a4f2919c20">
+                                                        <i class="s539d1182c3fa1a7bc94"></i>
+                                                    </div>
+                                                    <div class="s320557479c9081763b9">
+                                                        Truly stable income
+                                                    </div>
+                                                    <div class="s9cc6398ada76904bb5a">
+                                                        We offer a balanced and stable investment proposal system. The key to stability is a business day
+                                                        system of income accruals. Ordering the instant withdrawal is available at any time.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-            @include('layouts.mainsite.footer')
+                                    <div class="s2386ecc69f56f35a784">
+                                        <div class="s778db1cacbba86e8c6e">
+                                            <div class="s70c025e91cefe39c82d about-block__about-card about-block__about-card--1">
+                                                <div class="s155da3188b06c0d55f2">
+                                                    <div class="s1e4715234a4f2919c20">
+                                                        <i class="s35d6fe6dc33e71bcfa6"></i>
+                                                    </div>
+                                                    <div class="s320557479c9081763b9">
+                                                        Instant withdrawals
+                                                    </div>
+                                                    <div class="s9cc6398ada76904bb5a">
+                                                        Our investment offer provides instant withdrawals for all currencies.
+                                                        In 1-2 minutes after ordering the withdrawal, you can check the txid of the transaction.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sa5f7a31977f6424ff11"></div>
+                                        <div class="s70c8f86dae7c1105826">
+                                            <div class="s70c025e91cefe39c82d about-block__about-card s12ff57b889436083508">
+                                                <div class="s155da3188b06c0d55f2">
+                                                    <div class="s1e4715234a4f2919c20">
+                                                        <i class="sb3c903c2d403fc07a53"></i>
+                                                    </div>
+                                                    <div class="s320557479c9081763b9">
+                                                        Strong security
+                                                    </div>
+                                                    <div class="s9cc6398ada76904bb5a">
+                                                        Our company has enough powerful servers to ensure uninterrupted online
+                                                        of the site even under high loads.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @include('layouts.mainsite.footer')

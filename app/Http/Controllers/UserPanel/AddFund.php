@@ -22,6 +22,28 @@ $this->data['page'] = 'user.fund.addFund';
 return $this->dashboard_layout();
 
 }
+public function confirmFund(Request $request)
+{
+$user=Auth::user();
+$paymentMode = $request->payment_type;
+$amount = $request->amount;
+if ($paymentMode=="USDT.TRC20") 
+{
+  $walletAdress = generalDetail()->usdtTrc20;
+}
+else
+{
+    $walletAdress = generalDetail()->usdtBep20;   
+}
+
+
+$this->data['paymentMode'] = $paymentMode;
+$this->data['amount'] = $amount;
+$this->data['walletAdress'] = $walletAdress;
+$this->data['page'] = 'user.fund.confirmFund';
+return $this->dashboard_layout();
+
+}
 
 
 public function fundHistory(Request $request)
@@ -124,52 +146,43 @@ public function fundHistory(Request $request)
 
 public function SubmitBuyFund(Request $request)
 {
-
-  try{
-        $validation =  Validator::make($request->all(), [
-            'amount' => 'required|numeric|min:30',
-            'transaction_hash' => 'required',
-            'icon_image'=>'max:4096',
+    try {
+        $validation = Validator::make($request->all(), [
+            'amount' => 'required|numeric',
+            'payment_type' => 'required',
+            'transaction_id' => 'required|string|max:255', // Validate transaction ID
         ]);
 
-        if($validation->fails()) {
+        if ($validation->fails()) {
             Log::info($validation->getMessageBag()->first());
-
             return redirect()->route('user.AddFund')->withErrors($validation->getMessageBag()->first())->withInput();
         }
 
-        $user=Auth::user();
+        $user = Auth::user();
+        $invoice = substr(str_shuffle("0123456789"), 0, 7);
 
-        $icon_image = $this->saveDocument($request->file('icon_image'), 'icon_image');
+        $data = [
+            'txn_no' => $request->transaction_id, // Correctly get transaction ID
+            'orderId' => $invoice,
+            'user_id' => $user->id,
+            'user_id_fk' => $user->username,
+            'amount' => $request->amount,
+            'status' => 'Pending',
+            'type' => $request->payment_type,
+            'bdate' => date("Y-m-d"),
+        ];
 
+        $payment = BuyFund::create($data);
 
-               $data = [
-                    'txn_no' =>$request->transaction_hash,
-                    'user_id' => $user->id, 
-                    'user_id_fk' => $user->username,
-                    'amount' => $request->amount,
-                    'status'=>'Pending', 
-                    'type' => 'USDT',
-                    'slip'=>$icon_image,
-                    'bdate' => Date("Y-m-d"),
-
-                ];
-                // dd($data);
-               $payment =  BuyFund::create($data);
-
-
-      $notify[] = ['success', 'Fund Request Submited successfully'];
-      return redirect()->route('user.AddFund')->withNotify($notify);
-      }
-       catch(\Exception $e){
+        $notify[] = ['success', 'Fund Request Submitted successfully'];
+        return redirect()->route('user.AddFund')->withNotify($notify);
+    } catch (\Exception $e) {
         Log::info('error here');
         Log::info($e->getMessage());
-        print_r($e->getMessage());
-        die("hi");
-        return  redirect()->route('user.AddFund')->withErrors('error', $e->getMessage())->withInput();
+        return redirect()->route('user.AddFund')->withErrors('error', $e->getMessage())->withInput();
     }
-
 }
+
 public function saveDocument($document)
 {
     $documentName = time() . '_' . $document->getClientOriginalName();
