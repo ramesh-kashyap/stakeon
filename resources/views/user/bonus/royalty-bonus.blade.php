@@ -28,9 +28,9 @@
         <figure id="as-transactions-list" class="uk-width-expand@xl uk-first-column">
             <div class="uk-card uk-card-default uk-card-body">
                 <header class="uk-heading uk-text-center">
-                    <h1 class="uk-heading-line">Direct Income</h1>
+                    <h1 class="uk-heading-line"> Royalty Income</h1>
                 </header>
-                <form action="{{ route('user.direct-income') }}" method="GET" name="opts">
+                <form action="{{ route('user.royalty-bonus') }}" method="GET" name="opts">
 @csrf
 <!-- Form Grid with Flexbox for better alignment -->
 <div class="uk-grid-medium uk-flex-middle uk-flex-start uk-grid" uk-grid="">
@@ -85,7 +85,7 @@
                class="uk-button uk-button-primary" 
                value="Search" />
 
-        <a href="{{ route('user.direct-income') }}" 
+        <a href="{{ route('user.royalty-bonus') }}" 
            name="reset" 
            class="uk-button uk-button-default" 
            value="Reset">Reset</a>
@@ -93,8 +93,6 @@
 
 </div>
 </form>
-
-
                        
                         <div class="uk-overflow-auto uk-margin-bottom">
                                                             <div>
@@ -104,51 +102,42 @@
                                            <table class="table">
 											   <thead>
 												  <tr>
-													 <th class="table__th">SR</th>
-													 <th class="table__th">Package</th>
-													 <th class="table__th"> Commission</th>
-                                                     <th class="table__th">Date</th>
-													 <th class="table__th">From ID</th>
-                                                     <th class="table__th"> Description</th>
+													 <th class="table__th">Date</th>
+													 <th class="table__th">Amount</th>
+													 <th class="table__th"> Operation</th>
+                                                     <th class="table__th">Status</th>
+													 <th class="table__th">Payment System</th>
 
 												  </tr>
 											   </thead>
 											   <tbody>
-                                               <?php if(is_array($Direct_income) || is_object($Direct_income)){ ?>
+                                               <?php if(is_array($level_income) || is_object($level_income)){ ?>
 
-<?php $cnt = $Direct_income->perPage() * ($Direct_income->currentPage() - 1); ?>
-@foreach ($Direct_income as $value)
+<?php  date_default_timezone_set('UTC');  $cnt = $level_income->perPage() * ($level_income->currentPage() - 1); ?>
+@foreach ($level_income as $value)
 <tr>
                                     <td>
-                                        <div ><?= $cnt += 1 ?></div>
+                                        <div >{{date("D, d M Y H:i:s", strtotime($value->created_at)) }}</div>
                                     </td>
 
                                     <td>
-                                        <div >{{currency()}} {{ $value->amt }}</div>
+                                        <div >{{ $value->comm }} {{generalDetail()->cur_text}}</div>
                                     </td>
 
-                                    
-
-    
-                                    <td>
-                                        <div >{{currency()}} {{ $value->comm }}</div>
-                                    </td>
-
-                                   
-
-                                    <td>
-                                        <div >{{ date('D, d M Y', strtotime($value->created_at)) }}</div>
-                                    </td>
-                                    
-                                    <td>
-                                        <div >{{ $value->rname }}</div>
-                                    </td>
-                                    
                                     <td>
                                         <div >{{ $value->remarks }}</div>
                                     </td>
+                                   
+                                    <td>
+                                        <div >Received</div>
+                                    </td>
+                                    
+                                    <td>
+                                        <div >USDT</div>
+                                    </td>
+                                    
+                                  
 
-    
                                 </tr>
                             @endforeach
     
@@ -158,7 +147,7 @@
 											   </tbody>
 											</table>
                                             <br>
-                                            {{ $Direct_income->withQueryString()->links() }}
+                                            {{ $level_income->withQueryString()->links() }}
 
 											</div>
 											
@@ -178,5 +167,6 @@
 
 </div>
 </main>
+<!-- Custom inline CSS for responsive design -->
 
 

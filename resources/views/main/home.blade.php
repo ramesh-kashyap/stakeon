@@ -18,55 +18,14 @@
 
                     <div class="rate-card">
                         <div class="rate-card__inner">
-                            <div class="s569b8faacdac0ed570f">
-                                Rate increasing
-                            </div>
-                            <div class="s708d42ac42020d0b100">
-                                by 0.2%
-                            </div>
+                            
                             <div class="timer-row sadde6349924fb0901e8" id="js-percent-timer"
                                 data-next="2024-09-30T00:00:00+00:00">
                                 <div class="s8581be162c1437aee29">
-                                    <div class="sb168db56f4dc6d233ec">
-                                        <div class="scdfee7c0554c6572d04">
-                                            <div class="s50dac5755b2678b6e57" id="js-percent-days">
-                                                02
-                                            </div>
-                                            <div class="s034f485fb898619081b">
-                                                days
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="sb168db56f4dc6d233ec">
-                                        <div class="scdfee7c0554c6572d04">
-                                            <div class="s50dac5755b2678b6e57" id="js-percent-hours">
-                                                17
-                                            </div>
-                                            <div class="s034f485fb898619081b">
-                                                hours
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="sb168db56f4dc6d233ec">
-                                        <div class="scdfee7c0554c6572d04">
-                                            <div class="s50dac5755b2678b6e57" id="js-percent-minutes">
-                                                48
-                                            </div>
-                                            <div class="s034f485fb898619081b">
-                                                min
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="sb168db56f4dc6d233ec">
-                                        <div class="scdfee7c0554c6572d04">
-                                            <div class="s50dac5755b2678b6e57" id="js-percent-seconds">
-                                                08
-                                            </div>
-                                            <div class="s034f485fb898619081b">
-                                                sec
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
+                                   
+                                   
+                                   
                                 </div>
                             </div>
                         </div>

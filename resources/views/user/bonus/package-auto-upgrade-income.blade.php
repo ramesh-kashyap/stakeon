@@ -28,9 +28,9 @@
         <figure id="as-transactions-list" class="uk-width-expand@xl uk-first-column">
             <div class="uk-card uk-card-default uk-card-body">
                 <header class="uk-heading uk-text-center">
-                    <h1 class="uk-heading-line">Direct Income</h1>
+                    <h1 class="uk-heading-line">Level Income</h1>
                 </header>
-                <form action="{{ route('user.direct-income') }}" method="GET" name="opts">
+                <form action="{{ route('user.package-auto-income') }}" method="GET" name="opts">
 @csrf
 <!-- Form Grid with Flexbox for better alignment -->
 <div class="uk-grid-medium uk-flex-middle uk-flex-start uk-grid" uk-grid="">
@@ -85,7 +85,7 @@
                class="uk-button uk-button-primary" 
                value="Search" />
 
-        <a href="{{ route('user.direct-income') }}" 
+        <a href="{{ route('user.package-auto-income') }}" 
            name="reset" 
            class="uk-button uk-button-default" 
            value="Reset">Reset</a>
@@ -114,10 +114,10 @@
 												  </tr>
 											   </thead>
 											   <tbody>
-                                               <?php if(is_array($Direct_income) || is_object($Direct_income)){ ?>
+                                               <?php if(is_array($level_income) || is_object($level_income)){ ?>
 
-<?php $cnt = $Direct_income->perPage() * ($Direct_income->currentPage() - 1); ?>
-@foreach ($Direct_income as $value)
+<?php $cnt = $level_income->perPage() * ($level_income->currentPage() - 1); ?>
+@foreach ($level_income as $value)
 <tr>
                                     <td>
                                         <div ><?= $cnt += 1 ?></div>
@@ -158,7 +158,7 @@
 											   </tbody>
 											</table>
                                             <br>
-                                            {{ $Direct_income->withQueryString()->links() }}
+                                            {{ $level_income->withQueryString()->links() }}
 
 											</div>
 											
@@ -178,5 +178,5 @@
 
 </div>
 </main>
-
+<!-- Custom inline CSS for responsive design -->
 

@@ -176,29 +176,4 @@ $cnt = $direct_team->perPage() * ($direct_team->currentPage() - 1); ?>
 </main>
 
 <!-- Custom inline CSS for responsive design -->
-<style>
-/* Style for buttons */
-.search-reset-btns {
-    margin-left: 600px; /* Large screens margin */
-}
 
-/* Responsive Design: Adjust margin-left on smaller screens */
-@media screen and (max-width: 1200px) {
-    .search-reset-btns {
-        margin-left: 300px; /* Medium screens */
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .search-reset-btns {
-        margin-left: 100px; /* Small screens like tablets */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .search-reset-btns {
-        margin-left: 0; /* Mobile screens: no margin */
-        text-align: center; /* Center buttons on mobile */
-    }
-}
-</style>

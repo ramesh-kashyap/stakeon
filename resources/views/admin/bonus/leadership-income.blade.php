@@ -8,7 +8,7 @@
 				<div class="row page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item active"><a href="javascript:void(0)">Profit Summery </a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Roi Bonus</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Leadership Bonus</a></li>
 					</ol>
                 </div>
                 <!-- row -->
@@ -22,7 +22,7 @@
                             </div>
                             <div class="card-body">
                                 
-                                 <form action="{{ route('admin.roi-bonus') }}" method="GET">
+                                 <form action="{{ route('admin.leadership-bonus') }}" method="GET">
                                         <div class="row">
                                             <div class="col-xl-4">
                                                 <div class="form-group mb-3">
@@ -49,7 +49,7 @@
                                             </div>
                                             <div class="col-xl-2">
                                                 <div class="form-group mb-3">
-                                                    <a href="{{ route('admin.roi-bonus') }}" style="padding: 0.6rem 2rem;"
+                                                    <a href="{{ route('admin.leadership-bonus') }}" style="padding: 0.6rem 2rem;"
                                                         name="reset"
                                                         class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
                                                         value="Reset">Reset</a>
@@ -75,10 +75,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if(is_array($direct_incomes) || is_object($direct_incomes)){ ?>
+                                            <?php if(is_array($level_incomes) || is_object($level_incomes)){ ?>
                 
-                                                <?php $cnt =$direct_incomes->perPage() * ($direct_incomes->currentPage() - 1); ?>
-                                                 @foreach($direct_incomes as $value)
+                                                <?php $cnt =$level_incomes->perPage() * ($level_incomes->currentPage() - 1); ?>
+                                                 @foreach($level_incomes as $value)
                                                   <tr>
                                                       <td><?= $cnt += 1?></td>
                                                       <td>{{($value->user)?$value->user->name:''}}</td>
@@ -103,7 +103,7 @@
                                     
                                      <br>
 
-                                    {{ $direct_incomes->withQueryString()->links() }}
+                                    {{ $level_incomes->withQueryString()->links() }}
                                 </div>
                             </div>
                         </div>

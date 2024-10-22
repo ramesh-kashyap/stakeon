@@ -13,6 +13,8 @@ use Hash;
 class Register extends Controller
 {
 
+    private $downline="";
+
     public function getUserNameAjax(Request $request)
     {
         $user = User::where('username', $request->user_id)->first();
@@ -29,7 +31,7 @@ class Register extends Controller
             ]);
         }
     }
-
+    
     public function index()
     {
         return view('auth.verify');

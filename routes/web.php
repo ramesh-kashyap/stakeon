@@ -143,7 +143,15 @@ Route::get('/Direct-income', [App\Http\Controllers\UserPanel\Bonus::class, 'dire
 Route::get('/level-income', [App\Http\Controllers\UserPanel\Bonus::class, 'index'])->name('user.level-income');
 Route::get('/matching-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'cashback_income'])->name('user.matching-bonus');
 Route::get('/reward-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'reward_income'])->name('user.reward-bonus');
-Route::get('/roi-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'roi_income'])->name('user.roi-bonus');
+Route::get('/royalty-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'royalty_income'])->name('user.royalty-bonus');
+Route::get('/leadership-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'leadership_income'])->name('user.leadership-bonus');
+Route::get('/pool-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'pool_income'])->name('user.pool-bonus');
+Route::get('/package-auto-upgrade-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'package_auto_income'])->name('user.package-auto-income');
+Route::get('/re-birth-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 're_birth_bonus'])->name('user.re-birth-income');
+Route::get('/auto-upgrade-bonus', [App\Http\Controllers\UserPanel\Bonus::class, 'auto_upgrade_bonus'])->name('user.auto-upgrade-bonus');
+
+
+
 Route::get('/dailyIncentive', [App\Http\Controllers\UserPanel\Bonus::class, 'dailyIncentive'])->name('user.dailyIncentive');
 Route::get('/activitiesBonus', [App\Http\Controllers\UserPanel\Bonus::class, 'activitiesBonus'])->name('user.activitiesBonus');
 
@@ -224,7 +232,9 @@ Route::get('/direct_level', [App\Http\Controllers\Admin\UserController::class, '
 
 
 //bonusController
-Route::get('roi-bonus', [App\Http\Controllers\Admin\BonusController::class, 'roi_bonus'])->name('admin.roi-bonus');
+Route::get('leadership-bonus', [App\Http\Controllers\Admin\BonusController::class, 'leadership_bonus'])->name('admin.leadership-bonus');
+
+Route::get('pool-bonus', [App\Http\Controllers\Admin\BonusController::class, 'pool_bonus'])->name('admin.pool-bonus');
 Route::get('level-bonus', [App\Http\Controllers\Admin\BonusController::class, 'level_bonus'])->name('admin.level-bonus');
 Route::get('booster-bonus', [App\Http\Controllers\Admin\BonusController::class, 'booster_bonus'])->name('admin.booster-bonus');
 Route::get('club-bonus', [App\Http\Controllers\Admin\BonusController::class, 'club_bonus'])->name('admin.club-bonus');

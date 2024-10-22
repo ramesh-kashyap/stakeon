@@ -53,7 +53,19 @@
             <option value="{{ route('user.direct-income') }}">Direct Income</option>
 >>>>>>> 58591ea (new one)
             <option value="{{ route('user.level-income') }}">Level Income</option>
-            <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
+            <option value="{{ route('user.royalty-bonus') }}">Royalty Income</option>
+            <option value="{{ route('user.leadership-bonus') }}">Leadership Income</option>
+            <option value="{{ route('user.reward-bonus') }}">Reward Income</option>
+            <option value="{{ route('user.pool-bonus') }}">Pool Income</option>
+            <option value="{{ route('user.package-auto-income') }}">Package Auto Upgrade Income</option>
+            <option value="{{ route('user.re-birth-income') }}">Re Birth Income</option>
+            <option value="{{ route('user.auto-upgrade-bonus') }}">Auto Upgrade Income</option>
+
+
+
+
+
+
         </select>
     </div>
 
@@ -172,28 +184,7 @@
 <!-- Custom inline CSS for responsive design -->
 <style>
 /* Style for buttons */
-.search-reset-btns {
-    margin-left: 600px; /* Large screens margin */
-}
 
-/* Responsive Design: Adjust margin-left on smaller screens */
-@media screen and (max-width: 1200px) {
-    .search-reset-btns {
-        margin-left: 300px; /* Medium screens */
-    }
-}
 
-@media screen and (max-width: 768px) {
-    .search-reset-btns {
-        margin-left: 100px; /* Small screens like tablets */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .search-reset-btns {
-        margin-left: 0; /* Mobile screens: no margin */
-        text-align: center; /* Center buttons on mobile */
-    }
-}
 </style>
 
