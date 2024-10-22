@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 58591ea (new one)
 <html>
 
 <head>
@@ -266,6 +269,7 @@
                             </div>
                         </div>
                     </div>
+<<<<<<< HEAD
 =======
 <div class="header-top">
 					<div class="container">
@@ -335,3 +339,5 @@
 					</div>
 				</div>
 >>>>>>> 1abec5b (ruutu)
+=======
+>>>>>>> 58591ea (new one)

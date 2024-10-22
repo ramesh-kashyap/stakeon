@@ -152,6 +152,7 @@
                         </div>
                         <div class="uk-panel">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <div class="as-exit-name">Royalty Income</div>
                             <ins class="js-stats-withdrawn-amount">
                             {{ currency() }}{{ number_format(Auth::user()->reward_bonus->sum('comm'), 2) }}                            </ins>
@@ -160,6 +161,11 @@
                             <ins class="js-stats-withdrawn-amount">
                             {{ currency() }}{{ number_format(Auth::user()->level_bonus->sum('comm'), 2) }}                            </ins>
 >>>>>>> 1abec5b (ruutu)
+=======
+                            <div class="as-exit-name">Royalty Income</div>
+                            <ins class="js-stats-withdrawn-amount">
+                            {{ currency() }}{{ number_format(Auth::user()->reward_bonus->sum('comm'), 2) }}                            </ins>
+>>>>>>> 58591ea (new one)
                         </div>
                     </li>
                 </ul>
@@ -200,10 +206,14 @@
                             <div class="as-exit-name">E Wallet</div>
                             <ins class="js-stats-deposits-amount">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
 =======
                             {{ currency() }}{{ number_format(Auth::user()->withdraw(), 2) }}                            </ins>
 >>>>>>> 1abec5b (ruutu)
+=======
+                            {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
+>>>>>>> 58591ea (new one)
                         </div>
                     </li>
                     <li class="uk-grid-margin">
@@ -222,15 +232,23 @@
     </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     
 =======
 >>>>>>> 1abec5b (ruutu)
+=======
+    
+    
+>>>>>>> 58591ea (new one)
     <!-- Move the referral link section below the statistics -->
     
 
 </section>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 58591ea (new one)
 
 
 
@@ -349,8 +367,11 @@
 
 
 </section>
+<<<<<<< HEAD
 =======
 >>>>>>> 1abec5b (ruutu)
+=======
+>>>>>>> 58591ea (new one)
 <div id="as-dashboard-bottom_inputs" class="uk-form-controls-label-figure uk-grid-margin uk-first-column">
         <div class="week-limit-widget">
             <div class="week-limit-widget__inner">

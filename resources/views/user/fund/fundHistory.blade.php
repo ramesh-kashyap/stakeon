@@ -44,10 +44,14 @@
             <option value="{{ route('user.fundHistory') }}">Fund History</option>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             <option value="{{ route('user.direct-income') }}">Direct Income</option>
 =======
             <option value="{{ route('user.level-income') }}">Direct Income</option>
 >>>>>>> 1abec5b (ruutu)
+=======
+            <option value="{{ route('user.direct-income') }}">Direct Income</option>
+>>>>>>> 58591ea (new one)
             <option value="{{ route('user.level-income') }}">Level Income</option>
             <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
         </select>

@@ -29,10 +29,14 @@
             <div class="uk-card uk-card-default uk-card-body">
                 <header class="uk-heading uk-text-center">
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <h1 class="uk-heading-line">Roi Income</h1>
 =======
                     <h1 class="uk-heading-line">Level Income</h1>
 >>>>>>> 1abec5b (ruutu)
+=======
+                    <h1 class="uk-heading-line">Roi Income</h1>
+>>>>>>> 58591ea (new one)
                 </header>
                 <form action="{{ route('user.roi-bonus') }}" method="GET" name="opts">
 
@@ -48,10 +52,14 @@
             <option value="{{ route('user.fundHistory') }}">Fund History</option>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             <option value="{{ route('user.direct-income') }}">Direct Income</option>
 =======
             <option value="{{ route('user.level-income') }}">Direct Income</option>
 >>>>>>> 1abec5b (ruutu)
+=======
+            <option value="{{ route('user.direct-income') }}">Direct Income</option>
+>>>>>>> 58591ea (new one)
             <option value="{{ route('user.level-income') }}">Level Income</option>
             <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
         </select>
@@ -101,11 +109,15 @@
 											   <thead>
 												  <tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 58591ea (new one)
 													 <th class="table__th">Date</th>
 													 <th class="table__th">Amount</th>
 													 <th class="table__th"> Operation</th>
                                                      <th class="table__th">Status</th>
 													 <th class="table__th">Payment System</th>
+<<<<<<< HEAD
 =======
 													 <th class="table__th">date</th>
 													 <th class="table__th">amount</th>
@@ -113,6 +125,8 @@
                                                      <th class="table__th">status</th>
 													 <th class="table__th">payment system</th>
 >>>>>>> 1abec5b (ruutu)
+=======
+>>>>>>> 58591ea (new one)
 
 												  </tr>
 											   </thead>

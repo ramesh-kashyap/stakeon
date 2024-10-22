@@ -132,10 +132,14 @@ $cnt = $direct_team->perPage() * ($direct_team->currentPage() - 1); ?>
                                    
                                     <td>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <div >{{ $value->active_status }}</div>
 =======
                                         <div >{{ $value->active_status == 'Active' ? 'green' : 'red' }}-tag">{{ $value->active_status }}</div>
 >>>>>>> 1abec5b (ruutu)
+=======
+                                        <div >{{ $value->active_status }}</div>
+>>>>>>> 58591ea (new one)
                                     </td>
 
 

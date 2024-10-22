@@ -381,9 +381,12 @@ try{
     $validation =  Validator::make($request->all(), [
         'amount' => 'required|numeric|min:5',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         'walletType' => 'required|in:1,2',
 >>>>>>> 1abec5b (ruutu)
+=======
+>>>>>>> 58591ea (new one)
         'user_id' => 'required|exists:users,username',
         'transaction_password' => 'required',
 
@@ -414,10 +417,14 @@ try{
 
          $balance=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
           // $walletType = $request->walletType;
 =======
           $walletType = $request->walletType;
 >>>>>>> 1abec5b (ruutu)
+=======
+          // $walletType = $request->walletType;
+>>>>>>> 58591ea (new one)
       
           $balance=round(Auth::user()->FundBalance(),2);
        
@@ -446,18 +453,26 @@ try{
                 'sdate' => Date("Y-m-d"),
                 'active_from' => $user->username,
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'walletType' =>1,
 =======
                 'walletType' =>$request->walletType,
 >>>>>>> 1abec5b (ruutu)
+=======
+                'walletType' =>1,
+>>>>>>> 58591ea (new one)
                 'created_at' =>Date('Y-m-d H:i:s'),
 
             ];
             $payment = Investment::insert($data);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 1abec5b (ruutu)
+=======
+
+>>>>>>> 58591ea (new one)
             if ($user_detail->active_status=="Pending")
             {
              $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
@@ -470,10 +485,14 @@ try{
               User::where('id',$user_detail->id)->update($user_update);
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 58591ea (new one)
             
             add_level_income($user_detail->id,$request->amount);
             add_direct_income($user_detail->id,$request->amount);
 
+<<<<<<< HEAD
 
             // // add pickup bonus
             //   sendEmail($user_detail->email, 'Invoice at '.siteName(), [
@@ -514,6 +533,8 @@ try{
 =======
  
             // add_level_income($user_detail->id,$request->amount);
+=======
+>>>>>>> 58591ea (new one)
 
             // // add pickup bonus
             //   sendEmail($user_detail->email, 'Invoice at '.siteName(), [

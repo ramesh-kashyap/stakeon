@@ -126,10 +126,14 @@ audio,canvas,iframe,img,svg,video {
 
 canvas,img,svg,video {
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* max-width: 100%; */
 =======
     max-width: 100%;
 >>>>>>> 1abec5b (ruutu)
+=======
+    /* max-width: 100%; */
+>>>>>>> 58591ea (new one)
     height: auto;
     box-sizing: border-box
 }

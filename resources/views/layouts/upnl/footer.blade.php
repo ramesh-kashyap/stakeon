@@ -52,13 +52,17 @@
 			</li>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             <li class="uk-nav-divider"></li>
 >>>>>>> 1abec5b (ruutu)
+=======
+>>>>>>> 58591ea (new one)
         </ul>
 
         <ul class="uk-nav uk-nav-default">
             
+<<<<<<< HEAD
 <<<<<<< HEAD
                      
 =======
@@ -71,6 +75,9 @@
             
             <li class="uk-nav-divider"></li>
 >>>>>>> 1abec5b (ruutu)
+=======
+                     
+>>>>>>> 58591ea (new one)
 
             <li>
                 <a href="?a=logout">

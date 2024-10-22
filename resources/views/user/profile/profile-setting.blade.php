@@ -36,10 +36,15 @@
                         </form>
                     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     @include('partials.notify')
 
 =======
 >>>>>>> 1abec5b (ruutu)
+=======
+                    @include('partials.notify')
+
+>>>>>>> 58591ea (new one)
                 </div>
             </section>
 

@@ -10,6 +10,7 @@ class FrontController extends Controller
     public function index()
     {
 
+        dd("hii ");
         return view('main.home');
     }
 
