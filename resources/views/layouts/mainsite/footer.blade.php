@@ -1,10 +1,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 <div class="outer__footer-cell">
 	<div class="sbde03e8dcbeadda33ed">
 		<div class="sf4f625148df40a9b356">
@@ -71,6 +76,7 @@
 											</a>
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 
@@ -106,36 +112,46 @@
 										</div>
 <<<<<<< HEAD
 =======
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 
-<footer class="footer">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 offset-lg-12">
-							<div class="footer-wallets py-4 py-lg-5">
-								<div class="swiper-button-prev">
-									<svg>
-										<use xlink:href="{{asset('')}}assets/img/sprite.svg#arrow"></use>
-									</svg>
-								</div>
-								<div class="swiper-button-next">
-									<svg>
-										<use xlink:href="{{asset('')}}assets/img/sprite.svg#arrow"></use>
-									</svg>
-								</div>
-								<div class="swiper">
-									<div class="swiper-wrapper">
-
-										<div class="swiper-slide">
-											<div class="footer-wallets__item"> <img
-													src="{{asset('')}}assets/img/btc-white.svg" alt="btc-white" />
-											</div>
+								<div class="s1dab33613abadb0cc48 se9a7677fd00cc80f871">
+									<div class="se6064b19f8f79ce6a25">
+										<div class="s33c3761b3091ae8112d sb776cf8ce854af55dc8">
+											<a href="{{route('Index')}}"  class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+												<span class="s06c98fe1938eb74d270">
+													<span class="s30c7c55921a92c292cf">
+														<span class="s2dc3968485132430838">
+															<i class="saa3132e9667e1e0db2b s8678425de6e020307ae"></i>
+														</span>
+													</span>
+													<span class="s481147518fd44c61fea">
+														Group
+													</span>
+												</span>
+											</a>
 										</div>
-										<div class="swiper-slide">
-											<div class="footer-wallets__item"> <img
-													src="{{asset('')}}assets/img/eth-white.svg" alt="eth-white" />
-											</div>
+										<div class="s33c3761b3091ae8112d s0a5597b8746d7600762">
+											<a href="{{route('Index')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+												<span class="s06c98fe1938eb74d270">
+													<span class="s30c7c55921a92c292cf">
+														<span class="s2dc3968485132430838">
+															<i class="saa3132e9667e1e0db2b s8678425de6e020307ae"></i>
+														</span>
+													</span>
+													<span class="s481147518fd44c61fea">
+														News
+													</span>
+												</span>
+											</a>
 										</div>
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+<<<<<<< HEAD
+>>>>>>> d15f7a2 (new one)
 										<div class="swiper-slide">
 											<div class="footer-wallets__item"> <img
 													src="{{asset('')}}assets/img/bch-white.svg" alt="xrp-white" />
@@ -194,7 +210,25 @@
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+										<div class="s33c3761b3091ae8112d socials-gutter__cell--3">
+											<a href="{{route('Index')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+												<span class="s06c98fe1938eb74d270">
+													<span class="s30c7c55921a92c292cf">
+														<span class="s2dc3968485132430838">
+															<i class="saa3132e9667e1e0db2b s8678425de6e020307ae"></i>
+														</span>
+													</span>
+													<span class="s481147518fd44c61fea">
+														Support
+													</span>
+												</span>
+											</a>
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 										</div>
 									</div>
 								</div>
@@ -203,10 +237,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 						<div class="s68280e68b7649396fc4">
 							<div class="s7ebeb2a9fe6777f8611">
 								<div class="s4c8118ff52454be8a1a s736598a381373ae01df">
@@ -247,16 +286,24 @@
 								<div class="footer-text">
 									<p><strong class="footer-text__warning">Risk Warning:</strong> The performance of most cryptoassets can be highly volatile, with their value dropping as quickly as it can rise. You should be prepared to lose all the money you invest in cryptoassets. The cryptoasset market is largely unregulated.</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 								</div>
 							</div>
 <<<<<<< HEAD
 =======
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 								</div>
-								<div class="footer-copy">Copyright © 2024 StakeOn. All rights reserved</div>
 							</div>
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+<<<<<<< HEAD
+>>>>>>> d15f7a2 (new one)
 						</div>
 						<div class="col-lg-9 order-1 oreder-lg-2">
 							<div class="footer-bot">
@@ -326,7 +373,14 @@
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+							<div class="s31f257875c7e312d967">
+								
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 							</div>
 						</div>
 					</div>
@@ -334,10 +388,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 			</div>
 		</div>
 	</div>
@@ -380,6 +439,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 </html>
 =======
 			</footer>
@@ -388,8 +448,16 @@
 </html>
 >>>>>>> 58591ea (new one)
 =======
+=======
+>>>>>>> d15f7a2 (new one)
 </html>
 =======
 			</footer>
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+</html>
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)

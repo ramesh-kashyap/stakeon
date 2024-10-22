@@ -74,14 +74,16 @@
             <option value="{{ route('user.DepositHistory') }}">Deposit History</option>
             <option value="{{ route('user.Withdraw-History') }}">Withdraw History</option>
             <option value="{{ route('user.fundHistory') }}">Fund History</option>
-
-            <option value="{{ route('user.level-income') }}">Direct Income</option>
+            <option value="{{ route('user.direct-income') }}">Direct Income</option>
             <option value="{{ route('user.level-income') }}">Level Income</option>
             <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
         </select>
     </div>
+<<<<<<< HEAD
 
 >>>>>>> db9cd7b (ruutu)
+=======
+>>>>>>> 9df20e3 (new one)
     <!-- Form Control 2: Limit Dropdown -->
     <div class="uk-form-controls" style="margin-right: 10px;">
         <select name="limit" class="uk-input form-control custom-select">
@@ -92,9 +94,12 @@
         </select>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> db9cd7b (ruutu)
+=======
+>>>>>>> 9df20e3 (new one)
     <!-- Search Input with custom width and spacing -->
     <input type="text" 
            placeholder="Search Users"

@@ -154,8 +154,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+>>>>>>> d15f7a2 (new one)
                             <div class="as-exit-name">Royalty Income</div>
                             <ins class="js-stats-withdrawn-amount">
                             {{ currency() }}{{ number_format(Auth::user()->reward_bonus->sum('comm'), 2) }}                            </ins>
@@ -172,7 +175,15 @@
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+                            <div class="as-exit-name">Royalty Income</div>
+                            <ins class="js-stats-withdrawn-amount">
+                            {{ currency() }}{{ number_format(Auth::user()->reward_bonus->sum('comm'), 2) }}                            </ins>
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
                         </div>
                     </li>
                 </ul>
@@ -215,6 +226,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
 =======
                             {{ currency() }}{{ number_format(Auth::user()->withdraw(), 2) }}                            </ins>
@@ -223,11 +235,19 @@
                             {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
 >>>>>>> 58591ea (new one)
 =======
+=======
+>>>>>>> d15f7a2 (new one)
                             {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
 =======
                             {{ currency() }}{{ number_format(Auth::user()->withdraw(), 2) }}                            </ins>
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+                            {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}                            </ins>
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
                         </div>
                     </li>
                     <li class="uk-grid-margin">
@@ -248,6 +268,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     
 =======
@@ -257,11 +278,20 @@
     
 >>>>>>> 58591ea (new one)
 =======
+=======
+>>>>>>> d15f7a2 (new one)
     
     
 =======
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+    
+    
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
     <!-- Move the referral link section below the statistics -->
     
 
@@ -269,10 +299,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 
 
 
@@ -393,6 +428,7 @@
 </section>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1abec5b (ruutu)
 =======
@@ -401,6 +437,12 @@
 =======
 >>>>>>> db9cd7b (ruutu)
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> db9cd7b (ruutu)
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 <div id="as-dashboard-bottom_inputs" class="uk-form-controls-label-figure uk-grid-margin uk-first-column">
         <div class="week-limit-widget">
             <div class="week-limit-widget__inner">

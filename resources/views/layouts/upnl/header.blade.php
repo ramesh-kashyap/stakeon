@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <title>{{siteName()}}</title>
 =======
     <title>StakeOn</title>
@@ -17,11 +18,19 @@
     <title>{{siteName()}}</title>
 >>>>>>> 58591ea (new one)
 =======
+=======
+>>>>>>> d15f7a2 (new one)
     <title>{{siteName()}}</title>
 =======
     <title>StakeOn</title>
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+    <title>{{siteName()}}</title>
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 	
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,15 +48,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
         <div style=" margin-top:3px;"class="username">{{ Auth::user()->username }}</div>
         <div style=" margin-top:3px;" class="username">{{ Auth::user()->name }}</div>
 
         
        </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -58,10 +73,17 @@
 >>>>>>> 58591ea (new one)
 =======
 =======
+>>>>>>> d15f7a2 (new one)
+=======
         <div class="username">{{ Auth::user()->username }}</div>
     </div>
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
     <ul class="uk-iconnav uk-iconnav-vertical uk-animation-fade uk-animation-fast">
         
         <li class="">
@@ -95,6 +117,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <img src="{{asset('')}}massets/img/icon/account/new-deposit.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
 =======
                     <img src="{{asset('')}}massets/img/icon/account/withdrawal.svg" width="28" height="28" loading="lazy" alt="" uk-svg>
@@ -103,11 +126,19 @@
                 <img src="{{asset('')}}massets/img/icon/account/new-deposit.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
 >>>>>>> 58591ea (new one)
 =======
+=======
+>>>>>>> d15f7a2 (new one)
                 <img src="{{asset('')}}massets/img/icon/account/new-deposit.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
 =======
                     <img src="{{asset('')}}massets/img/icon/account/withdrawal.svg" width="28" height="28" loading="lazy" alt="" uk-svg>
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+                <img src="{{asset('')}}massets/img/icon/account/new-deposit.svg" width="36" height="31" loading="lazy" alt="" uk-svg>
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
                 </span>
                 Add Fund
             </a>
@@ -164,6 +195,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <span class="uk-text-lead">Welcome, {{Auth::user()->name}}!</span>
 =======
                     <span class="uk-text-lead">Welcome, Rameshk!</span>
@@ -172,11 +204,19 @@
                     <span class="uk-text-lead">Welcome, {{Auth::user()->name}}!</span>
 >>>>>>> 58591ea (new one)
 =======
+=======
+>>>>>>> d15f7a2 (new one)
                     <span class="uk-text-lead">Welcome, {{Auth::user()->name}}!</span>
 =======
                     <span class="uk-text-lead">Welcome, Rameshk!</span>
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+                    <span class="uk-text-lead">Welcome, {{Auth::user()->name}}!</span>
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
                 </aside>
 
             </div>

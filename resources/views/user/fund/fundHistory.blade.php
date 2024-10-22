@@ -46,8 +46,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+>>>>>>> d15f7a2 (new one)
             <option value="{{ route('user.direct-income') }}">Direct Income</option>
 =======
             <option value="{{ route('user.level-income') }}">Direct Income</option>
@@ -67,6 +70,9 @@
 
 =======
             <option value="{{ route('user.level-income') }}">Direct Income</option>
+=======
+            <option value="{{ route('user.direct-income') }}">Direct Income</option>
+>>>>>>> 9df20e3 (new one)
             <option value="{{ route('user.level-income') }}">Level Income</option>
             <option value="{{ route('user.roi-bonus') }}">Roi Income</option>
         </select>

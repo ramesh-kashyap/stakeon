@@ -134,6 +134,7 @@ $cnt = $direct_team->perPage() * ($direct_team->currentPage() - 1); ?>
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <div >{{ $value->active_status }}</div>
 =======
                                         <div >{{ $value->active_status == 'Active' ? 'green' : 'red' }}-tag">{{ $value->active_status }}</div>
@@ -142,11 +143,19 @@ $cnt = $direct_team->perPage() * ($direct_team->currentPage() - 1); ?>
                                         <div >{{ $value->active_status }}</div>
 >>>>>>> 58591ea (new one)
 =======
+=======
+>>>>>>> d15f7a2 (new one)
                                         <div >{{ $value->active_status }}</div>
 =======
                                         <div >{{ $value->active_status == 'Active' ? 'green' : 'red' }}-tag">{{ $value->active_status }}</div>
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+                                        <div >{{ $value->active_status }}</div>
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
                                     </td>
 
 

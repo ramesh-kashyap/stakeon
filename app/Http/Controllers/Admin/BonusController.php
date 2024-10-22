@@ -16,7 +16,11 @@ class BonusController extends Controller
            $limit = $request->limit ? $request->limit :  paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
+<<<<<<< HEAD
              $notes = Income::where('remarks','Pool Income')->orderBy('id', 'DESC');
+=======
+             $notes = Income::where('remarks','Roi Income')->orderBy('id', 'DESC');
+>>>>>>> 9df20e3 (new one)
 
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){

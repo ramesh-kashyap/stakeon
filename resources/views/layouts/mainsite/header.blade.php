@@ -1,10 +1,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 <html>
 
 <head>
@@ -274,8 +279,11 @@
                     </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+>>>>>>> d15f7a2 (new one)
 =======
 <div class="header-top">
 					<div class="container">
@@ -350,4 +358,9 @@
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)

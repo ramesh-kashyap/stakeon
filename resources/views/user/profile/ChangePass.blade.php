@@ -42,6 +42,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                         @include('partials.notify')
 >>>>>>> 1abec5b (ruutu)
@@ -52,6 +53,13 @@
                         @include('partials.notify')
 >>>>>>> db9cd7b (ruutu)
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+                        @include('partials.notify')
+>>>>>>> db9cd7b (ruutu)
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 
                     </div>
 
@@ -68,8 +76,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+>>>>>>> d15f7a2 (new one)
               
 =======
                         @if ($errors->any())
@@ -84,7 +95,13 @@
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+              
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
                         <form action="{{ route('user.change-trxpasswword') }}" method="post" name="editform">
                             {{ csrf_field() }}
                             <!-- Old Password -->
@@ -119,6 +136,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 1abec5b (ruutu)
@@ -130,6 +148,14 @@
 =======
 >>>>>>> db9cd7b (ruutu)
 >>>>>>> da964d8 (ruutu)
+=======
+
+=======
+>>>>>>> db9cd7b (ruutu)
+=======
+
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
         </div>
     </div>
 </main>

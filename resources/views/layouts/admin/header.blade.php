@@ -276,7 +276,11 @@ table#example {
 							<span class="nav-text">Profit Summary</span>
 						</a>
                         <ul aria-expanded="false">
+<<<<<<< HEAD
                             <li><a href="{{ route('admin.pool-bonus') }}">PHP_ROUND_HALF_ODD  Income</a></li>
+=======
+                            <li><a href="{{ route('admin.roi-bonus') }}">Roi  Income</a></li>
+>>>>>>> 9df20e3 (new one)
                           
                             <li><a href="{{ route('admin.level-bonus') }}">Level Income</a></li>
                             <!--<li><a href="{{route('admin.reward-bonus')}}">Royalty Bonus</a></li>-->

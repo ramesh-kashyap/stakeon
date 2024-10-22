@@ -383,6 +383,7 @@ try{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         'walletType' => 'required|in:1,2',
 >>>>>>> 1abec5b (ruutu)
@@ -393,6 +394,13 @@ try{
         'walletType' => 'required|in:1,2',
 >>>>>>> db9cd7b (ruutu)
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+        'walletType' => 'required|in:1,2',
+>>>>>>> db9cd7b (ruutu)
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
         'user_id' => 'required|exists:users,username',
         'transaction_password' => 'required',
 
@@ -425,6 +433,7 @@ try{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           // $walletType = $request->walletType;
 =======
           $walletType = $request->walletType;
@@ -433,11 +442,19 @@ try{
           // $walletType = $request->walletType;
 >>>>>>> 58591ea (new one)
 =======
+=======
+>>>>>>> d15f7a2 (new one)
           // $walletType = $request->walletType;
 =======
           $walletType = $request->walletType;
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+          // $walletType = $request->walletType;
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
       
           $balance=round(Auth::user()->FundBalance(),2);
        
@@ -468,6 +485,7 @@ try{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 'walletType' =>1,
 =======
                 'walletType' =>$request->walletType,
@@ -476,11 +494,19 @@ try{
                 'walletType' =>1,
 >>>>>>> 58591ea (new one)
 =======
+=======
+>>>>>>> d15f7a2 (new one)
                 'walletType' =>1,
 =======
                 'walletType' =>$request->walletType,
 >>>>>>> db9cd7b (ruutu)
+<<<<<<< HEAD
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+                'walletType' =>1,
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
                 'created_at' =>Date('Y-m-d H:i:s'),
 
             ];
@@ -488,6 +514,7 @@ try{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 1abec5b (ruutu)
@@ -499,6 +526,14 @@ try{
 =======
 >>>>>>> db9cd7b (ruutu)
 >>>>>>> da964d8 (ruutu)
+=======
+
+=======
+>>>>>>> db9cd7b (ruutu)
+=======
+
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
             if ($user_detail->active_status=="Pending")
             {
              $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
@@ -513,10 +548,15 @@ try{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
             
             add_level_income($user_detail->id,$request->amount);
             add_direct_income($user_detail->id,$request->amount);
@@ -563,10 +603,15 @@ try{
  
             // add_level_income($user_detail->id,$request->amount);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 58591ea (new one)
 =======
 >>>>>>> da964d8 (ruutu)
+=======
+=======
+>>>>>>> 9df20e3 (new one)
+>>>>>>> d15f7a2 (new one)
 
             // // add pickup bonus
             //   sendEmail($user_detail->email, 'Invoice at '.siteName(), [
