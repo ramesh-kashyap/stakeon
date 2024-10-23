@@ -133,31 +133,22 @@
         }
 
         .responsive-logo {
-    margin-top: 20px;
-    width: 110px; /* Fixed width for larger screens */
-    max-width: 100%; /* Ensures the logo will not exceed the width of its container */
-    height: auto; /* Maintains the aspect ratio */
-    display: block; /* Removes any inline spacing */
-}
+                    margin-top: 20px;
+            width: 231px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
 /* Responsive Design for mobile */
-@media (max-width: 768px) {
-    .responsive-logo {
-        width: 70%; /* Adjust width for mobile view */
-        max-width: 90px; /* Set a max width to prevent it from getting too large */
-        margin-top:-15px; /* Set a max width for smaller devices */
+        @media (max-width: 768px) {
+            .responsive-logo {
+                width: 83%;
+                max-width: 160px;
+                margin-top: -15px;
 
-    }
-}
-
-/* Additional for very small screens */
-@media (max-width: 480px) {
-    .responsive-logo {
-        width: 60%; /* Further reduce the logo size */
-        max-width: 70px;
-        margin-top:-15px; /* Set a max width for smaller devices */
-    }
-}
+            }
+        }
 
 
     </style>
@@ -184,7 +175,7 @@
                                     <div class="s26a3f56d59811ed1db0">
                                         <div class="s34b1f5c5ed748488792">
                                         <a href="{{ route('Index') }}" class=" s53d13bdb71d5e83ed29 ">
-                                                <img style="margin-top:6px;" src="{{ asset('assets/fonts/G B C LOGO.png') }}" alt="Logo"
+                                                <img style="margin-top:6px;" src="{{ asset('massets/img/logo/logo-white.png') }}" alt="Logo"
                                                     class="responsive-logo">
                                             </a>
                                         </div>
@@ -197,7 +188,7 @@
                                     <div class="se5e25fa1fdaceeef360">
                                         <div class="sc82330a9d2e5c2fc209">
                                             <a href="{{ route('Index') }}" class=" s53d13bdb71d5e83ed29 ">
-                                                <img src="{{ asset('assets/fonts/G B C LOGO.png') }}" alt="Logo"
+                                                <img src="{{ asset('massets/img/logo/logo-white.png') }}" alt="Logo"
                                                     class="responsive-logo">
                                             </a>
                                         </div>

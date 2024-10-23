@@ -7,7 +7,7 @@
 						<div class="sddec949fb417995c5e0">
 							<div class="sb2b288de5b7c77d381f">
 							<a href="{{ route('Index') }}" class=" " data-ajax="">
-                                                <img src="{{ asset('assets/fonts/G B C LOGO.png') }}" alt="Logo"
+                                                <img src="{{ asset('massets/img/logo/logo-white.png') }}" alt="Logo"
                                                     class="responsive-logo">
                                             </a>							</div>
 							<div class="sd556bd83dda32e2f784">

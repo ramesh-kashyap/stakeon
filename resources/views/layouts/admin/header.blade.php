@@ -81,7 +81,32 @@ table#example {
     height: 3.5rem;
     border-radius: 1rem;
 }
+
+
+
+.responsive-logo {
+                    margin-top: 20px;
+            width: 231px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+/* Responsive Design for mobile */
+        @media (max-width: 768px) {
+            .responsive-logo {
+                width: 83%;
+                max-width: 160px;
+                margin-top: -15px;
+
+            }
+        }
+
+
+
+
 </style>
+
 <body>
 
     <!--*******************
@@ -111,8 +136,8 @@ table#example {
         ***********************************-->
         <div class="nav-header">
             <a href="{{asset('')}}" class="brand-logo">
-                <img src="{{asset('')}}assets/img/logo.png" style="    width: 133px;
-                margin: 0px auto;" alt=""/>
+            <img src="{{ asset('massets/img/logo/logo-white.png') }}" alt="Logo"
+            class="responsive-logo">
 
             </a>
             <div class="nav-control">
@@ -276,14 +301,18 @@ table#example {
 							<span class="nav-text">Profit Summary</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('admin.pool-bonus') }}">PHP_ROUND_HALF_ODD  Income</a></li>
                           
                             <li><a href="{{ route('admin.level-bonus') }}">Level Income</a></li>
-                            <!--<li><a href="{{route('admin.reward-bonus')}}">Royalty Bonus</a></li>-->
-                            <!--<li><a href="{{route('admin.booster-bonus')}}">Daily Incentive</a></li>-->
-                            <li><a href="{{route('admin.club-bonus')}}">Direct  Income</a></li>
-                            <!--<li><a href="{{route('admin.activities-bonus')}}">Activities Bonus</a></li>-->
+                            <li><a href="{{route('admin.direct-bonus')}}">Direct  Income</a></li>
                             <li><a href="{{route('admin.royalty')}}">Royalty</a></li>
+                            <li><a href="{{ route('admin.auto-upgrade-bonus') }}">Auto Upgrade Income</a></li>
+                            <li><a href="{{route('admin.re-birth-bonus')}}">Re Birth Income</a></li>
+                            <li><a href="{{route('admin.reward-bonus')}}">Reward Income</a></li>
+                            <li><a href="{{route('admin.package-auto-upgrade-bonus')}}">Package Auto Upgrade Income</a></li>
+                            <li><a href="{{route('admin.leadership-bonus')}}">Leadership Income</a></li>
+                            <li><a href="{{route('admin.pool-bonus')}}">Pool Income</a></li>
+
+
 
 
                         </ul>

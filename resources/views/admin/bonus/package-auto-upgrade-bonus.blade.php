@@ -8,7 +8,7 @@
 				<div class="row page-titles">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item active"><a href="javascript:void(0)">Profit Summery </a></li>
-						<li class="breadcrumb-item"><a href="javascript:void(0)">Daily Incentive</a></li>
+						<li class="breadcrumb-item"><a href="javascript:void(0)">Package Auto Upgrade Bonus</a></li>
 					</ol>
                 </div>
                 <!-- row -->
@@ -18,11 +18,10 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Daily Incentive</h4>
+                                <h4 class="card-title">Package Auto Upgrade Bonus</h4>
                             </div>
                             <div class="card-body">
-                                
-                                  <form action="{{ route('admin.booster-bonus') }}" method="GET">
+                                     <form action="{{ route('admin.package-auto-upgrade-bonus') }}" method="GET">
                                         <div class="row">
                                             <div class="col-xl-4">
                                                 <div class="form-group mb-3">
@@ -49,7 +48,7 @@
                                             </div>
                                             <div class="col-xl-2">
                                                 <div class="form-group mb-3">
-                                                    <a href="{{ route('admin.booster-bonus') }}" style="padding: 0.6rem 2rem;"
+                                                    <a href="{{ route('admin.package-auto-upgrade-bonus') }}" style="padding: 0.6rem 2rem;"
                                                         name="reset"
                                                         class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
                                                         value="Reset">Reset</a>
@@ -59,6 +58,7 @@
         
                                         </div>
                                     </form>
+                                    
                                 <div class="table-responsive">
                                     <table id="example" class="display" style="min-width: 845px">
                                         <thead>
@@ -66,43 +66,43 @@
                                                 <th>S NO.</th>
                                                 <th>Name</th>
                                                 <th>User ID</th>
+                                               
                                                 <th>Amount</th>
                                                 <th>Transaction Date.</th>
-                                              
-                                                <th>From ID</th>
                                                 <th>Remarks</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if(is_array($level_incomes) || is_object($level_incomes)){ ?>
+                                            <?php if(is_array($direct_incomes) || is_object($direct_incomes)){ ?>
                 
-                                            <?php $cnt =$level_incomes->perPage() * ($level_incomes->currentPage() - 1); ?>
-                                            @foreach($level_incomes as $value)
-                                                <tr>
-                                                    <td><?= $cnt += 1?></td>
-                                                    <td>{{ ($value->user)?$value->user->name:'' }}</td>
-                                                    <td>{{ $value->user_id_fk }}</td>
-                                                  
-                                                    <td> {{currency()}} {{ $value->comm }} </td>
-                                                    <td>{{ $value->created_at }}</td>
+                                                <?php $cnt =$direct_incomes->perPage() * ($direct_incomes->currentPage() - 1); ?>
+                                                 @foreach($direct_incomes as $value)
+                                                  <tr>
+                                                      <td><?= $cnt += 1?></td>
+                                                      <td>{{($value->user)?$value->user->name:''}}</td>
+                                                      <td>{{$value->user_id_fk}}</td>
+                                                    
+                                                      <td>  {{currency()}}   {{$value->comm}} </td>
+                                                      <td>{{$value->created_at}}</td>
                 
-                                                    <td>{{ $value->rname }}</td>
-                                                    <td>{{ $value->remarks }}</td>
-                
+                                                      <td>{{$value->remarks}}</td>
                 
                 
-                                                </tr>
-                                            @endforeach
                 
-                                            <?php }?>
+                                                  </tr>
+                                                  @endforeach
+                
+                                             <?php }?>
                 
                 
                                                 </tbody>
                                        
                                     </table>
-                                     <br>
+                                    
+                                      <br>
 
-                                    {{ $level_incomes->withQueryString()->links() }}
+                                    {{ $direct_incomes->withQueryString()->links() }}
+                                    
                                 </div>
                             </div>
                         </div>

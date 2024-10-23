@@ -5,38 +5,40 @@
             <div class="sef8edc60a1db89dd9a8">
                 <div class="s21aa5237a89546b52c7">
                     <picture class="s981e1350a7b148e1e80">
-                        <source srcset="{{asset('')}}assets/img/webp/header-img.webp" type="image/webp"
+                        <source srcset="{{ asset('') }}assets/img/webp/header-img.webp" type="image/webp"
                             class="s981e1350a7b148e1e80">
-                        <img src="{{asset('')}}assets/img/header-img.png" class="s981e1350a7b148e1e80" alt="">
+                        <img src="{{ asset('') }}assets/img/header-img.png" class="s981e1350a7b148e1e80"
+                            alt="">
                     </picture>
-                    <video src="{{asset('')}}assets/video.webm" poster="{{asset('')}}assets/img/webp/header-img.webp"
-                        class="s6a59b29b240c81267d8" width="800" height="800" autoplay loop muted playsinline></video>
+                    <video src="{{ asset('') }}assets/video.webm"
+                        poster="{{ asset('') }}assets/img/webp/header-img.webp" class="s6a59b29b240c81267d8"
+                        width="800" height="800" autoplay loop muted playsinline></video>
                 </div>
                 <div class="s1959f39a0085f1c427d">
 
                     <div class="rate-card">
                         <div class="rate-card__inner">
-                            
+
                             <div class="timer-row sadde6349924fb0901e8" id="js-percent-timer"
                                 data-next="2024-09-30T00:00:00+00:00">
                                 <div class="s8581be162c1437aee29">
-                                    
-                                   
-                                   
-                                   
+
+
+
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="s5287119afa388f6b384">
-				<div class="sf09790a9d81a6bd8730 s3a8ac87771f5ed3a9ea">
-    Empowering the <br>
-    future of <br>
-    <b>digital finance</b>
-</div>
+                    <div class="sf09790a9d81a6bd8730 s3a8ac87771f5ed3a9ea">
+                        Empowering the <br>
+                        future of <br>
+                        <b>digital finance</b>
+                    </div>
 
-                    
+
                     <div class="sd3fefc2ad98f5dc6af1">
                         <div class="principal-short-widget sd8cee1dbdf3e824ec1a">
                             <div class="sd96dfffb45a7b8fd752">
@@ -47,7 +49,7 @@
                                     <div class="s167bd5b948af2fe9282">
                                         Safely & security Transaction
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -57,7 +59,7 @@
                         <div class="s1dab33613abadb0cc48 s2c21f49c4a409d9c218">
                             <div class="se6064b19f8f79ce6a25">
                                 <div class="s33c3761b3091ae8112d sb776cf8ce854af55dc8">
-                                    <a href="{{route('Index')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+                                    <a href="{{ route('Index') }}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
                                         <span class="s06c98fe1938eb74d270">
                                             <span class="s30c7c55921a92c292cf">
                                                 <span class="s2dc3968485132430838">
@@ -71,7 +73,7 @@
                                     </a>
                                 </div>
                                 <div class="s33c3761b3091ae8112d s0a5597b8746d7600762">
-                                    <a href="{{route('Index')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+                                    <a href="{{ route('Index') }}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
                                         <span class="s06c98fe1938eb74d270">
                                             <span class="s30c7c55921a92c292cf">
                                                 <span class="s2dc3968485132430838">
@@ -85,7 +87,7 @@
                                     </a>
                                 </div>
                                 <div class="s33c3761b3091ae8112d socials-gutter__cell--3">
-                                    <a href="{{route('Index')}}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
+                                    <a href="{{ route('Index') }}" class="sa9b62efbc946a658b67 s0bfcd081967e1ac882a">
                                         <span class="s06c98fe1938eb74d270">
                                             <span class="s30c7c55921a92c292cf">
                                                 <span class="s2dc3968485132430838">
@@ -203,22 +205,26 @@
     <div class="s86b2fd219e61fe0f9c5 section-about page-home__section-about" id="js-section-about">
         <div class="sf4f625148df40a9b356">
             <div class="s8ee82f6a5e1ab59b645">
-			<div class="s066aa868a49bdbee19a sa15973c4c62eba2574b s27fc8d1deb736e45cf1">
-    <div class="section-text-group sa62ceae8836e3156222">
-        <div class="sdb9e2d97d2518c23086 s22f65b880151d773a74">
-            Who <b>We Are</b>
-        </div>
-        <div class="sb7488ce532086996310 s940d16aab02a35ad8a8">
-            Global Boss Coin (GBC) is an innovative cryptocurrency platform designed to provide fast, secure, and decentralized financial solutions. We are committed to empowering users around the globe by offering easy access to blockchain technology and digital assets.
-            Our mission is to foster a global community of investors and entrepreneurs who are ready to embrace the future of finance. With cutting-edge cryptography and a transparent system, GBC ensures security and reliability for all our users.
-        </div>
-        <a href="{{route('login')}}"
-            class="s33127ef4acbf82b3964 sb2f023228505bea984c s74f63b5ee420d3b520f s64c34f60fa6a939403c">
-            <i class="s1844a59843fdb259200"></i>
-            <span>Join Us Now</span>
-        </a>
-    </div>
-</div>
+                <div class="s066aa868a49bdbee19a sa15973c4c62eba2574b s27fc8d1deb736e45cf1">
+                    <div class="section-text-group sa62ceae8836e3156222">
+                        <div class="sdb9e2d97d2518c23086 s22f65b880151d773a74">
+                            Who <b>We Are</b>
+                        </div>
+                        <div class="sb7488ce532086996310 s940d16aab02a35ad8a8">
+                            Global Boss Coin (GBC) is an innovative cryptocurrency platform designed to provide fast,
+                            secure, and decentralized financial solutions. We are committed to empowering users around
+                            the globe by offering easy access to blockchain technology and digital assets.
+                            Our mission is to foster a global community of investors and entrepreneurs who are ready to
+                            embrace the future of finance. With cutting-edge cryptography and a transparent system, GBC
+                            ensures security and reliability for all our users.
+                        </div>
+                        <a href="{{ route('login') }}"
+                            class="s33127ef4acbf82b3964 sb2f023228505bea984c s74f63b5ee420d3b520f s64c34f60fa6a939403c">
+                            <i class="s1844a59843fdb259200"></i>
+                            <span>Join Us Now</span>
+                        </a>
+                    </div>
+                </div>
 
                 <div class="s066aa868a49bdbee19a sc86843aded1cfe31ca0 sace15b151f63dba1f99">
                     <div class="s45957be5abe63b23397 s22e23b15054cf5b5f95">
@@ -341,7 +347,7 @@
 
 
 
-   
+
     <div class="s86b2fd219e61fe0f9c5 section-why page-home__section-why">
         <div class="sf4f625148df40a9b356">
             <div class="s8ee82f6a5e1ab59b645">
@@ -350,7 +356,7 @@
                         <div class="s987d4c4a4aae188830d">
                             <div class="s6b99af4c97de590361b">
                                 <div class="sdb9e2d97d2518c23086 section-why__second-title">
-                                    Why choose us <br> <b>Santera</b>
+                                    Why choose us <br> <b>{{ siteName() }}</b>
                                 </div>
                             </div>
                             <div class="s292c03d738c88a5b92d">
@@ -361,7 +367,8 @@
                                         </div>
                                         <div class="s2444da481a4d8cb04a8">
                                             <div class="scf89aa1f1c1e94bec51">
-                                                Santera Platform offers competitive advantages for investments
+                                                {{ siteName() }} Platform offers competitive advantages for
+                                                investments
                                                 that clearly win in comparison with other market platforms.
                                             </div>
                                         </div>
@@ -462,14 +469,19 @@
                 <div class="s810ab62c54740cd9705">
                     <div class="affiliate-block section-affiliate__affiliate-block">
                         <div class="sa109ca17776132e8f44">
-						<div class="sdb9e2d97d2518c23086 s84818dcf5041c269959">
-    Affiliate <b>Program</b>
-</div>
-<div class="sb7488ce532086996310 s8e4cf634a2ccd369041">
-    Join the Global Boss Coin Affiliate Program and earn rewards by referring new users to our platform. With every successful referral, you can receive bonuses in GBC tokens. Our program is designed to help you grow your network while benefiting from our expanding community.
-    <br><br>
-    To participate, simply make an active deposit and start sharing your unique referral link. There are no limits on earnings, and you can withdraw your funds at any time. The more you refer, the more you earn!
-</div>
+                            <div class="sdb9e2d97d2518c23086 s84818dcf5041c269959">
+                                Affiliate <b>Program</b>
+                            </div>
+                            <div class="sb7488ce532086996310 s8e4cf634a2ccd369041">
+                                Join the Global Boss Coin Affiliate Program and earn rewards by referring new users to
+                                our platform. With every successful referral, you can receive bonuses in GBC tokens. Our
+                                program is designed to help you grow your network while benefiting from our expanding
+                                community.
+                                <br><br>
+                                To participate, simply make an active deposit and start sharing your unique referral
+                                link. There are no limits on earnings, and you can withdraw your funds at any time. The
+                                more you refer, the more you earn!
+                            </div>
 
                             <div class="ref-lvl-gutter sdecaf80b581ad31fb08">
                                 <div class="s100c65fe113b4618778">

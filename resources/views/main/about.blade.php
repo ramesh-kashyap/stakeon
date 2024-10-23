@@ -72,20 +72,20 @@
                         <div class="s8ee82f6a5e1ab59b645">
                             <div class="s066aa868a49bdbee19a sa15973c4c62eba2574b s27fc8d1deb736e45cf1">
                             <div class="section-text-group sa62ceae8836e3156222">
-    <div class="sdb9e2d97d2518c23086 s22f65b880151d773a74">
-        Who <b>We Are</b>
-    </div>
-    <div class="sb7488ce532086996310 s940d16aab02a35ad8a8">
-        Global Boss Coin (GBC) is a revolutionary digital asset platform focused on empowering users in the rapidly growing world of cryptocurrency. With a focus on transparency, security, and innovation, we provide cutting-edge solutions that allow users to participate in the global financial revolution.
-        <br><br>
-        At GBC, we offer investment opportunities backed by blockchain technology, providing users with a chance to grow their wealth through our secure and decentralized system. Our platform is designed to cater to both beginners and experienced investors, ensuring a seamless experience for all.
-        
-    </div>
-    <a href="{{route('login')}}" class="s33127ef4acbf82b3964 sb2f023228505bea984c s74f63b5ee420d3b520f s64c34f60fa6a939403c">
-        <i class="s1844a59843fdb259200"></i>
-        <span>Check Registration</span>
-    </a>
-</div>
+                            <div class="sdb9e2d97d2518c23086 s22f65b880151d773a74">
+                                Who <b>We Are</b>
+                            </div>
+                            <div class="sb7488ce532086996310 s940d16aab02a35ad8a8">
+                                {{siteName()}} (GBC) is a revolutionary digital asset platform focused on empowering users in the rapidly growing world of cryptocurrency. With a focus on transparency, security, and innovation, we provide cutting-edge solutions that allow users to participate in the global financial revolution.
+                                <br><br>
+                                At GBC, we offer investment opportunities backed by blockchain technology, providing users with a chance to grow their wealth through our secure and decentralized system. Our platform is designed to cater to both beginners and experienced investors, ensuring a seamless experience for all.
+                                
+                            </div>
+                            <a href="{{route('login')}}" class="s33127ef4acbf82b3964 sb2f023228505bea984c s74f63b5ee420d3b520f s64c34f60fa6a939403c">
+                                <i class="s1844a59843fdb259200"></i>
+                                <span>Check Registration</span>
+                            </a>
+                        </div>
 
                             </div>
                             <div class="s066aa868a49bdbee19a sc86843aded1cfe31ca0 sace15b151f63dba1f99">
@@ -101,7 +101,7 @@
                                                         Company number
                                                     </div>
                                                     <div class="sb8974693ac08ca3a60c">
-                                                        15722838
+                                                        15728212
                                                     </div>
                                                 </div>
                                             </div>
@@ -134,7 +134,7 @@
         About <b>Our Project</b>
     </div>
     <div class="sb7488ce532086996310 s940d16aab02a35ad8a8">
-        Global Boss Coin (GBC) is a visionary cryptocurrency platform designed to revolutionize the financial landscape. Our project combines the power of blockchain technology with a user-friendly ecosystem that empowers individuals to take control of their financial futures.
+        {{siteName()}} (GBC) is a visionary cryptocurrency platform designed to revolutionize the financial landscape. Our project combines the power of blockchain technology with a user-friendly ecosystem that empowers individuals to take control of their financial futures.
         <br><br>
         Our innovative approach leverages the latest advancements in digital currency, offering secure, fast, and decentralized transactions. By embracing a forward-thinking strategy, we are continually enhancing our platform to meet the needs of an ever-evolving market.
     </div>

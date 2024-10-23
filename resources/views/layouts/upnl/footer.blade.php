@@ -53,12 +53,9 @@
 
         </ul>
 
-        <ul class="uk-nav uk-nav-default">
-            
-                     
-
+        <ul class="uk-nav uk-nav-default">                     
             <li>
-                <a href="?a=logout">
+                <a href="{{route('logout')}}">
                     <img src="{{asset('')}}massets/img/icon/sign-in.svg" width="21" height="21" loading="lazy" alt="icon" uk-svg>
                     Log out
                 </a>

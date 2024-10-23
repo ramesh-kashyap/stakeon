@@ -232,13 +232,15 @@ Route::get('/direct_level', [App\Http\Controllers\Admin\UserController::class, '
 
 
 //bonusController
+Route::get('auto-upgrade-bonus', [App\Http\Controllers\Admin\BonusController::class, 'auto_upgrade_bonus'])->name('admin.auto-upgrade-bonus');
+Route::get('rewards-bonus', [App\Http\Controllers\Admin\BonusController::class, 'rewards_bonus'])->name('admin.reward-bonus');
+Route::get('re-birth-bonus', [App\Http\Controllers\Admin\BonusController::class, 're_birth_bonus'])->name('admin.re-birth-bonus');
+Route::get('package-auto-upgrade-bonus', [App\Http\Controllers\Admin\BonusController::class, 'package_auto_upgrade_bonus'])->name('admin.package-auto-upgrade-bonus');
 Route::get('leadership-bonus', [App\Http\Controllers\Admin\BonusController::class, 'leadership_bonus'])->name('admin.leadership-bonus');
-
 Route::get('pool-bonus', [App\Http\Controllers\Admin\BonusController::class, 'pool_bonus'])->name('admin.pool-bonus');
 Route::get('level-bonus', [App\Http\Controllers\Admin\BonusController::class, 'level_bonus'])->name('admin.level-bonus');
 Route::get('booster-bonus', [App\Http\Controllers\Admin\BonusController::class, 'booster_bonus'])->name('admin.booster-bonus');
-Route::get('club-bonus', [App\Http\Controllers\Admin\BonusController::class, 'club_bonus'])->name('admin.club-bonus');
-Route::get('reward-bonus', [App\Http\Controllers\Admin\BonusController::class, 'reward_bonus'])->name('admin.reward-bonus');
+Route::get('direct-income', [App\Http\Controllers\Admin\BonusController::class, 'direct_bonus'])->name('admin.direct-bonus');
 Route::get('activities-bonus', [App\Http\Controllers\Admin\BonusController::class, 'activities_bonus'])->name('admin.activities-bonus');
 Route::get('royalty', [App\Http\Controllers\Admin\BonusController::class, 'royalty'])->name('admin.royalty');
 

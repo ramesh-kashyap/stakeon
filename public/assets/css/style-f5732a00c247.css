@@ -1528,7 +1528,7 @@ textarea {
 }
 
 a {
-    color: #0769e0;
+    /* color: #0769e0; */
     text-decoration: none
 }
 
@@ -3384,7 +3384,7 @@ a.s33127ef4acbf82b3964.disabled {
 }
 
 .s74f63b5ee420d3b520f {
-    color: #fff;
+    color: #000000;
     background-color: #0769e0;
     border-color: #065dc7
 }
@@ -4894,7 +4894,7 @@ html {
 }
 
 a {
-    color: #f7ef9e;
+    /* color: #f7ef9e; */
     text-decoration: underline
 }
 
@@ -5039,7 +5039,7 @@ a:hover {
 .s74f63b5ee420d3b520f:focus,
 .s74f63b5ee420d3b520f:hover {
     background: #008ff3;
-    background: linear-gradient(to bottom, #008ff3 0, #005edc 100%)
+    background: linear-gradient(to bottom, #99ff99 0, #99ff99 100%);
 }
 
 .sbeff0940880ae426f28,
@@ -5637,7 +5637,7 @@ button.close:hover {
 
 @supports ((-webkit-background-clip:text) or (background-clip:text)) and (-webkit-text-fill-color:transparent) {
     .sf09790a9d81a6bd8730>b {
-        background-image: linear-gradient(to right, #e9dd64 0, #fdf6a4 100%);
+        background-image: linear-gradient(to right, #99ff99 0, #99ff99 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent
@@ -5672,7 +5672,7 @@ button.close:hover {
 
 @supports ((-webkit-background-clip:text) or (background-clip:text)) and (-webkit-text-fill-color:transparent) {
     .sdb9e2d97d2518c23086>b {
-        background-image: linear-gradient(to right, #e9dd64 0, #fdf6a4 100%);
+        background-image: linear-gradient(to right, #99ff99 0, #99ff99 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent
@@ -5698,7 +5698,7 @@ button.close:hover {
 }
 
 .s71134aef7072f13d68c>b {
-    color: #0769e0;
+    color: #99ff99;
     font-weight: 700
 }
 
@@ -6363,7 +6363,7 @@ button.close:hover {
     left: 0;
     top: 0;
     background: #f8f09f;
-    background: linear-gradient(to bottom, #f8f09f 0, #c1b568 100%);
+    background: linear-gradient(to bottom, #99ff99 0, #99ff99 100%);
     -webkit-clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
     clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%)
 }

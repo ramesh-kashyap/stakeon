@@ -109,13 +109,13 @@
                                                                     <span class="sd8f089d148a17ec3445"></span>
                                                                 </span>
                                                                 <span class="s09ba7b4ea10f1f8be2e">
-                                                                    What is Global Boss Coin?
+                                                                    What is {{siteName()}}?
                                                                 </span>
                                                             </a>
                                                             <div class="rule-card__body collapse in" id="collapse-main-1" role="tabpanel">
                                                                 <div class="s1d385b1218ee18cab11">
                                                                     <p>
-                                                                    Global Boss Coin (GBC) is a cryptocurrency that aims to provide a decentralized platform for users to engage in various financial transactions, including trading, investing, and possibly other financial services.
+                                                                    {{siteName()}} (GBC) is a cryptocurrency that aims to provide a decentralized platform for users to engage in various financial transactions, including trading, investing, and possibly other financial services.
                                                                     </p>
                                                                 </div>
                                                             </div>
@@ -128,7 +128,7 @@
                                                                     <span class="sd8f089d148a17ec3445"></span>
                                                                 </span>
                                                                 <span class="s09ba7b4ea10f1f8be2e">
-                                                                    Is the Global Boss Coin company officially registered?
+                                                                    Is the {{siteName()}} company officially registered?
                                                                 </span>
                                                             </a>
                                                             <div class="rule-card__body collapse" id="collapse-main-2" role="tabpanel">
@@ -150,7 +150,7 @@
                                                                     <span class="sd8f089d148a17ec3445"></span>
                                                                 </span>
                                                                 <span class="s09ba7b4ea10f1f8be2e">
-                                                                    How can I start cooperate with Global Boss Coin?
+                                                                    How can I start cooperate with {{siteName()}}?
                                                                 </span>
                                                             </a>
                                                             <div class="rule-card__body collapse" id="collapse-main-3" role="tabpanel">
